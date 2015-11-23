@@ -1,0 +1,24 @@
+/* Website styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #eee;
+}
+
+header,
+#page-container,
+footer {
+  padding: 16px 0;
+}
+
+header,
+footer {
+  color: #1fc2ff;
+}
+
+#page-container {
+  background: #333;
+  color: #dddddd;
+}
