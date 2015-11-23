@@ -1,9 +1,6 @@
 <template name="PageLayout">
   <header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-    </nav>
+    {{> yield "Header"}}
   </header>
 
   <section id="page-container">
@@ -11,6 +8,6 @@
   </section>
 
   <footer>
-    <p>Copyright &copy; 2015, Elliot Derhay</p>
+    {{> yield "Footer"}}
   </footer>
 </template>

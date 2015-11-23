@@ -3,7 +3,11 @@
 // Client-side routes
 
 Router.configure({
-  layoutTemplate: 'PageLayout'
+  layoutTemplate: 'PageLayout',
+  yieldTemplates: {
+    'Footer': {to: 'Footer'},
+    'Header': {to: 'Header'}
+  }
 });
 
 Router.route('/', function() {
