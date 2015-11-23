@@ -1,15 +1,13 @@
-// counter starts at 0
-Session.setDefault('counter', 0);
+// App JS
 
-Template.hello.helpers({
-  counter: function () {
-    return Session.get('counter');
-  }
+// Client-side routes
+
+Router.configure({
+  layoutTemplate: 'PageLayout'
 });
 
-Template.hello.events({
-  'click button': function () {
-    // increment the counter when button is clicked
-    Session.set('counter', Session.get('counter') + 1);
-  }
+Router.route('/', function() {
+  this.render('Home');
 });
+
+Router.route('/about');

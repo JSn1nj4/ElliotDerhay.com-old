@@ -1,0 +1,16 @@
+<template name="PageLayout">
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <section id="page-container">
+    {{> yield}}
+  </section>
+
+  <footer>
+    <p>Copyright &copy; 2015, Elliot Derhay</p>
+  </footer>
+</template>
