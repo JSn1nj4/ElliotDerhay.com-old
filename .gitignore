@@ -1,0 +1,47 @@
+# archive and compressed files
+*.gz
+*.zip
+*.tar
+*.tgz
+*.tbz
+
+# computer system files
+Thumbs.db
+.DS_Store
+
+# file caches
+
+# fonts
+*.eot
+*.ttc
+*.ttf
+*.otf
+*.woff
+
+# images
+*.png
+*.jpg
+*.jpe
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.cur
+*.tiff
+
+# logs
+*.log
+error_log
+
+# videos
+*.mp4
+*.m4v
+*.ogg
+*.wmv
+*.mov
+*.webm
+*.flv
+*.fla
+*.ogv
+*.avi
+*.swf
