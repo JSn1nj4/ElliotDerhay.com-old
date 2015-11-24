@@ -4,7 +4,7 @@
 
 Template.Header.helpers({
   route: function() {
-    return Iron.Location.get().path;
+    return Router.current().route.path();
   }
 });
 
