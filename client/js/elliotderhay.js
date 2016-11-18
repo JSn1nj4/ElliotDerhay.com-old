@@ -11,4 +11,4 @@ Router.configure({
 });
 
 Router.route('/', {name: 'Home'});
-Router.route('/about');
+Router.route('/about', {name: 'About'});
