@@ -5,7 +5,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #111;
+  background: #0B100F;
   color: #eee;
   font-family: monospace;
 }
@@ -29,7 +29,7 @@ footer {
 
 header,
 footer {
-  color: #008aff;
+  color: #00C49A;
   position: relative;
 }
 
@@ -45,7 +45,7 @@ header a {
 }
 
 #brand span {
-  color: #008aff;
+  color: #00C49A;
   font-size: .7em;
   margin: auto -.3em;
   line-height: 1em;
@@ -62,7 +62,7 @@ header a {
 
 #main-menu a {
   display: inline-block;
-  color: #008aff;
+  color: #00C49A;
   text-align: right;
   vertical-align: middle;
   text-transform: uppercase;
