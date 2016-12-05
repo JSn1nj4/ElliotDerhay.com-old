@@ -74,3 +74,19 @@ header a {
   background: #333;
   color: #dddddd;
 }
+
+/* Styles for Coming Soon template */
+#page-coming-soon {
+    text-align: center;
+    padding: 160px 15px;
+}
+
+#page-coming-soon h1 {
+    font-size: 80px;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+#page-coming-soon h4 {
+    font-size: 24px;
+}
