@@ -12,5 +12,5 @@ Router.configure({
 
 // Route name = "name" in <template> element
 Router.route('/', {name: 'Home'});
-Router.route('/projects', {name: 'Projects'});
-Router.route('/contact', {name: 'Contact'});
+Router.route('/projects', {name: 'Projects', template: 'ComingSoon'});
+Router.route('/contact', {name: 'Contact', template: 'ComingSoon'});
