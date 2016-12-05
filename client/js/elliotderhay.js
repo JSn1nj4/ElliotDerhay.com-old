@@ -12,3 +12,4 @@ Router.configure({
 
 Router.route('/', {name: 'Home'});
 Router.route('/projects', {name: 'Projects'});
+Router.route('/contact', {name: 'Contact'});
