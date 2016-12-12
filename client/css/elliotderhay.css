@@ -68,6 +68,15 @@ header a {
   text-transform: uppercase;
   font-size: 2em;
   padding: 1em;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  -moz-transition: color 0.3s, background-color 0.3s;
+  -o-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+#main-menu a:hover {
+  color: #333;
+  background-color: #00C49A;
 }
 
 #page-container {
