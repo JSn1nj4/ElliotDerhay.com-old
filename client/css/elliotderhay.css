@@ -86,6 +86,26 @@ header a {
   color: #dddddd;
 }
 
+/* = ROWS AND COLUMNS = */
+/*
+  @TODO: figure out general row/column paddings and other styles
+*/
+.e_row {
+
+}
+
+.row_inner {
+
+}
+
+.e_col {
+
+}
+
+.col-inner {
+
+}
+
 /* Styles for Coming Soon template */
 #page-coming-soon {
     text-align: center;
@@ -101,3 +121,22 @@ header a {
 #page-coming-soon h4 {
     font-size: 24px;
 }
+
+/* === RESPONSIVE STYLES === */
+/*
+  @TODO: Create grid system somewhat similar to what Bootstrap does
+    Note: I understand Bootstrap already exists, but I'm trying to create
+    something simpler that fits my needs rather than compiling a bloat, pre-made
+    stylesheet into my project.
+
+  Grid size notes:
+    - 16 columns across
+    - 15px side padding (inner)
+    - Screen sizes: (ranging from XS to XL)
+      > XS:
+      > SM:
+      > MD:
+      > LG:
+      > XL:
+    These sizes should be handled smallest to largest below
+*/
