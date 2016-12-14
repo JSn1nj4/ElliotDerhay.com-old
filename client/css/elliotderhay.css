@@ -90,7 +90,11 @@ header a {
 /*
   @TODO: figure out general row/column paddings and other styles
 */
-.e_row {
+.e_row { /* by default, all rows will be full-width */
+
+}
+
+.row-fixed_width { /* @TODO: decide what the largest fixed width of the grid is */
 
 }
 
