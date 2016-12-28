@@ -84,6 +84,7 @@ header a {
 #page-container {
   background: #333;
   color: #dddddd;
+  overflow: hidden;
 }
 
 /* = ROWS AND COLUMNS = */
@@ -91,7 +92,9 @@ header a {
   @TODO: figure out general row/column paddings and other styles
 */
 .e_row { /* by default, all rows will be full-width */
-
+  width: 100%;
+  position: relative;
+  clear: both;
 }
 
 .row-fixed_width { /* @TODO: decide what the largest fixed width of the grid is */
@@ -103,7 +106,8 @@ header a {
 }
 
 .e_col {
-
+  position: relative;
+  float: left;
 }
 
 .col-inner {
@@ -130,17 +134,44 @@ header a {
 /*
   @TODO: Create grid system somewhat similar to what Bootstrap does
     Note: I understand Bootstrap already exists, but I'm trying to create
-    something simpler that fits my needs rather than compiling a bloat, pre-made
-    stylesheet into my project.
+    something simpler that fits my needs rather than compiling a bloated,
+    pre-made stylesheet into my project.
 
   Grid size notes:
     - 16 columns across
     - 15px side padding (inner)
     - Screen sizes: (ranging from XS to XL)
-      > XS:
-      > SM:
-      > MD:
-      > LG:
-      > XL:
+      > XS:  320px
+      > SM:  480px
+      > MD:  768px
+      > LG:  992px
+      > XL: 1200px+
     These sizes should be handled smallest to largest below
 */
+
+@media only screen and (max-width: 319px) { /* everything below XS */
+
+}
+
+@media only screen and (min-width: 320px) { /* beginning of XS screens */
+  .col-1-xs, .col-2-xs, .col-3-xs, .col-4-xs, .col-5-xs, .col-6-xs, .col-7-xs, .col-8-xs,
+  .col-9-xs, .col-10-xs, .col-11-xs, .col-12-xs, .col-13-xs, .col-14-xs, .col-15-xs, .col-16-xs {
+
+  }
+}
+
+@media only screen and (min-width: 480px) { /* beginning of SM screens */
+
+}
+
+@media only screen and (min-width: 768px) { /* beginning of MD screens */
+
+}
+
+@media only screen and (min-width: 992px) { /* beginning of LG screens */
+
+}
+
+@media only screen and (min-width: 1200px) { /* beginning of XL screens */
+
+}
