@@ -140,6 +140,7 @@ header a {
   Grid size notes:
     - 16 columns across
     - 15px side padding (inner)
+    - column class formatting as follows: .col-<1-16>-<xs-xl>
     - Screen sizes: (ranging from XS to XL)
       > XS:  320px
       > SM:  480px
@@ -154,10 +155,7 @@ header a {
 }
 
 @media only screen and (min-width: 320px) { /* beginning of XS screens */
-  .col-1-xs, .col-2-xs, .col-3-xs, .col-4-xs, .col-5-xs, .col-6-xs, .col-7-xs, .col-8-xs,
-  .col-9-xs, .col-10-xs, .col-11-xs, .col-12-xs, .col-13-xs, .col-14-xs, .col-15-xs, .col-16-xs {
-
-  }
+  
 }
 
 @media only screen and (min-width: 480px) { /* beginning of SM screens */
