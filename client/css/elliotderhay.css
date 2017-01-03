@@ -15,6 +15,22 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0.83em 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p > img,
+span > img {
+  display: inline;
+}
+
+img.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 
 
@@ -98,11 +114,13 @@ header a {
 }
 
 .row-fixed_width { /* @TODO: decide what the largest fixed width of the grid is */
-
+  max-width: 992px;
+  margin: 0 auto;
 }
 
 .row_inner {
-
+  padding: 30px 0;
+  overflow: hidden;
 }
 
 .e_col {
@@ -111,7 +129,7 @@ header a {
 }
 
 .col-inner {
-
+  padding: 0 10px;
 }
 
 /* Styles for Coming Soon template */
@@ -151,19 +169,27 @@ header a {
 */
 
 @media only screen and (max-width: 319px) { /* everything below XS */
-
+  .col-8-sm, .col-8-md {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 320px) { /* beginning of XS screens */
-  
+  .col-8-sm, .col-8-md {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 480px) { /* beginning of SM screens */
-
+  .col-8-sm {
+    width: 50%;
+  }
 }
 
 @media only screen and (min-width: 768px) { /* beginning of MD screens */
-
+  .col-8-md {
+    width: 50%;
+  }
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
