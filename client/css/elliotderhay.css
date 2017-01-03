@@ -101,6 +101,7 @@ header a {
   background: #333;
   color: #dddddd;
   overflow: hidden;
+  padding-bottom: 60px;
 }
 
 /* = ROWS AND COLUMNS = */
@@ -119,7 +120,7 @@ header a {
 }
 
 .row_inner {
-  padding: 30px 0;
+  padding-top: 60px;
   overflow: hidden;
 }
 
@@ -129,7 +130,7 @@ header a {
 }
 
 .col-inner {
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 /* Styles for Coming Soon template */
