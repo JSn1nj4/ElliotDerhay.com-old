@@ -75,6 +75,7 @@ header a {
   right: 0;
   top: 0;
   height: 100%;
+  font-size: 0;
 }
 
 #main-menu a {
