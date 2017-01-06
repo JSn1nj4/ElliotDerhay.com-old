@@ -150,6 +150,26 @@ header a {
     font-size: 24px;
 }
 
+#banner_container {
+  background-image: url(/img/Elliot.Color2-hd-outlined-green-dark.jpg);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  padding: 90px 0 120px 0;
+}
+
+#banner_container h1 {
+  font-size: 60px;
+  font-weight: 400;
+  padding: 0.2em 0;
+  text-align: center;
+}
+
+#banner_container p {
+
+}
+
 footer {
   padding: 30px 15px;
 }
@@ -175,13 +195,19 @@ footer {
 */
 
 @media only screen and (max-width: 319px) { /* everything below XS */
-  .col-8-sm, .col-8-md {
+  .col-4-md,
+  .col-8-sm, .col-8-md,
+  .col-12-md,
+  .col-16-xs {
     width: 100%;
   }
 }
 
 @media only screen and (min-width: 320px) { /* beginning of XS screens */
-  .col-8-sm, .col-8-md {
+  .col-4-md,
+  .col-8-sm, .col-8-md,
+  .col-12-md,
+  .col-16-xs {
     width: 100%;
   }
 }
@@ -193,8 +219,14 @@ footer {
 }
 
 @media only screen and (min-width: 768px) { /* beginning of MD screens */
+  .col-4-md {
+    width: 25%;
+  }
   .col-8-md {
     width: 50%;
+  }
+  .col-12-md {
+    width: 75%;
   }
 }
 
