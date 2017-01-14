@@ -180,6 +180,8 @@ header a {
   font-weight: 400;
   padding: 0.2em 0;
   text-align: center;
+  color: #fff;
+  text-shadow: #fff 0 0 10px;
 }
 
 .banner-container h1 {
