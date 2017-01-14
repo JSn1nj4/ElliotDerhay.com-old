@@ -166,11 +166,20 @@ header a {
   padding: 90px 0 120px 0;
 }
 
-#banner_container h1 {
-  font-size: 60px;
+#banner_container h1,
+#banner_container h2,
+#banner_container h3 {
   font-weight: 400;
   padding: 0.2em 0;
   text-align: center;
+}
+
+#banner_container h1 {
+  font-size: 60px;
+}
+
+#banner_container h3 {
+  font-size: 30px;
 }
 
 #banner_container p {
