@@ -169,6 +169,11 @@ header a {
   background-image: url(/img/Elliot.Color2-hd-outlined-green-dark.jpg);
 }
 
+#projects_banner {
+  background-image: url(/img/github-static-v1-darker.jpg);
+  background-position: center;
+}
+
 .banner-container h1,
 .banner-container h2,
 .banner-container h3 {
