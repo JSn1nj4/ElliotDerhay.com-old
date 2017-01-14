@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   background: #0B100F;
-  color: #eee;
+  color: #fff;
   font-family: monospace;
 }
 
@@ -61,7 +61,7 @@ header a {
 }
 
 #brand {
-  color: #d4d7d6;
+  color: #fff;
   font-size: 60px;
   line-height: 1em;
   padding: 15px;
@@ -107,7 +107,7 @@ header a {
 
 #page-container {
   background: #333;
-  color: #dddddd;
+  color: #fff;
   overflow: hidden;
   padding-bottom: 60px;
 }
