@@ -16,7 +16,9 @@ Router.route('/', {
 });
 Router.route('/projects', {
   name: 'Projects',
-  template: 'ComingSoon'
+  subscriptions: function() { // subscribe to this route's related collection
+    return Meteor.subscribe('Projects');
+  }
 });
 Router.route('/contact', {
   name: 'Contact',
