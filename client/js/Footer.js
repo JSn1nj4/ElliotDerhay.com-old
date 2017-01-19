@@ -1,5 +1,5 @@
 Template.Footer.helpers({
-  year: function() {
+  getYear: function() {
     return new Date().getFullYear();
   }
 });
