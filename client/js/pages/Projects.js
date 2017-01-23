@@ -1,13 +1,13 @@
-import { Projects } from '../../../imports/api/projects.js';
+import { projects } from '../../../imports/api/projects.js';
 Template.Projects.onCreated(function projectsOnCreated() {
-  Meteor.subscribe('Projects');
+  Meteor.subscribe('projects');
 });
 
-console.log( Projects.find().fetch() );
+console.log( projects.find({}).count() );
 
 Template.Projects.helpers({
   projects() {
     // return all projects for the time being
-    return Projects.find({});
+    return projects.find({}).fetch();
   }
 });
