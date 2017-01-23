@@ -1,6 +1,6 @@
-import '../../imports/ui/Projects.js';
+import '../../../imports/ui/Projects.js';
 
-Template.Projects.Helpers({
+Template.Projects.helpers({
   projects() {
     // return all projects for the time being
     return Projects.find({});
