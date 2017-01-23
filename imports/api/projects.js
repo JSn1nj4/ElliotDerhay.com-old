@@ -5,6 +5,6 @@ export const projects = new Mongo.Collection('projects');
 
 if(Meteor.isServer) {
   Meteor.publish('projects', function projectsPublication() {
-    projects.find({});
+    return projects.find({});
   });
 }
