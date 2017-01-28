@@ -3,10 +3,8 @@ Template.Projects.onCreated(function projectsOnCreated() {
   Meteor.subscribe('projects');
 });
 
-console.log( projects.find({}).count() );
-
 Template.Projects.helpers({
-  projects() {
+  listProjects() {
     // return all projects for the time being
     return projects.find({}).fetch();
   }
