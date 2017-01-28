@@ -19,17 +19,18 @@
   <section>
     <div class="e_row row-fixed_width">
       <div class="row_inner">
-        <div class="e_col col-8-md">
-          <div class="col-inner">
-            <h2>Project Title</h2>
-          </div>
-        </div>
-        <div class="e_col col-8-md">
-          <div class="col-inner">
-            <h2>Project Title</h2>
-          </div>
-        </div>
+        {{ #each listProjects }}
+          {{> gitproject }}
+        {{ /each }}
       </div>
     </div>
   </section>
+</template>
+
+<template name="gitproject">
+  <div class="e_col col-8-md">
+    <div class="col-inner">
+      <h2>{{ name }}</h2>
+    </div>
+  </div>
 </template>
