@@ -6,6 +6,6 @@ Template.Projects.onCreated(function projectsOnCreated() {
 Template.Projects.helpers({
   listProjects() {
     // return all projects for the time being
-    return projects.find({}).fetch();
+    return projects.find({}, { sort: { createdAt: -1 } }).fetch();
   }
 });
