@@ -30,11 +30,13 @@
 <template name="gitproject">
   <div class="e_col col-8-md">
     <div class="col-inner">
-      <h2 class="project-title">
-        <a class="devicons devicons-git{{#unless isSource}}_branch{{/unless}}" href="{{ url }}" target="_blank">{{ name }}</a>
-      </h2>
-      <p class="project-author">Author: <a href="{{ author.url }}" target="_blank">{{ author.user }}</a></p>
-      <p class="project-last-updated">Last updated: {{ CalDate updatedAt }}</p>
+      <div class="project-wrapper">
+        <h2 class="project-title">
+          <a class="devicons devicons-git{{#unless isSource}}_branch{{/unless}}" href="{{ url }}" target="_blank">{{ name }}<span></span></a>
+        </h2>
+        <p class="project-author">Author: <a href="{{ author.url }}" target="_blank">{{ author.user }}</a></p>
+        <p class="project-last-updated">Updated: {{ CalDate updatedAt }}</p>
+      </div>
     </div>
   </div>
 </template>
