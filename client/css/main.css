@@ -22,6 +22,19 @@ p {
   line-height: 1.5em;
 }
 
+#page-container a {
+  color: #00C49A;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+#page-container a:hover {
+  color: #85ffe4;
+}
+
 img {
   max-width: 100%;
   height: auto;
