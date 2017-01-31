@@ -30,9 +30,9 @@
 <template name="gitproject">
   <div class="e_col col-8-md">
     <div class="col-inner">
-      <h2><span class="typeIcon {{ repoType }}"></span><a href="{{ url }}" target="_blank">{{ name }}</a></h2>
-      <p>Author: <a href="{{ author.url }}" target="_blank">{{ author.user }}</a></p>
-      <p>Last updated: {{ updatedAt }}</p>
+      <h2 class="project-title"><span class="typeIcon {{ repoType }}"></span><a href="{{ url }}" target="_blank">{{ name }}</a></h2>
+      <p class="project-author">Author: <a href="{{ author.url }}" target="_blank">{{ author.user }}</a></p>
+      <p class="project-last-updated">Last updated: {{ updatedAt }}</p>
     </div>
   </div>
 </template>
