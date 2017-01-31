@@ -211,7 +211,12 @@ header a {
 
 /* = PROJECTS STYLES = */
 
-.project-title, .project-author, .project-last-updated {
+.project-wrapper {
+  padding: 0 8px;
+}
+
+.project-title,
+.project-wrapper p {
     padding-bottom: 16px;
     line-height: 1em;
 }
