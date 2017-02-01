@@ -213,10 +213,9 @@ header a {
 
 .project-wrapper {
   padding: 0 8px;
-  border: solid 1px;
-  border-color: #555 #444 #444 #555;
+  border: solid 1px #555;
   border-radius: 3px;
-  background: #393939;
+  background: rgba(255,255,255,0.05);
 }
 
 .project-title,
