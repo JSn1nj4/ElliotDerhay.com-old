@@ -141,7 +141,7 @@ header a {
 }
 
 .row_inner {
-  padding-top: 60px;
+  padding-top: 40px;
   overflow: hidden;
 }
 
@@ -151,7 +151,7 @@ header a {
 }
 
 .col-inner {
-  padding: 0 15px;
+  padding: 20px 15px 0;
 }
 
 /* Styles for Coming Soon template */
