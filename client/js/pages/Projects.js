@@ -1,4 +1,4 @@
-import { projects } from '../../../imports/api/projects.js';
+import { projects } from '/imports/api/projects.js';
 Template.Projects.onCreated(function projectsOnCreated() {
   Meteor.subscribe('projects');
 });
