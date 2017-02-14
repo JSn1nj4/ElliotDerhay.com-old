@@ -1,0 +1,20 @@
+{
+  "name": "elliotderhay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/JSn1nj4/elliotderhay.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/JSn1nj4/elliotderhay.com/issues"
+  },
+  "homepage": "https://gitlab.com/JSn1nj4/elliotderhay.com#README"
+}
