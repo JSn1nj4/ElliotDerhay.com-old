@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://gitlab.com/JSn1nj4/elliotderhay.com/issues"
   },
-  "homepage": "https://gitlab.com/JSn1nj4/elliotderhay.com#README"
+  "homepage": "https://gitlab.com/JSn1nj4/elliotderhay.com#README",
+  "devDependencies": {
+    "eslint": "^3.15.0"
+  }
 }
