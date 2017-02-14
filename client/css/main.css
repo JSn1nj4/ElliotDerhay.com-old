@@ -216,6 +216,8 @@ header a {
   border: solid 1px #555;
   border-radius: 3px;
   background: rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
 }
 
 .project-title,
@@ -257,7 +259,7 @@ footer {
   .col-5-md,
   .col-8-sm, .col-8-md,
   .col-12-md,
-  .col-16-xs {
+  .col-16-xs, .col-16-lg {
     width: 100%;
   }
 }
@@ -267,7 +269,7 @@ footer {
   .col-5-md,
   .col-8-sm, .col-8-md,
   .col-12-md,
-  .col-16-xs {
+  .col-16-xs, .col-16-lg {
     width: 100%;
   }
 }
@@ -291,11 +293,20 @@ footer {
   .col-12-md {
     width: 75%;
   }
+  .col-16-md {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
   .col-5-lg {
     width: 31.25%;
+  }
+  .col-8-lg {
+    width: 50%;
+  }
+  .col-16-lg {
+    width: 100%;
   }
 }
 
