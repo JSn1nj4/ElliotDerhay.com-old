@@ -11,6 +11,9 @@ Thumbs.db
 
 # file caches
 
+# NPM
+node_modules/*
+
 # fonts
 *.eot
 *.ttc
