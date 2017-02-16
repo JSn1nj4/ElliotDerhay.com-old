@@ -1,0 +1,11 @@
+{
+  "parserOptions": {
+    "impliedStrict": true
+  },
+  "env": {
+    "browser": true,
+    "meteor": true,
+    "mongo": true,
+    "es6": true
+  }
+}
