@@ -21,15 +21,5 @@
     "eslint": "^3.15.0"
   },
   "private": true,
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "impliedStrict": true
-    },
-    "env": {
-      "browser": true,
-      "meteor": true,
-      "mongo": true
-    }
-  }
+  "dependencies": {}
 }
