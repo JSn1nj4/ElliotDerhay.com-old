@@ -19,3 +19,4 @@ standard-minifier-js@1.2.1
 shell-server@0.2.1
 ecmascript
 es5-shim
+webtempest:animate
