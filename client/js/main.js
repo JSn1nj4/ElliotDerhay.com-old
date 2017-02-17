@@ -1,4 +1,4 @@
-import '../../imports/ui/body.js';
+import '/imports/ui/body.js';
 // App JS
 
 // Client-side routes
