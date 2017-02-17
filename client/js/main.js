@@ -23,24 +23,27 @@ Router.route('/contact', {
 });*/
 
 FlowRouter.route('/', {
+  name: 'home',
   action() {
-    BlazeLayout.render('Home', {
+    BlazeLayout.render('PageLayout', {
       content: 'Home'
     });
   }
 });
 
 FlowRouter.route('/projects', {
+  name: 'projects',
   action() {
-    BlazeLayout.render('Projects', {
+    BlazeLayout.render('PageLayout', {
       content: 'Projects'
     });
   }
 });
 
 FlowRouter.route('/contact', {
+  name: 'contact',
   action() {
-    BlazeLayout.render('Contact', {
+    BlazeLayout.render('PageLayout', {
       content: 'ComingSoon'
     });
   }
