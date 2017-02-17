@@ -3,7 +3,7 @@ import '../../imports/ui/body.js';
 
 // Client-side routes
 
-Router.configure({
+/*Router.configure({
   layoutTemplate: 'PageLayout',
   yieldTemplates: {
     'Footer': {to: 'Footer'},
@@ -22,4 +22,4 @@ Router.route('/projects', {
 Router.route('/contact', {
   name: 'Contact',
   template: 'ComingSoon'
-});
+});*/
