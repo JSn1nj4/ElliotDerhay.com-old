@@ -6,11 +6,7 @@ Template.Header.helpers({
     return FlowRouter.current().path;
   },
   pathFor(routeName) {
-    var path = '/';
-    if(routeName != 'Home') {
-      path += routeName.toLowerCase();
-    }
-    return path;
+    return FlowRouter.path(routeName);
   }
 });
 
