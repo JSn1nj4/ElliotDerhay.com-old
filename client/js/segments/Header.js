@@ -4,4 +4,4 @@ Template.Header.helpers({
   }
 });
 
-console.log(Router);
+console.log(FlowRouter);
