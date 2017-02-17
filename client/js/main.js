@@ -23,7 +23,7 @@ Router.route('/contact', {
 });*/
 
 FlowRouter.route('/', {
-  name: 'home',
+  name: 'Home',
   action() {
     BlazeLayout.render('PageLayout', {
       content: 'Home'
@@ -32,7 +32,7 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/projects', {
-  name: 'projects',
+  name: 'Projects',
   action() {
     BlazeLayout.render('PageLayout', {
       content: 'Projects'
@@ -41,7 +41,7 @@ FlowRouter.route('/projects', {
 });
 
 FlowRouter.route('/contact', {
-  name: 'contact',
+  name: 'Contact',
   action() {
     BlazeLayout.render('PageLayout', {
       content: 'ComingSoon'
