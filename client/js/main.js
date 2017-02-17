@@ -1,4 +1,5 @@
-import '/imports/ui/body.js';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // App JS
 
 // Client-side routes
@@ -12,9 +13,6 @@ import '/imports/ui/body.js';
 });
 
 // Route name = "name" in <template> element
-Router.route('/', {
-  name: 'Home'
-});
 Router.route('/projects', {
   name: 'Projects',
   template: 'ComingSoon'
@@ -25,5 +23,25 @@ Router.route('/contact', {
 });*/
 
 FlowRouter.route('/', {
-  name: 'Home'
+  action() {
+    BlazeLayout.render('Home', {
+      content: 'Home'
+    });
+  }
+});
+
+FlowRouter.route('/projects', {
+  action() {
+    BlazeLayout.render('Projects', {
+      content: 'Projects'
+    });
+  }
+});
+
+FlowRouter.route('/contact', {
+  action() {
+    BlazeLayout.render('Contact', {
+      content: 'ComingSoon'
+    });
+  }
 });

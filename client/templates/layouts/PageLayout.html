@@ -1,15 +1,15 @@
 <template name="PageLayout">
   <header>
-    {{> Template.dynamic template=Header}}
+    {{> Header}}
   </header>
 
   <section id="page-container">
     {{#transition in="fadeIn" out="fadeOut"}}
-      {{> Template.dynamic template=content}}
+      {{>Template.dynamic template=content}}
     {{/transition}}
   </section>
 
   <footer>
-    {{> Template.dynamic template=Footer}}
+    {{> Footer}}
   </footer>
 </template>
