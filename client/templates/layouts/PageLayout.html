@@ -4,7 +4,9 @@
   </header>
 
   <section id="page-container">
-    {{> yield}}
+    {{#transition in="fadeIn" out="fadeOut"}}
+      {{> yield}}
+    {{/transition}}
   </section>
 
   <footer>
