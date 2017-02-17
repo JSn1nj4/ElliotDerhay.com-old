@@ -23,3 +23,7 @@ Router.route('/contact', {
   name: 'Contact',
   template: 'ComingSoon'
 });*/
+
+FlowRouter.route('/', {
+  name: 'Home'
+});
