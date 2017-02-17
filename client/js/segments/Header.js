@@ -1,6 +1,6 @@
 Template.Header.helpers({
   route: function() {
-  //  return Router.current().route.path();
+    return FlowRouter.getRouteName();
   }
 });
 
