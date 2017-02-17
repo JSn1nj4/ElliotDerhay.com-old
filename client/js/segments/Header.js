@@ -4,6 +4,13 @@ Template.Header.helpers({
   route: function() {
     FlowRouter.watchPathChange();
     return FlowRouter.current().path;
+  },
+  pathFor(routeName) {
+    var path = '/';
+    if(routeName != 'Home') {
+      path += routeName.toLowerCase();
+    }
+    return path;
   }
 });
 
