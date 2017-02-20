@@ -4,9 +4,6 @@ Template.Header.helpers({
   route: function() {
     FlowRouter.watchPathChange();
     return FlowRouter.current().path;
-  },
-  pathFor(routeName) {
-    return FlowRouter.path(routeName);
   }
 });
 
