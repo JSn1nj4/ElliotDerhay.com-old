@@ -1,7 +1,10 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+
 Template.Header.helpers({
   route: function() {
-    return Router.current().route.path();
+    FlowRouter.watchPathChange();
+    return FlowRouter.current().path;
   }
 });
 
-console.log(Router);
+console.log(FlowRouter);

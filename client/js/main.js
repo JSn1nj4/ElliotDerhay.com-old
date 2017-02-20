@@ -1,24 +1,32 @@
-import '../../imports/ui/body.js';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // App JS
 
 // Client-side routes
 
-Router.configure({
-  layoutTemplate: 'PageLayout',
-  yieldTemplates: {
-    'Footer': {to: 'Footer'},
-    'Header': {to: 'Header'}
+FlowRouter.route('/', {
+  name: 'Home',
+  action() {
+    BlazeLayout.render('PageLayout', {
+      content: 'Home'
+    });
   }
 });
 
-// Route name = "name" in <template> element
-Router.route('/', {
-  name: 'Home'
+FlowRouter.route('/projects', {
+  name: 'Projects',
+  action() {
+    BlazeLayout.render('PageLayout', {
+      content: 'Projects'
+    });
+  }
 });
-Router.route('/projects', {
-  name: 'Projects'
-});
-Router.route('/contact', {
+
+FlowRouter.route('/contact', {
   name: 'Contact',
-  template: 'ComingSoon'
+  action() {
+    BlazeLayout.render('PageLayout', {
+      content: 'ComingSoon'
+    });
+  }
 });
