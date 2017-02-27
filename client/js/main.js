@@ -29,7 +29,7 @@ FlowRouter.route('/projects/manager', {
       content: 'ProjectsManager'
     });
   }
-})
+});
 
 FlowRouter.route('/contact', {
   name: 'Contact',
