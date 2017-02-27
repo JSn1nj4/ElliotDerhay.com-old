@@ -22,6 +22,19 @@ p {
   line-height: 1.5em;
 }
 
+#page-container a {
+  color: #00C49A;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+#page-container a:hover {
+  color: #85ffe4;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -128,7 +141,7 @@ header a {
 }
 
 .row_inner {
-  padding-top: 60px;
+  padding-top: 40px;
   overflow: hidden;
 }
 
@@ -138,7 +151,7 @@ header a {
 }
 
 .col-inner {
-  padding: 0 15px;
+  padding: 20px 15px 0;
 }
 
 /* Styles for Coming Soon template */
@@ -196,6 +209,27 @@ header a {
 
 }
 
+/* = PROJECTS STYLES = */
+
+.project-wrapper {
+  padding: 0 8px;
+  border: solid 1px #555;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-title,
+.project-wrapper p {
+    padding-bottom: 16px;
+    line-height: 1em;
+}
+
+.project-author, .project-last-updated {
+    padding-left: 24px;
+}
+
 footer {
   padding: 30px 15px;
 }
@@ -222,18 +256,20 @@ footer {
 
 @media only screen and (max-width: 319px) { /* everything below XS */
   .col-4-md,
+  .col-5-md,
   .col-8-sm, .col-8-md,
   .col-12-md,
-  .col-16-xs {
+  .col-16-xs, .col-16-lg {
     width: 100%;
   }
 }
 
 @media only screen and (min-width: 320px) { /* beginning of XS screens */
   .col-4-md,
+  .col-5-md,
   .col-8-sm, .col-8-md,
   .col-12-md,
-  .col-16-xs {
+  .col-16-xs, .col-16-lg {
     width: 100%;
   }
 }
@@ -248,16 +284,30 @@ footer {
   .col-4-md {
     width: 25%;
   }
+  .col-5-md {
+    width: 31.25%;
+  }
   .col-8-md {
     width: 50%;
   }
   .col-12-md {
     width: 75%;
   }
+  .col-16-md {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
-
+  .col-5-lg {
+    width: 31.25%;
+  }
+  .col-8-lg {
+    width: 50%;
+  }
+  .col-16-lg {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1200px) { /* beginning of XL screens */
