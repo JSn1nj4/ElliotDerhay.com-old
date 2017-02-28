@@ -1,0 +1,11 @@
+<template name="ManagerLayout">
+  <header>
+    <a href="/">ed(<span>'/projects/manager'</span>)</a>
+  </header>
+
+  <section id="page-container">
+    {{#transition in="fadeIn" out="fadeOut"}}
+      {{> Template.dynamic template=content}}
+    {{/transition}}
+  </section>
+</template>

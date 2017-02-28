@@ -1,4 +1,4 @@
 import '/imports/api/projectsmanager.js';
-Template.ProjectsManager.onCreated(function projectsOnCreated() {
+Template.ManagerContent.onCreated(function managerOnCreated() {
   Meteor.subscribe('projects');
 });
