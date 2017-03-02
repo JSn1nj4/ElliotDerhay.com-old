@@ -22,3 +22,4 @@ webtempest:animate
 kadira:flow-router
 kadira:blaze-layout
 useraccounts:unstyled
+npm-bcrypt
