@@ -25,15 +25,7 @@ FlowRouter.route('/projects', {
 FlowRouter.route('/projects/manager', {
   name: 'Projects Manager',
   action() {
-    var loggedIn, pageContent;
-
-    // @TODO: check if lone admin user is logged in
-    loggedIn = false;
-    pageContent = loggedIn ? 'ManagerContent' : 'LoginPage';
-
-    BlazeLayout.render('ManagerLayout', {
-      content: pageContent
-    });
+    BlazeLayout.render('ManagerLayout');
   }
 });
 
