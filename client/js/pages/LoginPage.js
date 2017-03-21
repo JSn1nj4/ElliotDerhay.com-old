@@ -3,6 +3,11 @@ Template.LoginPage.events({
     e.preventDefault();
     let username = String(e.target.username.value);
     let password = String(e.target.password.value);
-    console.log(`Login attempted.\nUser: '${username}'\nPassword: ${password}`);
+    e.target.reset();
+
+    
+
+    username = undefined;
+    password = undefined;
   }
 });
