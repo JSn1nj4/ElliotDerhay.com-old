@@ -2,15 +2,16 @@ import SimpleSchema from 'simpl-schema';
 
 Meteor.methods({
   adminLogin({ username, password }) {
-    console.log(`user: ${typeof username}, password: ${typeof password}`);
 
-    let loginIsValid = new SimpleSchema({
-      username: { type: String },
-      password: { type: String }
-    }).validate({ username, password });
+    let loginContext = new SimpleSchema({
+      username: String,
+      password: String
+    }).newContext();
+
+    loginContext.validate({ username, password });
 
     return {
-      loginIsValid: loginIsValid
+      loginIsValid: loginContext.isValid()
     };
   }
 });
