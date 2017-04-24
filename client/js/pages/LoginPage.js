@@ -9,9 +9,9 @@ Template.LoginPage.events({
       if(err) {
         console.log(`Login validation error: ${err}`); // eslint-disable-line
       } else if(result.loginIsValid) {
-        Meteor.loginWithPassword(username, password, (err)=>{
-          if(err) {
-            console.log(`Login error: ${err}`); // eslint-disable-line
+        Meteor.loginWithPassword(username, password, (error)=>{
+          if(error) {
+            console.log(`Login error: ${error}`); // eslint-disable-line
           }
         });
       } else {
