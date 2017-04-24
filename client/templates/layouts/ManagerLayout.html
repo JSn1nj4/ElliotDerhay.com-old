@@ -5,10 +5,14 @@
 
   <section id="page-container">
     {{#transition in="fadeIn" out="fadeOut"}}
-      {{#if currentUser}}
-        {{> ManagerContent}}
+      {{#if loggingIn}}
+        <h4>Logging in...</h4>
       {{else}}
-        {{> LoginPage}}
+        {{#if currentUser}}
+          {{> ManagerContent}}
+        {{else}}
+          {{> LoginPage}}
+        {{/if}}
       {{/if}}
     {{/transition}}
   </section>
