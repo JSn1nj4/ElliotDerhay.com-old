@@ -5,7 +5,11 @@ Template.LoginPage.events({
     let password = String(e.target.password.value);
     e.target.reset();
 
-    
+    Meteor.call('adminLogin', {username, password}, (err, result)=>{
+      if(result.testMsg) {
+        console.log( `Result: ${result.testMsg}` );
+      }
+    });
 
     username = undefined;
     password = undefined;
