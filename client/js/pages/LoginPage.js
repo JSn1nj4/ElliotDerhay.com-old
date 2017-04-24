@@ -7,7 +7,7 @@ Template.LoginPage.events({
 
     Meteor.call('adminLogin', {username, password}, (err, result)=>{
       if(result.testMsg) {
-        console.log( `Result: ${result.testMsg}` );
+        console.log( `Result: ${result.testMsg}` ); // eslint-disable-line
       }
     });
 
