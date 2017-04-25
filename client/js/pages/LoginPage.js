@@ -7,20 +7,24 @@ Template.LoginPage.events({
 
     Meteor.call('adminLogin', {username, password}, (err, result)=>{
       if(err) {
-        console.log(`Login validation error: ${err}`);
+        // @TODO: Look into modifying this line, in case sensitive info can leak
+        console.log(`Login validation error: ${err}`); // eslint-disable-line
       } else if(result.loginIsValid) {
-        console.log('login valid');
-        Meteor.loginWithPassword(username, password, (error)=>{
+        //
+        Meteor.loginWithPassword(result.username, result.password, (error)=>{
           if(error) {
-            console.log(`Login error: ${error}`);
+            // @TODO: Look into modifying this line, in case sensitive info can leak
+            console.log(`Login error: ${error}`); // eslint-disable-line
           }
         });
+
       } else {
-        console.log('Login info validation failed');
+        // @TODO: Add some control to display a "login failure" message
+        console.log('Login info validation failed'); // eslint-disable-line
       }
     });
 
-    username = undefined;
-    password = undefined;
+    username = null;
+    password = null;
   }
 });
