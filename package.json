@@ -20,6 +20,7 @@
   "private": true,
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "bcrypt": "^1.0.2",
     "simpl-schema": "^0.2.3"
   }
 }
