@@ -1,11 +1,11 @@
 import { ReactiveVar } from 'meteor/reactive-var';
 
-Template.loginPage.onCreated(() => {
+Template.LoginPage.onCreated(() => {
   // Setup a reactive var for dealing with login messages
   this.loginError = new ReactiveVar(''); // empty initially
 });
 
-Template.loginPage.helpers({
+Template.LoginPage.helpers({
   getLoginError() { // simply returns the value of the 'loginError' reactive var
     return Template.instance().loginError.get();
   }
