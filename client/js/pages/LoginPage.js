@@ -27,28 +27,28 @@ Template.LoginPage.events({
           Reason: This will replace the following `console.log()`, and allow setting up
           a couple of helpers that can 1) check if the message is empty and 2) display whatever
           error message is set */
-      tpl.loginError.set('Login fields not filled in');
-      console.log(tpl.loginError.get()); // @TODO: remove once message template part of template is built
+      tpl.loginError.set('Both login fields are required');
+      console.error(tpl.loginError.get()); // @TODO: remove once message template part of template is built
       return false; // Exit error handler if either login field is blank
     }
     e.target.reset();
 
     Meteor.call('adminLogin', {username, password}, (err, result)=>{
       if(err) {
-        // @TODO: Look into modifying this line, in case sensitive info can leak
-        console.log(`Login validation error: ${err}`); // eslint-disable-line
+        tpl.loginError.set(`Login validation error: ${err}`); // @TODO: Replace with generic login failure message
+        console.error(tpl.loginError.get());
       } else if(result.loginIsValid) {
         //
         Meteor.loginWithPassword(result.username, result.password, (error)=>{
           if(error) {
-            // @TODO: Look into modifying this line, in case sensitive info can leak
-            console.log(`Login error: ${error}`); // eslint-disable-line
+            tpl.loginError.set(`Login error: ${error}`); // @TODO: Replace with generic login failure message
+            console.error(tpl.loginError.get());
           }
         });
 
       } else {
-        // @TODO: Add some control to display a "login failure" message
-        console.log('Login info validation failed'); // eslint-disable-line
+        tpl.loginError.set('Login info validation failed'); // @TODO: Replace with generic login failure message
+        console.error(tpl.loginError.get());
       }
     });
 
