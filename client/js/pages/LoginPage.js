@@ -27,9 +27,9 @@ Template.LoginPage.events({
           Reason: This will replace the following `console.log()`, and allow setting up
           a couple of helpers that can 1) check if the message is empty and 2) display whatever
           error message is set */
-      template.loginError.set('Login fields not filled in');
-      console.log(template);
-      console.log(template.loginError.get());
+      tpl.loginError.set('Login fields not filled in');
+      console.log(tpl);
+      console.log(tpl.loginError.get());
       return false; // Exit error handler if either login field is blank
     }
     e.target.reset();
