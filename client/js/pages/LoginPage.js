@@ -1,6 +1,6 @@
 import { ReactiveVar } from 'meteor/reactive-var';
 
-Template.LoginPage.onCreated(() => {
+Template.LoginPage.onCreated(function() { // arrow function broke context :'(
   // Setup a reactive var for dealing with login messages
   this.loginError = new ReactiveVar(''); // empty initially
 });
@@ -28,7 +28,6 @@ Template.LoginPage.events({
           a couple of helpers that can 1) check if the message is empty and 2) display whatever
           error message is set */
       tpl.loginError.set('Login fields not filled in');
-      console.log(tpl);
       console.log(tpl.loginError.get());
       return false; // Exit error handler if either login field is blank
     }
