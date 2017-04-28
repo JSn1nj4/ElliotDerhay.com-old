@@ -4,16 +4,24 @@
       <div class="row_inner">
         <div class="e_col col-16-xs">
           <div class="col-inner">
-            <form id="login_form">
-              <p><input type="text" name="username" id="username" value="" placeholder="Username"></p>
-              <p><input type="password" name="password" id="password" value="" placeholder="Password"></p>
-              <p><button type="submit" name="login-btn">Sign in</button></p>
-            </form>
-            {{#transition in="fadeInUp:500" out="fadeOutDown:500"}}
-              {{#if getLoginError}}
-                <p>{{getLoginError}}</p>
+            {{#transition in="fadeIn:500" out="fadeOut:500"}}
+              {{#if loggingIn}}
+                <h4>Welcome back, X!</h4>
+              {{else}}
+                <form id="login_form">
+                  <p><input type="text" name="username" id="username" value="" placeholder="Username"></p>
+                  <p><input type="password" name="password" id="password" value="" placeholder="Password"></p>
+                  <p><button type="submit" name="login-btn">Sign in</button></p>
+                </form>
               {{/if}}
             {{/transition}}
+            <div class="error-message">
+              {{#transition in="fadeInUp:500" out="fadeOutDown:500"}}
+                {{#if getLoginError}}
+                  <p>{{getLoginError}}</p>
+                {{/if}}
+              {{/transition}}
+            </div>
           </div>
         </div>
       </div>

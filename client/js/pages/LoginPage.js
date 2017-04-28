@@ -43,6 +43,8 @@ Template.LoginPage.events({
           if(error) {
             tpl.loginError.set(`Login error: ${error}`); // @TODO: Replace with generic login failure message
             console.error(tpl.loginError.get());
+          } else {
+            tpl.loginError.set('');
           }
         });
 
