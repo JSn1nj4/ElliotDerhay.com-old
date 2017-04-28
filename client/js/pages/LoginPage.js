@@ -20,6 +20,7 @@ Template.LoginPage.events({
         3. Check that values aren't empty
         4. Reset the form if value check passes */
     e.preventDefault();
+    tpl.loginError.set('');
     let username = String(e.target.username.value);
     let password = String(e.target.password.value);
     if( username.length === 0 || password.length === 0) {
@@ -28,7 +29,6 @@ Template.LoginPage.events({
           a couple of helpers that can 1) check if the message is empty and 2) display whatever
           error message is set */
       tpl.loginError.set('Both login fields are required');
-      console.error(tpl.loginError.get()); // @TODO: remove once message part of template is built
       return false; // Exit error handler if either login field is blank
     }
     e.target.reset();
