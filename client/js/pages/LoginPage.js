@@ -42,7 +42,6 @@ Template.LoginPage.events({
         Meteor.loginWithPassword(result.username, result.password, (error)=>{
           if(error) {
             tpl.loginError.set(`Login error: ${error}`); // @TODO: Replace with generic login failure message
-            console.error(tpl.loginError.get());
           } else {
             tpl.loginError.set('');
           }
@@ -50,7 +49,6 @@ Template.LoginPage.events({
 
       } else {
         tpl.loginError.set('Login info validation failed'); // @TODO: Replace with generic login failure message
-        console.error(tpl.loginError.get());
       }
     });
 
