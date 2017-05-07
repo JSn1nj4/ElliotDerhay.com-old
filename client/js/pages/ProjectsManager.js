@@ -3,12 +3,7 @@ import { projects } from '/imports/api/projects';
 
 Template.ManagerContent.onCreated(function managerOnCreated() {
   Meteor.subscribe('projects');
-});
-
-Template.ManagerContent.helpers({
-  getUsername() {
-    return Meteor.user().username;
-  }
+  this.username = new ReactiveVar( Meteor.user().username );
 });
 
 Template.ManagerContent.events({
@@ -21,5 +16,8 @@ Template.ManagerContent.events({
 Template.ManagerContent.helpers({
   getProjectsList() {
     return projects.find({}, { sort: { createdAt: -1} } ).fetch();
+  },
+  getUsername() {
+    return Template.instance().username.get();
   }
 });
