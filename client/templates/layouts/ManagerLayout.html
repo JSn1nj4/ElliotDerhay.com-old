@@ -1,0 +1,15 @@
+<template name="ManagerLayout">
+  <header>
+    {{> Header}}
+  </header>
+
+  <section id="page-container">
+    {{#transition in="fadeIn" out="fadeOut"}}
+      {{#if currentUser}}
+        {{> ManagerContent}}
+      {{else}}
+        {{> LoginPage}}
+      {{/if}}
+    {{/transition}}
+  </section>
+</template>

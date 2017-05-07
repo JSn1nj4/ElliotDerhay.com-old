@@ -22,6 +22,13 @@ FlowRouter.route('/projects', {
   }
 });
 
+FlowRouter.route('/projects/manager', {
+  name: 'Projects Manager',
+  action() {
+    BlazeLayout.render('ManagerLayout');
+  }
+});
+
 FlowRouter.route('/contact', {
   name: 'Contact',
   action() {
