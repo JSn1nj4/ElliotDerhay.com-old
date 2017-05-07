@@ -24,10 +24,7 @@ Template.LoginPage.events({
     let username = String(e.target.username.value);
     let password = String(e.target.password.value);
     if( username.length === 0 || password.length === 0) {
-      /* @TODO: set a reactive var that can be updated from here
-          Reason: This will replace the following `console.log()`, and allow setting up
-          a couple of helpers that can 1) check if the message is empty and 2) display whatever
-          error message is set */
+      /* @TODO: Setup decent error handling library */
       tpl.loginError.set('Both login fields are required');
       return false; // Exit error handler if either login field is blank
     }
@@ -36,7 +33,6 @@ Template.LoginPage.events({
     Meteor.call('adminLogin', {username, password}, (err, result)=>{
       if(err) {
         tpl.loginError.set(`Login validation error: ${err}`); // @TODO: Replace with generic login failure message
-        console.error(tpl.loginError.get());
       } else if(result.loginIsValid) {
         //
         Meteor.loginWithPassword(result.username, result.password, (error)=>{
