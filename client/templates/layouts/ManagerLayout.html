@@ -5,7 +5,11 @@
 
   <section id="page-container">
     {{#transition in="fadeIn" out="fadeOut"}}
-      {{> Template.dynamic template=content}}
+      {{#if currentUser}}
+        {{> ManagerContent}}
+      {{else}}
+        {{> LoginPage}}
+      {{/if}}
     {{/transition}}
   </section>
 </template>

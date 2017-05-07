@@ -19,6 +19,8 @@
   "homepage": "https://gitlab.com/JSn1nj4/elliotderhay.com#README",
   "private": true,
   "dependencies": {
-    "babel-runtime": "^6.23.0"
+    "babel-runtime": "^6.23.0",
+    "bcrypt": "^1.0.2",
+    "simpl-schema": "^0.2.3"
   }
 }
