@@ -17,7 +17,7 @@ Template.ManagerContent.helpers({
   getProjectsList() {
     return projects.find({}, { sort: { createdAt: -1} } ).fetch();
   },
-  projectIsSource(isSource) {
-    return isSource ? 'selected' : '';
+  isFalse(isSource) {
+    return !isSource ? 'selected' : '';
   }
 });
