@@ -6,7 +6,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #0B100F;
+  background: #000a08;
   color: #fff;
   font-family: monospace;
 }
@@ -69,6 +69,10 @@ footer {
   position: relative;
 }
 
+header {
+  z-index: 10;
+}
+
 header a {
   text-decoration: none;
 }
@@ -119,7 +123,8 @@ header a {
 }
 
 #page-container {
-  background: #333;
+  background: #00130f;
+  box-shadow: 0px 2px 4px #000;
   color: #fff;
   overflow: hidden;
   padding-bottom: 60px;
