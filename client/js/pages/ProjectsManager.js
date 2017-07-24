@@ -11,6 +11,9 @@ Template.ManagerContent.events({
   'click #logout'(event) { // the 'event' param may be necessary later
     Meteor.logout();
   },
+  'click #newProjectBtn'(e, tpl) {
+    // insert new blank project into collection
+  },
   'submit .project-listing'(e) {
     e.preventDefault();
     console.log(`this: ${this._id}`);
