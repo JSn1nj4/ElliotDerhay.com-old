@@ -10,6 +10,10 @@ Template.ManagerContent.events({
   // eslint-disable-next-line no-unused-vars
   'click #logout': (event) => { // the 'event' param may be necessary later
     Meteor.logout();
+  },
+  'submit .project-listing': function(e) { // needed for context
+    e.preventDefault();
+    console.log(`this: ${this._id}`);
   }
 });
 

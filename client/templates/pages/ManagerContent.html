@@ -7,16 +7,19 @@
             <h1>Projects Manager</h1>
             <button id="logout">Sign out</button>
             {{#each getProjectsList}}
-              <p class="project-manager-row">
-                <input type="text" name="proj_name" value="{{this.name}}">
-                <input type="text" name="proj_url" value="{{this.url}}">
-                <select name="isSource">
-                  <option value="true">true</option>
-                  <option value="false" {{isFalse isSource}}>false</option>
-                </select>
-                <input type="text" name="auth_user" value="{{author.user}}">
-                <input type="text" name="auth_url" value="{{author.url}}">
-              </p>
+              <form class="project-listing">
+                <p class="project-manager-row">
+                  <input type="text" name="proj_name" value="{{this.name}}">
+                  <input type="text" name="proj_url" value="{{this.url}}">
+                  <select name="isSource">
+                    <option value="true">true</option>
+                    <option value="false" {{isFalse isSource}}>false</option>
+                  </select>
+                  <input type="text" name="auth_user" value="{{author.user}}">
+                  <input type="text" name="auth_url" value="{{author.url}}">
+                  <button type="submit">Update</button>
+                </p>
+              </form>
             {{/each}}
           </div>
         </div>
