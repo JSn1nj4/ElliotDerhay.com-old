@@ -8,7 +8,7 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
 
 Template.ManagerContent.events({
   // eslint-disable-next-line no-unused-vars
-  'click #logout'(event) { // the 'event' param may be necessary later
+  'click #logout'(e) { // the 'event' param may be necessary later
     Meteor.logout();
   },
   'click #newProjectBtn'(e, tpl) {
