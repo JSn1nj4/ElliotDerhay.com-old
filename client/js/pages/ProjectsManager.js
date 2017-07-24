@@ -8,10 +8,10 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
 
 Template.ManagerContent.events({
   // eslint-disable-next-line no-unused-vars
-  'click #logout': (event) => { // the 'event' param may be necessary later
+  'click #logout'(event) { // the 'event' param may be necessary later
     Meteor.logout();
   },
-  'submit .project-listing': function(e) { // needed for context
+  'submit .project-listing'(e) {
     e.preventDefault();
     console.log(`this: ${this._id}`);
   }
