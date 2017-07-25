@@ -26,5 +26,32 @@ Meteor.methods({
       username: username,
       password: password
     };
+  },
+  addProject() {
+    console.log('Project created.');
+
+    if(true) {
+      return {success: 'Project created! :)'};
+    } else {
+      return {error: 'Could not create project.'};
+    }
+  },
+  updateProject({ projectData }) {
+    console.log(`Project data: ${projectData}`);
+
+    if(true) {
+      return {success: 'Project updated.'};
+    } else {
+      return {error: 'Could not update project.', projectData: projectData};
+    }
+  },
+  deleteProject({ projID }) {
+    console.log(`Project to delete: ${projID}`);
+
+    if(true) {
+      return {success: 'Project delete. :('};
+    } else {
+      return {error: 'Could not delete project.', projID: projID};
+    }
   }
 });
