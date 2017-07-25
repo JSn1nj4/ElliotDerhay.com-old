@@ -1,4 +1,6 @@
 import SimpleSchema from 'simpl-schema';
+import { projects } from '/imports/api/projects.js';
+import './schemas/projects.js';
 
 Meteor.methods({
   adminLogin({ username, password }) {
