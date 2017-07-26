@@ -26,7 +26,7 @@ Schemas.NewProjectAuthor = new SimpleSchema({
     type: String,
     max: 500,
     label: 'Project owner\'s web address',
-    regex: SimpleSchema.RegEx.Url
+    regEx: SimpleSchema.RegEx.Url
   }
 });
 
@@ -41,7 +41,7 @@ Schemas.NewProject = new SimpleSchema({
     type: String,
     label: 'Project URL',
     max: 500,
-    regex: SimpleSchema.RegEx.Url
+    regEx: SimpleSchema.RegEx.Url
   },
   isSource: {
     type: Boolean,
