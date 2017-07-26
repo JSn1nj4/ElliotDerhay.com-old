@@ -1,6 +1,6 @@
 import SimpleSchema from 'simpl-schema';
 import { projects } from '/imports/api/projects.js';
-import './schemas/projects.js';
+import { ProjectSchemas } from './schemas/projects.js';
 
 Meteor.methods({
   adminLogin({ username, password }) {
@@ -30,13 +30,20 @@ Meteor.methods({
     };
   },
   addProject() {
-    console.log('Project created.');
 
-    if(true) {
-      return {success: 'Project created! :)'};
-    } else {
-      return {error: 'Could not create project.'};
-    }
+    projects.attachSchema(ProjectSchemas.NewProject);
+    projects.insert({
+      name: 'new project', // Can't have an empty string unfortunately
+      url: 'http://example.com/username/project', // Same as above
+      isSource: true,
+      author: {
+        user: 'username',
+        url: 'http://example.com/username'
+      },
+      createdAt: new Date(),
+      updatedAt: new Date()
+    });
+
   },
   updateProject({ projectData }) {
     console.log(`Project data: ${projectData}`);

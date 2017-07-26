@@ -11,8 +11,9 @@ Template.ManagerContent.events({
   'click #logout'(e) { // the 'event' param may be necessary later
     Meteor.logout();
   },
-  'click #newProjectBtn'(e, tpl) {
-    // insert new blank project into collection
+  // eslint-disable-next-line no-unused-vars
+  'click #newProjectBtn'(e) {
+    Meteor.call('addProject');
   },
   'submit .project-listing'(e) {
     e.preventDefault();

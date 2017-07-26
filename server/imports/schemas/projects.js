@@ -13,7 +13,7 @@ import SimpleSchema from 'simpl-schema';
 */
 
 // container for all schemas
-let ProjectSchemas = {};
+export const ProjectSchemas = {};
 
 // Subschema definition for project author
 ProjectSchemas.NewProjectAuthor = new SimpleSchema({
