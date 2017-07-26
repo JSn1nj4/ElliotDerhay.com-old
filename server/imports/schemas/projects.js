@@ -13,10 +13,10 @@ import SimpleSchema from 'simpl-schema';
 */
 
 // container for all schemas
-let Schemas = {};
+let ProjectSchemas = {};
 
 // Subschema definition for project author
-Schemas.NewProjectAuthor = new SimpleSchema({
+ProjectSchemas.NewProjectAuthor = new SimpleSchema({
   user: {
     type: String,
     max: 200,
@@ -31,7 +31,7 @@ Schemas.NewProjectAuthor = new SimpleSchema({
 });
 
 // Main schema definition
-Schemas.NewProject = new SimpleSchema({
+ProjectSchemas.NewProject = new SimpleSchema({
   name: {
     type: String,
     label: 'Project name',
@@ -48,7 +48,7 @@ Schemas.NewProject = new SimpleSchema({
     label: 'Source or fork'
   },
   author: {
-    type: Schemas.NewProjectAuthor,
+    type: ProjectSchemas.NewProjectAuthor,
     label: 'Author info'
   },
   createdAt: {
