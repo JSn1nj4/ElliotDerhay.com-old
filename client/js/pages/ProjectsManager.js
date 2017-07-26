@@ -13,11 +13,20 @@ Template.ManagerContent.events({
   },
   // eslint-disable-next-line no-unused-vars
   'click #newProjectBtn'(e) {
-    Meteor.call('addProject');
+    Meteor.call('addProject', {}, (err, result)=>{
+      // Need to accept and use error/success message
+    });
   },
   'submit .project-listing'(e) {
     e.preventDefault();
     console.log(`this: ${this._id}`);
+  },
+  // eslint-disable-next-line no-unused-vars
+  'click .delete-btn'(e) {
+    let projID = this._id;
+    Meteor.call('deleteProject', { projID }, (err, result)=>{
+      // Need to accept and use error/success message
+    });
   }
 });
 

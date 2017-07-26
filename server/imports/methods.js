@@ -43,7 +43,7 @@ Meteor.methods({
       createdAt: new Date(),
       updatedAt: new Date()
     });
-
+    //@TODO: Send error/success messages for use on frontend
   },
   updateProject({ projectData }) {
     console.log(`Project data: ${projectData}`);
@@ -57,10 +57,21 @@ Meteor.methods({
   deleteProject({ projID }) {
     console.log(`Project to delete: ${projID}`);
 
-    if(true) {
-      return {success: 'Project delete. :('};
-    } else {
-      return {error: 'Could not delete project.', projID: projID};
+    let idContext = new SimpleSchema({
+      id: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Id
+      }
+    }).newContext();
+
+    idContext.validate({ projID });
+    console.log(`projID is valid: ${idContext.isValid()}`);
+
+    // Need to come back to this, since `idContext.isValid()` is returning false
+    if( projects.findOne({ _id: projID }) ) {
+      projects.remove({ _id: projID });
     }
+    //@TODO: send error and success message
+    //  Note: depends on getting above validation correct
   }
 });
