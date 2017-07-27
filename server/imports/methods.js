@@ -63,8 +63,13 @@ Meteor.methods({
     console.log(`projID is valid: ${idContext.isValid()}`);
 
     // Need to come back to this, since `idContext.isValid()` is returning false
-    if( projects.findOne({ _id: projID }) ) {
+    if( !idContext.isValid() ) {
+      return {error: 'Project ID is invalid'};
+    } else if (!projects.findOne({ projID })) {
+      return {error: 'Project not found'};
+    } else {
       projects.remove({ _id: projID });
+      return {success: 'Project removed'};
     }
     //@TODO: send error and success message
     //  Note: depends on getting above validation correct
