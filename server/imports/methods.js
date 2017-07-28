@@ -27,7 +27,7 @@ Meteor.methods({
   addProject() {
 
     projects.attachSchema(ProjectSchemas.NewProject);
-    projects.insert({
+    let newDoc = {
       name: 'new project', // Can't have an empty string unfortunately
       url: 'http://example.com/username/project', // Same as above
       isSource: true,
@@ -37,8 +37,14 @@ Meteor.methods({
       },
       createdAt: new Date(),
       updatedAt: new Date()
-    });
+    };
+
     //@TODO: Send error/success messages for use on frontend
+    if(projects.insert(newDoc).nInserted == 1) {
+      return {success: 'New project document created.'};
+    } else {
+      return {error: 'Unable to add new project.'};
+    }
   },
   updateProject({ projectData }) {
     console.log(`Project data: ${projectData}`);
@@ -64,9 +70,9 @@ Meteor.methods({
 
     // Need to come back to this, since `idContext.isValid()` is returning false
     if( !idContext.isValid() ) {
-      return {error: 'Project ID is invalid'};
+      return {error: 'Couldn\'t delete project: Project ID is invalid.'};
     } else if (!projects.findOne({ projID })) {
-      return {error: 'Project not found'};
+      return {error: 'Couldn\'t delete project: not found.'};
     } else {
       projects.remove({ _id: projID });
       return {success: 'Project removed'};
