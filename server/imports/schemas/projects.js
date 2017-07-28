@@ -19,7 +19,7 @@ export const ProjectSchemas = {};
 ProjectSchemas.DeleteProject = new SimpleSchema({
   _id: {
     type: String,
-    regEx: /^[0-9A-Za-z]{17}$/
+    regEx: SimpleSchema.RegEx.Id
   }
 });
 ProjectSchemas.NewProjectAuthor = new SimpleSchema({
