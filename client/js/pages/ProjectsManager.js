@@ -11,7 +11,7 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
       type: type
     });
     // Show message, using a vanilla JS timeout
-  }
+  };
 
   Meteor.subscribe('projects');
 });
@@ -60,7 +60,7 @@ Template.ManagerContent.events({
       }
     });
   }
-  
+
 });
 
 Template.ManagerContent.helpers({
