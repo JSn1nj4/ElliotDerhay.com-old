@@ -40,7 +40,7 @@ Meteor.methods({
     };
 
     //@TODO: Send error/success messages for use on frontend
-    if(projects.insert(newDoc).nInserted == 1) {
+    if(projects.insert(newDoc).length >= 1) {
       return {success: 'New project document created.'};
     } else {
       return {error: 'Unable to add new project.'};
