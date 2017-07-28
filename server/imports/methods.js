@@ -58,23 +58,15 @@ Meteor.methods({
   },
 
   deleteProject({ projID }) {
-    let idContext = new SimpleSchema({
-      _id: {
-        type: String,
-        regEx: /^[0-9A-Za-z]{17}$/
-      }
-    }).newContext();
+    projects.attachSchema(ProjectSchemas.DeleteProject);
+    var removed = projects.remove({ _id: projID });
 
-    idContext.validate({ _id: projID });
-
-    // Need to come back to this, since `idContext.isValid()` is returning false
-    if( !idContext.isValid() ) {
-      return {error: 'Couldn\'t delete project: Project ID is invalid.'};
-    } else if (!projects.findOne({ _id: projID })) {
+    if( removed > 1 ) {
+      return {error: 'Something went wrong. Multiple documents removed.'};
+    } else if ( removed !== 1) {
       return {error: 'Couldn\'t delete project: not found.'};
     } else {
-      projects.remove({ _id: projID });
-      return {success: 'Project removed'};
+      return {success: 'Project removed.'};
     }
     //@TODO: send error and success message
     //  Note: depends on getting above validation correct

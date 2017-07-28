@@ -16,6 +16,12 @@ import SimpleSchema from 'simpl-schema';
 export const ProjectSchemas = {};
 
 // Subschema definition for project author
+ProjectSchemas.DeleteProject = new SimpleSchema({
+  _id: {
+    type: String,
+    regEx: /^[0-9A-Za-z]{17}$/
+  }
+});
 ProjectSchemas.NewProjectAuthor = new SimpleSchema({
   user: {
     type: String,
