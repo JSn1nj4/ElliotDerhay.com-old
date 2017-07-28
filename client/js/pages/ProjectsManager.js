@@ -3,9 +3,13 @@ import { projects } from '/imports/api/projects';
 
 Template.ManagerContent.onCreated(function managerOnCreated() {
   this.username = new ReactiveVar( Meteor.user().username );
-  this.msgObj = new ReactiveVar({type: 'none', txt: ''}); // For error/success messages
+  this.msgObj = new ReactiveVar({}); // For error/success messages
   this.msgVisible = new ReactiveVar(false); // Whether to show the message box
-  this.showTheMsg = (msg, type) => {
+  this.showTheMsg = (txt, type) => {
+    console.log({
+      txt: txt,
+      type: type
+    });
     // Show message, using a vanilla JS timeout
   }
 
