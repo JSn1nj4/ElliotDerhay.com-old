@@ -18,8 +18,8 @@
             {{#each getProjectsList}}
               <form class="project-listing">
                 <p class="project-manager-row">
-                  <input type="text" name="proj_name" value="{{this.name}}">
-                  <input type="text" name="proj_url" value="{{this.url}}">
+                  <input type="text" name="proj_name" value="{{name}}">
+                  <input type="text" name="proj_url" value="{{url}}">
                   <select name="isSource">
                     <option value="true">true</option>
                     <option value="false" {{isFalse isSource}}>false</option>
