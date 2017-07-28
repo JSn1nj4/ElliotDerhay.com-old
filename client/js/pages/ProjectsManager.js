@@ -17,10 +17,12 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
 });
 
 Template.ManagerContent.events({
+
   // eslint-disable-next-line no-unused-vars
   'click #logout'(e) { // the 'event' param may be necessary later
     Meteor.logout();
   },
+
   // eslint-disable-next-line no-unused-vars
   'click #newProjectBtn'(e, tpl) {
     Meteor.call('addProject', {}, (err, result)=>{
@@ -36,10 +38,12 @@ Template.ManagerContent.events({
       }
     });
   },
+
   'submit .project-listing'(e) {
     e.preventDefault();
     console.log(`this: ${this._id}`);
   },
+
   // eslint-disable-next-line no-unused-vars
   'click .delete-btn'(e, tpl) {
     let projID = this._id;
@@ -56,6 +60,7 @@ Template.ManagerContent.events({
       }
     });
   }
+  
 });
 
 Template.ManagerContent.helpers({
