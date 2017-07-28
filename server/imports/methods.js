@@ -58,7 +58,7 @@ Meteor.methods({
   },
 
   deleteProject({ projID }) {
-    projects.attachSchema(ProjectSchemas.DeleteProject);
+    projects.attachSchema(ProjectSchemas.ExactId);
     var removed = projects.remove({ _id: projID });
 
     if( removed > 1 ) {

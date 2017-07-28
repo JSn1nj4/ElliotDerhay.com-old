@@ -16,12 +16,6 @@ import SimpleSchema from 'simpl-schema';
 export const ProjectSchemas = {};
 
 // Subschema definition for project author
-ProjectSchemas.DeleteProject = new SimpleSchema({
-  _id: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Id
-  }
-});
 ProjectSchemas.NewProjectAuthor = new SimpleSchema({
   user: {
     type: String,
@@ -62,5 +56,13 @@ ProjectSchemas.NewProject = new SimpleSchema({
   },
   updatedAt: {
     type: Date
+  }
+});
+
+// Schema for use with an ID only
+ProjectSchemas.ExactId = new SimpleSchema({
+  _id: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
   }
 });
