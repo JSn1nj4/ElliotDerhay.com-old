@@ -24,8 +24,8 @@ Meteor.methods({
       password: password
     };
   },
-  addProject() {
 
+  addProject() {
     projects.attachSchema(ProjectSchemas.NewProject);
     let newDoc = {
       name: 'new project', // Can't have an empty string unfortunately
@@ -46,6 +46,7 @@ Meteor.methods({
       return {error: 'Unable to add new project.'};
     }
   },
+
   updateProject({ projectData }) {
     console.log(`Project data: ${projectData}`);
 
@@ -55,23 +56,21 @@ Meteor.methods({
       return {error: 'Could not update project.', projectData: projectData};
     }
   },
-  deleteProject({ projID }) {
-    console.log(`Project to delete: ${projID}`);
 
+  deleteProject({ projID }) {
     let idContext = new SimpleSchema({
-      id: {
+      _id: {
         type: String,
-        regEx: SimpleSchema.RegEx.Id
+        regEx: /^[0-9A-Za-z]{17}$/
       }
     }).newContext();
 
-    idContext.validate({ projID });
-    console.log(`projID is valid: ${idContext.isValid()}`);
+    idContext.validate({ _id: projID });
 
     // Need to come back to this, since `idContext.isValid()` is returning false
     if( !idContext.isValid() ) {
       return {error: 'Couldn\'t delete project: Project ID is invalid.'};
-    } else if (!projects.findOne({ projID })) {
+    } else if (!projects.findOne({ _id: projID })) {
       return {error: 'Couldn\'t delete project: not found.'};
     } else {
       projects.remove({ _id: projID });
