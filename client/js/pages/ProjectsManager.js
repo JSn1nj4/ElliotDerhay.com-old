@@ -3,6 +3,9 @@ import { projects } from '/imports/api/projects';
 
 Template.ManagerContent.onCreated(function managerOnCreated() {
   this.username = new ReactiveVar( Meteor.user().username );
+  this.msgObj = new ReactiveVar({type: 'none', txt: ''});
+  this.msgVisible = new ReactiveVar(false);
+
   Meteor.subscribe('projects');
 });
 
@@ -36,5 +39,11 @@ Template.ManagerContent.helpers({
   },
   isFalse(isSource) {
     return !isSource ? 'selected' : '';
+  },
+  showMsg() { // check if the message should be visible
+    return Template.instance().msgVisible.get();
+  },
+  msg() { // return the message object
+    return Template.instance().msgObj.get();
   }
 });

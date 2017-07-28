@@ -6,6 +6,15 @@
           <div class="col-inner">
             <h1>Projects Manager</h1>
             <button id="logout">Sign out</button>
+            <div class="msg-box">
+              {{#transition in="slideInDown" out="slideOutDown"}}
+                {{#if showMsg}}
+                  {{#with msg}}
+                    <p><span class="{{msg.type}}">{{msg.txt}}</span></p>
+                  {{/with}}
+                {{/if}}
+              {{/transition}}
+            </div>
             {{#each getProjectsList}}
               <form class="project-listing">
                 <p class="project-manager-row">
