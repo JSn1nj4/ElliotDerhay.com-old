@@ -26,7 +26,7 @@ Meteor.methods({
   },
 
   addProject() {
-    projects.attachSchema(ProjectSchemas.NewProject);
+    projects.attachSchema(ProjectSchemas.Project);
     let newDoc = {
       name: 'new project', // Can't have an empty string unfortunately
       url: 'http://example.com/username/project', // Same as above

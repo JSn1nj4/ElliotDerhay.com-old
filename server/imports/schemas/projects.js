@@ -16,7 +16,7 @@ import SimpleSchema from 'simpl-schema';
 export const ProjectSchemas = {};
 
 // Subschema definition for project author
-ProjectSchemas.NewProjectAuthor = new SimpleSchema({
+ProjectSchemas.ProjAuthor = new SimpleSchema({
   user: {
     type: String,
     max: 200,
@@ -31,7 +31,7 @@ ProjectSchemas.NewProjectAuthor = new SimpleSchema({
 });
 
 // Main schema definition
-ProjectSchemas.NewProject = new SimpleSchema({
+ProjectSchemas.Project = new SimpleSchema({
   name: {
     type: String,
     label: 'Project name',
@@ -48,11 +48,12 @@ ProjectSchemas.NewProject = new SimpleSchema({
     label: 'Source or fork'
   },
   author: {
-    type: ProjectSchemas.NewProjectAuthor,
+    type: ProjectSchemas.ProjAuthor,
     label: 'Author info'
   },
   createdAt: {
-    type: Date
+    type: Date,
+    required: false
   },
   updatedAt: {
     type: Date
