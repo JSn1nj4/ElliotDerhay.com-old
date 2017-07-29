@@ -6,11 +6,16 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
   this.msgObj = new ReactiveVar({}); // For error/success messages
   this.msgVisible = new ReactiveVar(false); // Whether to show the message box
   this.showTheMsg = (txt, type) => {
-    console.log({
-      txt: txt,
-      type: type
-    });
+    // Just a reminder: `this` INSIDE this method refers to the template instance
+
     // Show message, using a vanilla JS timeout
+    this.msgObj.set({txt, type});
+    setTimeout(() => {
+      this.msgVisible.set(true);
+    }, 200);
+    setTimeout(() => {
+      this.msgVisible.set(false);
+    }, 4000);
   };
 
   Meteor.subscribe('projects');
