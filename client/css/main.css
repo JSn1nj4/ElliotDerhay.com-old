@@ -239,6 +239,35 @@ footer {
   padding: 30px 15px;
 }
 
+/* = PROJECT MANAGER STYLES = */
+div.msg-box {
+  min-height: 36px;
+  padding: 14px 0;
+}
+
+div.msg-box p {
+  padding: 0;
+  margin: 0;
+}
+
+div.msg-box p span {
+  padding: 3px 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+div.msg-box p span.success {
+  color: #5ec256;
+  border-color: #5ec256;
+}
+
+div.msg-box p span.error {
+  color: #ff436d;
+  border-color: #ff436d;
+}
+
 /* === RESPONSIVE STYLES === */
 /*
   @TODO: Create grid system somewhat similar to what Bootstrap does
