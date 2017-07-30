@@ -18,6 +18,19 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
     }, 4000);
   };
 
+  // Generic callback method for using the `.showTheMsg()` method
+  this.msgCallback = (err, result) => {
+    if(err) {
+      this.showTheMsg(err);
+    } else if(result.error) {
+      this.showTheMsg(result.error, 'error');
+    } else if(result.success) {
+      this.showTheMsg(result.success, 'success');
+    } else {
+      this.showTheMsg('Unknown error.', 'error');
+    }
+  };
+
   Meteor.subscribe('projects');
 });
 
@@ -30,18 +43,7 @@ Template.ManagerContent.events({
 
   // eslint-disable-next-line no-unused-vars
   'click #newProjectBtn'(e, tpl) {
-    Meteor.call('addProject', {}, (err, result)=>{
-      // Need to accept and use error/success message
-      if(err) {
-        tpl.showTheMsg(err);
-      } else if(result.error) {
-        tpl.showTheMsg(result.error, 'error');
-      } else if(result.success) {
-        tpl.showTheMsg(result.success, 'success');
-      } else {
-        tpl.showTheMsg('Unknown error.', 'error');
-      }
-    });
+    Meteor.call('addProject', {}, tpl.msgCallback);
   },
 
   'submit .project-listing'(e) {
@@ -52,18 +54,7 @@ Template.ManagerContent.events({
   // eslint-disable-next-line no-unused-vars
   'click .delete-btn'(e, tpl) {
     let projID = this._id;
-    Meteor.call('deleteProject', { projID }, (err, result)=>{
-      // Need to accept and use error/success message
-      if(err) {
-        tpl.showTheMsg(err);
-      } else if(result.error) {
-        tpl.showTheMsg(result.error, 'error');
-      } else if(result.success) {
-        tpl.showTheMsg(result.success, 'success');
-      } else {
-        tpl.showTheMsg('Unknown error.', 'error');
-      }
-    });
+    Meteor.call('deleteProject', { projID }, tpl.msgCallback);
   }
 
 });
