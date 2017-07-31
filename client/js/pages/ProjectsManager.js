@@ -22,6 +22,8 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
   this.msgCallback = (err, result) => {
     if(err) {
       this.showTheMsg(err);
+    } else if(result === undefined) {
+      this.showTheMsg('No usable result returned.', 'error');
     } else if(result.error) {
       this.showTheMsg(result.error, 'error');
     } else if(result.success) {
