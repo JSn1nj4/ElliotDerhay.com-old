@@ -48,7 +48,6 @@ Meteor.methods({
   },
 
   updateProject({ projID, projData }) {
-    console.log(`Project data: ${projData}`);
     projects.attachSchema(ProjectSchemas.Project);
 
     //@TODO: use `check` to validate data being sent from the client
@@ -70,12 +69,10 @@ Meteor.methods({
       }
     );
 
-    console.log(`update result: ${update}`);
-
     // `update` is expected to be a number on a successful update
     //@TODO: Make sure a docs affected number is all I should expect
     if(update < 1 || update > 1) {
-      console.log(`projData:\n\t${projData}`);
+      console.log(`projData:\n\t${JSON.stringify(projData)}`);
       return { error: 'Something went wrong. Unable to update project.' };
     } else if(update == 1) {
       return { success: 'Project updated.'};
