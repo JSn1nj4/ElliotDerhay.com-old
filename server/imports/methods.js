@@ -54,7 +54,7 @@ Meteor.methods({
     //@TODO: use `check` to validate data being sent from the client
     //@TODO: use `ProjectSchemas.Project.clean()` to strip any extra data that doesn't belong
 
-    return projects.update(
+    let update = projects.update(
       { _id: projID }, // Find the correct project to udpate
       {
         $set: {
@@ -67,19 +67,15 @@ Meteor.methods({
           },
           updatedAt: new Date()
         }
-      },
-      (err, docsAffected) => {
-        if(err) {
-          //@TODO: Remove this log statement before release
-          console.log(`projData:\n\t${projData}`);
-          return { error: 'Could not update project.' };
-        } else if(docsAffected < 1 || docsAffected > 1) {
-          return { error: 'Something went wrong. Update not completed.' };
-        } else if(docsAffected == 1) {
-          return {success: 'Project updated.'};
-        }
       }
     );
+
+    if(update.docsAffected < 1 || update.docsAffected > 1) {
+      console.log(`projData:\n\t${projData}`);
+      return { error: 'Something went wrong. Unable to update project.' };
+    } else if(update.docsAffected == 1) {
+      return {success: 'Project updated.'};
+    }
   },
 
   deleteProject({ projID }) {
