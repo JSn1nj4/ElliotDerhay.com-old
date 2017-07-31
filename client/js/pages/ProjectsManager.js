@@ -62,7 +62,7 @@ Template.ManagerContent.events({
       }
     };
 
-    Meteor.call('addProject', { projID, projData }, tpl.msgCallback);
+    Meteor.call('updateProject', { projID, projData }, tpl.msgCallback);
   },
 
   // eslint-disable-next-line no-unused-vars
