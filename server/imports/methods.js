@@ -70,10 +70,14 @@ Meteor.methods({
       }
     );
 
-    if(update.docsAffected < 1 || update.docsAffected > 1) {
+    console.log(`update result: ${update}`);
+
+    // `update` is expected to be a number on a successful update
+    //@TODO: Make sure a docs affected number is all I should expect
+    if(update < 1 || update > 1) {
       console.log(`projData:\n\t${projData}`);
       return { error: 'Something went wrong. Unable to update project.' };
-    } else if(update.docsAffected == 1) {
+    } else if(update == 1) {
       return { success: 'Project updated.'};
     }
   },
