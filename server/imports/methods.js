@@ -74,7 +74,7 @@ Meteor.methods({
       console.log(`projData:\n\t${projData}`);
       return { error: 'Something went wrong. Unable to update project.' };
     } else if(update.docsAffected == 1) {
-      return {success: 'Project updated.'};
+      return { success: 'Project updated.'};
     }
   },
 
