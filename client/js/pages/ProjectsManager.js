@@ -46,9 +46,23 @@ Template.ManagerContent.events({
     Meteor.call('addProject', {}, tpl.msgCallback);
   },
 
-  'submit .project-listing'(e) {
+  'submit .project-listing'(e, tpl) {
+    // First things first: prevent default form submit action
     e.preventDefault();
-    console.log(`this: ${this._id}`);
+
+    let formData = e.target;
+    let projID = this._id;
+    let projData = {
+      name: formData.proj_name.value,
+      url: formData.proj_url.value,
+      isSource: JSON.parse( formData.isSource.value.toLowerCase() ),
+      author: {
+        user: formData.auth_user.value,
+        url: formData.auth_url.value
+      }
+    };
+
+    Meteor.call('addProject', { projID, projData }, tpl.msgCallback);
   },
 
   // eslint-disable-next-line no-unused-vars

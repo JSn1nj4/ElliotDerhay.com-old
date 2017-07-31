@@ -47,14 +47,39 @@ Meteor.methods({
     }
   },
 
-  updateProject({ projectData }) {
-    console.log(`Project data: ${projectData}`);
+  updateProject({ projID, projData }) {
+    console.log(`Project data: ${projData}`);
+    projects.attachSchema(ProjectSchemas.Project);
 
-    if(true) {
-      return {success: 'Project updated.'};
-    } else {
-      return {error: 'Could not update project.', projectData: projectData};
-    }
+    //@TODO: use `check` to validate data being sent from the client
+    //@TODO: use `ProjectSchemas.Project.clean()` to strip any extra data that doesn't belong
+
+    return projects.update(
+      { _id: projID }, // Find the correct project to udpate
+      {
+        $set: {
+          name: projData.name,
+          url: projData.url,
+          isSource: projData.isSource,
+          author: {
+            user: projData.author.user,
+            url: projData.author.url
+          },
+          updatedAt: new Date()
+        }
+      },
+      (err, docsAffected) => {
+        if(err) {
+          //@TODO: Remove this log statement before release
+          console.log(`projData:\n\t${projData}`);
+          return { error: 'Could not update project.' };
+        } else if(docsAffected < 1 || docsAffected > 1) {
+          return { error: 'Something went wrong. Update not completed.' };
+        } else if(docsAffected == 1) {
+          return {success: 'Project updated.'};
+        }
+      }
+    );
   },
 
   deleteProject({ projID }) {
