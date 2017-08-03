@@ -49,9 +49,7 @@ Meteor.methods({
 
   updateProject({ projID, projData }) {
     projects.attachSchema(ProjectSchemas.Project);
-
-    //@TODO: use `check` to validate data being sent from the client
-    //@TODO: use `ProjectSchemas.Project.clean()` to strip any extra data that doesn't belong
+    ProjectSchemas.Project.clean(projData); // remove extra data that doesn't belong
 
     let update = projects.update(
       { _id: projID }, // Find the correct project to udpate
