@@ -2,6 +2,14 @@ import SimpleSchema from 'simpl-schema';
 import { projects } from '/imports/api/projects.js';
 import { ProjectSchemas } from './schemas/projects.js';
 
+function isAdminLoggedIn() { // Make sure the correct user is logged in
+  if( !false ){
+    throw new Meteor.Error('not-authorized');
+  } else {
+    return true;
+  }
+}
+
 Meteor.methods({
   adminLogin({ username, password }) {
 
@@ -26,6 +34,7 @@ Meteor.methods({
   },
 
   addProject() {
+    isAdminLoggedIn();
     projects.attachSchema(ProjectSchemas.Project);
     let newDoc = {
       name: 'new project', // Can't have an empty string unfortunately
@@ -48,6 +57,7 @@ Meteor.methods({
   },
 
   updateProject({ projID, projData }) {
+    isAdminLoggedIn();
     projects.attachSchema(ProjectSchemas.Project);
     ProjectSchemas.Project.clean(projData); // remove extra data that doesn't belong
 
@@ -78,6 +88,7 @@ Meteor.methods({
   },
 
   deleteProject({ projID }) {
+    isAdminLoggedIn();
     projects.attachSchema(ProjectSchemas.ExactId);
     var removed = projects.remove({ _id: projID });
 
