@@ -3,7 +3,7 @@ import { projects } from '/imports/api/projects.js';
 import { ProjectSchemas } from './schemas/projects.js';
 
 function isAdminLoggedIn() { // Make sure the correct user is logged in
-  if( !false ){
+  if( !Meteor.userId() ){
     throw new Meteor.Error('Not authorized!');
   } else {
     return true;
