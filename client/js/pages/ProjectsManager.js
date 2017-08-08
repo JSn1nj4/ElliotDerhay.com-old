@@ -7,7 +7,7 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
   this.msgVisible = new ReactiveVar(false); // Whether to show the message box
   this.showTheMsg = (txt, type) => {
     // Just a reminder: `this` INSIDE this method refers to the template instance
-
+    
     // Show message, using a vanilla JS timeout
     this.msgObj.set({txt, type});
     setTimeout(() => {
@@ -21,7 +21,7 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
   // Generic callback method for using the `.showTheMsg()` method
   this.msgCallback = (err, result) => {
     if(err) {
-      this.showTheMsg(err);
+      this.showTheMsg(err, 'error');
     } else if(result === undefined) {
       this.showTheMsg('No usable result returned.', 'error');
     } else if(result.error) {
