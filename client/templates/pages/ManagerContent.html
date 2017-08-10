@@ -4,8 +4,34 @@
       <div class="row_inner">
         <div class="e_col col-16-xs">
           <div class="col-inner">
-            <h1>Lorem ipsum dolor sit amet, mea no movet scaevola assueverit, pro ferri choro maiestatis in</h1>
-            <button id="logout">Sign out</button>
+            <h1>Projects Manager</h1>
+            <button id="logout">ed.logout()</button>
+            <div class="msg-box">
+              {{#transition in="fadeInDown" out="fadeOutUp"}}
+                {{#if showMsg}}
+                  {{#with msg}}
+                    <p><span class="{{type}}">{{txt}}</span></p>
+                  {{/with}}
+                {{/if}}
+              {{/transition}}
+            </div>
+            {{#each getProjectsList}}
+              <form class="project-listing">
+                <p class="project-manager-row">
+                  <input type="text" name="proj_name" value="{{name}}">
+                  <input type="text" name="proj_url" value="{{url}}">
+                  <select name="isSource">
+                    <option value="true">true</option>
+                    <option value="false" {{isFalse isSource}}>false</option>
+                  </select>
+                  <input type="text" name="auth_user" value="{{author.user}}">
+                  <input type="text" name="auth_url" value="{{author.url}}">
+                  <button type="submit" title="Update">&#10003;</button>
+                  <button type="button" class="delete-btn" title="Delete">&times;</button>
+                </p>
+              </form>
+            {{/each}}
+            <button id="newProjectBtn">+</button>
           </div>
         </div>
       </div>

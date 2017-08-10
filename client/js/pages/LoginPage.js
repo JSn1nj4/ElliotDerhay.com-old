@@ -34,7 +34,6 @@ Template.LoginPage.events({
       if(err) {
         tpl.loginError.set(`Login validation error: ${err}`); // @TODO: Replace with generic login failure message
       } else if(result.loginIsValid) {
-        //
         Meteor.loginWithPassword(result.username, result.password, (error)=>{
           if(error) {
             tpl.loginError.set(`Login error: ${error}`); // @TODO: Replace with generic login failure message

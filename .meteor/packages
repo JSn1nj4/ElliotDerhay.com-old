@@ -25,3 +25,4 @@ useraccounts:unstyled
 accounts-password@1.3.6
 reactive-var@1.0.11
 dynamic-import
+aldeed:collection2-core
