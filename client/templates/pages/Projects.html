@@ -32,13 +32,13 @@
     <div class="col-inner">
       <div class="project-wrapper">
         <h2 class="project-title">
-          <a class="devicons devicons-git{{#unless isSource}}_branch{{/unless}}" href="{{ url }}" target="_blank">{{ name }}<span></span></a>
+          <a class="devicons devicons-git{{#unless isSource}}_branch{{/unless}}" href="{{ url }}" target="_blank"><span>{{ name }}</span></a>
         </h2>
         <div class="e_col col-8-lg col-16-md col-8-sm">
           <p><span class="project-author">Author: <a href="{{ author.url }}" target="_blank">{{ author.user }}</a></span></p>
         </div>
         <div class="e_col col-8-lg col-16-md col-8-sm">
-          <p><span class="project-last-updated"> Updated: {{ CalDate updatedAt }}</span></p>
+          <p><span class="project-last-updated">Updated: {{ CalDate updatedAt }}</span></p>
         </div>
       </div>
     </div>
