@@ -20,6 +20,17 @@ Meteor.methods({
 
     loginContext.validate({ username, password });
 
+    //  Check that username validates before attempting to use it
+    const isValid = loginContext.isValid();
+    if(!isValid) {
+      throw new Meteor.Error('Login invalid!');
+    }
+
+    //  Throw an error if the username isn't found to be in the required role
+    if(!Roles.userIsInRole( Meteor.users.findOne({username})._id , 'sensei')) {
+      throw new Meteor.Error('Access denied!');
+    }
+
     /*
       Return validated username and password for these reasons:
         1) Validated login info is more secure.
@@ -27,7 +38,7 @@ Meteor.methods({
             otherwise, because of how JavaScript closures work.
     */
     return {
-      loginIsValid: loginContext.isValid(),
+      loginIsValid: isValid,
       username: username,
       password: password
     };
