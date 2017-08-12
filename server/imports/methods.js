@@ -1,10 +1,17 @@
 import SimpleSchema from 'simpl-schema';
+//@TODO: fix the following declaration
+//import { Roles } from 'meteor/alanning:roles';
 import { projects } from '/imports/api/projects.js';
 import { ProjectSchemas } from './schemas/projects.js';
 
+// Check that the given user ID is in the required role
+function userInRole( id ) {
+  return Roles.userIsInRole( id , 'sensei');
+}
+
 function isAdminLoggedIn() { // Make sure the correct user is logged in
-  if( !Meteor.userId() ){
-    throw new Meteor.Error('Not authorized!');
+  if( !Meteor.userId() || !userInRole(Meteor.userId()) ){
+    throw new Meteor.Error('Access denied!');
   } else {
     return true;
   }
@@ -27,7 +34,7 @@ Meteor.methods({
     }
 
     //  Throw an error if the username isn't found to be in the required role
-    if(!Roles.userIsInRole( Meteor.users.findOne({username})._id , 'sensei')) {
+    if(!userInRole( Meteor.users.findOne({username})._id )) {
       throw new Meteor.Error('Access denied!');
     }
 
