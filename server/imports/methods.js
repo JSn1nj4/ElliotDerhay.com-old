@@ -116,7 +116,5 @@ Meteor.methods({
     } else {
       return {success: 'Project removed.'};
     }
-    //@TODO: send error and success message
-    //  Note: depends on getting above validation correct
   }
 });
