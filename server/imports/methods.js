@@ -1,6 +1,5 @@
 import SimpleSchema from 'simpl-schema';
-//@TODO: fix the following declaration
-//import { Roles } from 'meteor/alanning:roles';
+import { Roles } from 'meteor/alanning:roles';
 import { projects } from '/imports/api/projects.js';
 import { ProjectSchemas } from './schemas/projects.js';
 
