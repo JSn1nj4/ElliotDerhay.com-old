@@ -1,10 +1,16 @@
 import SimpleSchema from 'simpl-schema';
+import { Roles } from 'meteor/alanning:roles';
 import { projects } from '/imports/api/projects.js';
 import { ProjectSchemas } from './schemas/projects.js';
 
+// Check that the given user ID is in the required role
+function userInRole( id ) {
+  return Roles.userIsInRole( id , 'sensei');
+}
+
 function isAdminLoggedIn() { // Make sure the correct user is logged in
-  if( !Meteor.userId() ){
-    throw new Meteor.Error('Not authorized!');
+  if( !Meteor.userId() || !userInRole(Meteor.userId()) ){
+    throw new Meteor.Error('Access denied!');
   } else {
     return true;
   }
@@ -20,6 +26,17 @@ Meteor.methods({
 
     loginContext.validate({ username, password });
 
+    //  Check that username validates before attempting to use it
+    const isValid = loginContext.isValid();
+    if(!isValid) {
+      throw new Meteor.Error('Login invalid!');
+    }
+
+    //  Throw an error if the username isn't found to be in the required role
+    if(!userInRole( Meteor.users.findOne({username})._id )) {
+      throw new Meteor.Error('Access denied!');
+    }
+
     /*
       Return validated username and password for these reasons:
         1) Validated login info is more secure.
@@ -27,7 +44,7 @@ Meteor.methods({
             otherwise, because of how JavaScript closures work.
     */
     return {
-      loginIsValid: loginContext.isValid(),
+      loginIsValid: isValid,
       username: username,
       password: password
     };
@@ -99,7 +116,5 @@ Meteor.methods({
     } else {
       return {success: 'Project removed.'};
     }
-    //@TODO: send error and success message
-    //  Note: depends on getting above validation correct
   }
 });
