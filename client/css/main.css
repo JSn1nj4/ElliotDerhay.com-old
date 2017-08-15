@@ -268,6 +268,67 @@ div.msg-box p span.error {
   border-color: #ff436d;
 }
 
+#project_col_headings,
+.project-listing,
+.project-manager-row {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+}
+
+#project_col_headings,
+.project-listing {
+  width: 100%;
+}
+
+#project_col_headings, .project-manager-row {
+  padding-top: 20px;
+}
+
+.proj-col {
+  position: relative;
+  float: left;
+}
+
+.proj-col.col-1 {
+  width: 20%;
+  background-color: rgba(0,255,255,0.1);
+}
+
+.proj-col.col-2 {
+  width: 25%;
+  background-color: rgba(0,255,255,0.2);
+}
+
+.proj-col.col-3 {
+  width: 10%;
+  background-color: rgba(0,255,255,0.3);
+}
+
+.proj-col.col-4 {
+  width: 10%;
+  background-color: rgba(0,255,255,0.4);
+}
+
+.proj-col.col-5 {
+  width: 25%;
+  background-color: rgba(0,255,255,0.5);
+}
+
+.proj-col.col-6 {
+  width: 10%;
+  background-color: rgba(0,255,255,0.6);
+}
+
+.proj-col-inner {
+  padding: 0 10px;
+}
+
+.proj-col input,
+.proj-col select {
+  width: 100%;
+}
+
 /* === RESPONSIVE STYLES === */
 /*
   @TODO: Create grid system somewhat similar to what Bootstrap does
