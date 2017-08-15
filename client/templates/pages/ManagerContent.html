@@ -15,19 +15,41 @@
                 {{/if}}
               {{/transition}}
             </div>
+            <div id="project_col_headings" class="project-manager-row">
+              <div class="proj-col-1">
+                <p>project</p>
+              </div>
+              <div class="proj-col-2">
+                <p>url</p>
+              </div>
+              <div class="proj-col-3">
+                <p>original?</p>
+              </div>
+              <div class="proj-col-4">
+                <p>author</p>
+              </div>
+              <div class="proj-col-5">
+                <p>profile</p>
+              </div>
+              <div class="proj-col-6">
+                <p>(<span class="keyboard-key">enter</span>/<span class="code-line">rm</span>)</p>
+              </div>
+            </div>
             {{#each getProjectsList}}
               <form class="project-listing">
                 <p class="project-manager-row">
-                  <input type="text" name="proj_name" value="{{name}}">
-                  <input type="text" name="proj_url" value="{{url}}">
-                  <select name="isSource">
+                  <input class="proj-col-1" type="text" name="proj_name" value="{{name}}">
+                  <input class="proj-col-2" type="text" name="proj_url" value="{{url}}">
+                  <select class="proj-col-3" name="isSource">
                     <option value="true">true</option>
                     <option value="false" {{isFalse isSource}}>false</option>
                   </select>
-                  <input type="text" name="auth_user" value="{{author.user}}">
-                  <input type="text" name="auth_url" value="{{author.url}}">
-                  <button type="submit" title="Update">&#10003;</button>
-                  <button type="button" class="delete-btn" title="Delete">&times;</button>
+                  <input class="proj-col-4" type="text" name="auth_user" value="{{author.user}}">
+                  <input class="proj-col-5" type="text" name="auth_url" value="{{author.url}}">
+                  <span class="proj-col-6">
+                    <button type="submit" title="Update">&#10003;</button>
+                    <button type="button" class="delete-btn" title="Delete">&times;</button>
+                  </span>
                 </p>
               </form>
             {{/each}}
