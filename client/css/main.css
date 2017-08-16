@@ -281,8 +281,13 @@ div.msg-box p span.error {
   width: 100%;
 }
 
-#project_col_headings, .project-manager-row {
+#project_col_headings,
+.project-manager-row {
   padding-top: 20px;
+}
+
+#project_col_headings p {
+  padding: 0;
 }
 
 .proj-col {
