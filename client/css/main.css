@@ -325,6 +325,24 @@ div.msg-box p span.error {
 
 /* project field styles */
 
+.project-manager-row .field-wrapper {
+  padding: 0 10px 0 20px;
+  position: relative;
+  border-bottom: solid 2px #fff;
+}
+.project-manager-row .field-wrapper:before {
+  content: "$";
+  position: absolute;
+  line-height: 30px;
+  left: 0px;
+}
+.project-manager-row .field-wrapper.field-select {
+  padding: 0;
+}
+.project-manager-row .field-wrapper.field-select:before {
+  display: none;
+}
+
 .project-manager-row input[type="text"],
 .project-manager-row select,
 .project-manager-row option {
@@ -334,11 +352,10 @@ div.msg-box p span.error {
 
 .project-manager-row input[type="text"],
 .project-manager-row select {
-  border-width: 0 0 2px 0;
-  border-color: #fff;
+  border: none;
   background: transparent;
-  padding: 0 3%;
-  width: 94%;
+  padding: 0;
+  width: 100%;
 }
 
 .project-manager-row input[type="text"] {

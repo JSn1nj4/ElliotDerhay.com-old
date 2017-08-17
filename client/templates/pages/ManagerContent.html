@@ -52,30 +52,32 @@
                 <div class="project-manager-row">
                   <div class="proj-col col-1">
                     <div class="proj-col-inner">
-                      <input type="text" name="proj_name" value="{{name}}">
+                      <div class="field-wrapper"><input type="text" name="proj_name" value="{{name}}"></div>
                     </div>
                   </div>
                   <div class="proj-col col-2">
                     <div class="proj-col-inner">
-                      <input type="text" name="proj_url" value="{{url}}">
+                      <div class="field-wrapper"><input type="text" name="proj_url" value="{{url}}"></div>
                     </div>
                   </div>
                   <div class="proj-col col-3">
                     <div class="proj-col-inner">
-                      <select name="isSource">
-                        <option value="true">true</option>
-                        <option value="false" {{isFalse isSource}}>false</option>
-                      </select>
+                      <div class="field-wrapper field-select">
+                        <select name="isSource">
+                          <option value="true">true</option>
+                          <option value="false" {{isFalse isSource}}>false</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                   <div class="proj-col col-4">
                     <div class="proj-col-inner">
-                      <input type="text" name="auth_user" value="{{author.user}}">
+                      <div class="field-wrapper"><input type="text" name="auth_user" value="{{author.user}}"></div>
                     </div>
                   </div>
                   <div class="proj-col col-5">
                     <div class="proj-col-inner">
-                      <input type="text" name="auth_url" value="{{author.url}}">
+                      <div class="field-wrapper"><input type="text" name="auth_url" value="{{author.url}}"></div>
                     </div>
                   </div>
                   <div class="proj-col col-6">
