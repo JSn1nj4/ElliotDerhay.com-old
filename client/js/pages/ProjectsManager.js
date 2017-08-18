@@ -7,7 +7,7 @@ Template.ManagerContent.onCreated(function managerOnCreated() {
   this.msgVisible = new ReactiveVar(false); // Whether to show the message box
   this.showTheMsg = (txt, type) => {
     // Just a reminder: `this` INSIDE this method refers to the template instance
-    
+
     // Show message, using a vanilla JS timeout
     this.msgObj.set({txt, type});
     setTimeout(() => {
@@ -79,8 +79,8 @@ Template.ManagerContent.helpers({
   getProjectsList() {
     return projects.find({}, { sort: { createdAt: -1} } ).fetch();
   },
-  isFalse(isSource) {
-    return !isSource ? 'selected' : '';
+  checkRepoType(isSource) {
+    return isSource ? 'checked' : '';
   },
   showMsg() { // check if the message should be visible
     return Template.instance().msgVisible.get();
