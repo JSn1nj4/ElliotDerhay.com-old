@@ -57,7 +57,7 @@ Template.ManagerContent.events({
     let projData = {
       name: formData.proj_name.value,
       url: formData.proj_url.value,
-      isSource: JSON.parse( formData.isSource.value.toLowerCase() ),
+      isSource: formData.isSource.checked,
       author: {
         user: formData.auth_user.value,
         url: formData.auth_url.value
