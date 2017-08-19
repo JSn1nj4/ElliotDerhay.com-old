@@ -340,6 +340,9 @@ div.msg-box p span.error {
 .project-manager-row .field-wrapper.field-checkbox {
   padding: 0;
 }
+.project-manager-row .field-wrapper.field-checkbox {
+  border: none;
+}
 .project-manager-row .field-wrapper.field-select:before,
 .project-manager-row .field-wrapper.field-checkbox:before {
   display: none;
@@ -371,6 +374,43 @@ div.msg-box p span.error {
 .project-manager-row option {
   border: none;
   background-color: #00130f;
+}
+
+/* styles for checkbox label altering trick */
+.project-manager-row input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.project-manager-row input[type="checkbox"] + label,
+.project-manager-row input[type="checkbox"] + label:before {
+  display: inline-block;
+  width: 100%;
+}
+
+.project-manager-row input[type="checkbox"] + label {
+  height: 30px;
+  text-align: center;
+}
+
+.project-manager-row input[type="checkbox"] + label:before {
+  border: solid 1px #00C49A;
+  background: transparent;
+  color: #00C49A;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  content: "No";
+  -webkit-transition: background 0.5s, color 0.3s;
+  -moz-transition: background 0.5s, color 0.3s;
+  -o-transition: background 0.5s, color 0.3s;
+  transition: background 0.5s, color 0.3s;
+}
+.project-manager-row input[type="checkbox"]:checked + label:before {
+  border: solid 1px #00C49A;
+  background: #00C49A;
+  color: #00130f;
+  content: "Yes";
 }
 
 /* === RESPONSIVE STYLES === */
