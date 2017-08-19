@@ -336,10 +336,12 @@ div.msg-box p span.error {
   line-height: 30px;
   left: 0px;
 }
-.project-manager-row .field-wrapper.field-select {
+.project-manager-row .field-wrapper.field-select,
+.project-manager-row .field-wrapper.field-checkbox {
   padding: 0;
 }
-.project-manager-row .field-wrapper.field-select:before {
+.project-manager-row .field-wrapper.field-select:before,
+.project-manager-row .field-wrapper.field-checkbox:before {
   display: none;
 }
 
