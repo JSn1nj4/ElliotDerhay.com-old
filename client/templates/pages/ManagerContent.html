@@ -62,9 +62,9 @@
                   </div>
                   <div class="proj-col col-3">
                     <div class="proj-col-inner">
-                      <div class="field-wrapper field-select">
-                        <label for="isSource">Yes|No</label>
-                        <input type="checkbox" name="isSource" value="true" {{checkRepoType isSource}}>
+                      <div class="field-wrapper field-checkbox">
+                        <label for="isSource-{{@index}}">Yes|No</label>
+                        <input type="checkbox" name="isSource" id="isSource-{{@index}}" value="true" {{checkRepoType isSource}}>
                       </div>
                     </div>
                   </div>
