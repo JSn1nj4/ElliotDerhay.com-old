@@ -247,7 +247,8 @@ footer {
   width: 90%;
 }
 #project-manager-header-row h1,
-#logout {
+#logout,
+#logout .devicons-terminal_badge {
   margin: 0;
   padding: 0;
   line-height: 40px;
@@ -269,6 +270,11 @@ footer {
   color: #fff;
   font-size: 18px;
   transition: background 0.5s, color 0.3s;
+}
+#logout .devicons-terminal_badge {
+  margin-left: -10px;
+  font-size: 40px;
+  vertical-align: middle;
 }
 #logout:hover {
   background-color: #fff;
