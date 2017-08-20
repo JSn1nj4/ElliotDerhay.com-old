@@ -367,6 +367,10 @@ div.msg-box p span.error {
   height: 30px;
 }
 
+.project-manager-row input[type="text"]:focus {
+  outline: none;
+}
+
 .project-manager-row select {
   height: 30px;
 }
