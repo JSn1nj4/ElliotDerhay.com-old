@@ -418,21 +418,41 @@ div.msg-box p span.error {
 }
 
 /* save/delete buttons */
-button.proj-btn {
-  display: block;
-  float: left;
-  margin: 0 8%;
-  border: solid 1px #00C49A;
-  width: 30%;
+button.proj-btn,
+#newProjectBtn {
   background-color: transparent;
   line-height: 28px;
   font-size: 20px;
-  color: #00C49A;
   transition: background 0.5s, color 0.3s;
+}
+
+button.proj-btn {
+  display: block;
+  float: left;
+  margin: 0;
+  border: solid 1px #00C49A;
+  width: 45%;
+  color: #00C49A;
+}
+
+button.proj-btn:first-child {
+  margin-right: 10%;
 }
 
 button.proj-btn:hover {
   background-color: #00C49A;
+  color: #00130f;
+}
+
+/* the new project button */
+#newProjectBtn {
+  width: 50px;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+#newProjectBtn:hover {
+  background-color: #fff;
   color: #00130f;
 }
 
