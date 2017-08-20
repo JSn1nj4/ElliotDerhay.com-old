@@ -458,7 +458,7 @@ div.msg-box p span.error {
 button.proj-btn,
 #newProjectBtn {
   background-color: transparent;
-  line-height: 28px;
+  line-height: 30px;
   font-size: 20px;
   transition: background 0.5s, color 0.3s;
 }
@@ -467,7 +467,9 @@ button.proj-btn {
   display: block;
   float: left;
   margin: 0;
-  border: solid 1px #00C49A;
+  outline: #00C49A solid thin;
+  outline-offset: -1px;
+  border: none;
   width: 45%;
   color: #00C49A;
 }
@@ -484,7 +486,9 @@ button.proj-btn:hover {
 /* the new project button */
 #newProjectBtn {
   width: 50px;
-  border: solid 1px #fff;
+  outline: #fff solid thin;
+  outline-offset: -1px;
+  border: none;
   color: #fff;
 }
 
