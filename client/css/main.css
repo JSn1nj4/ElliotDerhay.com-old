@@ -240,6 +240,41 @@ footer {
 }
 
 /* = PROJECT MANAGER STYLES = */
+#project-manager-header-row .proj-col {
+  width: 50%;
+}
+#project-manager-header-row .proj-col:first-child {
+  width: 90%;
+}
+#project-manager-header-row h1,
+#logout {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+}
+#project-manager-header-row h1 {
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+#project-manager-header-row .proj-col:last-child {
+  width: 10%;
+}
+#logout {
+  outline: #fff solid thin;
+  outline-offset: -1px;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  transition: background 0.5s, color 0.3s;
+}
+#logout:hover {
+  background-color: #fff;
+  color: #00130f;
+}
+
 #project-manager-header-row,
 #project-manager-msg-box-row,
 #project_col_headings,
