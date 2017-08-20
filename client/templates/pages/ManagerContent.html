@@ -4,18 +4,30 @@
       <div class="row_inner">
         <div class="e_col col-16-xs">
           <div class="col-inner">
-            <div class="proj-col">
-              <div class="proj-col-inner">
-                <h1>Projects Manager</h1>
-                <button id="logout">ed.logout()</button>
-                <div class="msg-box">
-                  {{#transition in="fadeInDown" out="fadeOutUp"}}
-                    {{#if showMsg}}
-                      {{#with msg}}
-                        <p><span class="{{type}}">{{txt}}</span></p>
-                      {{/with}}
-                    {{/if}}
-                  {{/transition}}
+            <div id="project-manager-header-row">
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <h1>Projects Manager</h1>
+                </div>
+              </div>
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <button id="logout">ed.logout()</button>
+                </div>
+              </div>
+            </div>
+            <div id="project-manager-msg-box-row">
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <div class="msg-box">
+                    {{#transition in="fadeInDown" out="fadeOutUp"}}
+                      {{#if showMsg}}
+                        {{#with msg}}
+                          <p><span class="{{type}}">{{txt}}</span></p>
+                        {{/with}}
+                      {{/if}}
+                    {{/transition}}
+                  </div>
                 </div>
               </div>
             </div>

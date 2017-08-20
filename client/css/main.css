@@ -240,6 +240,16 @@ footer {
 }
 
 /* = PROJECT MANAGER STYLES = */
+#project-manager-header-row,
+#project-manager-msg-box-row,
+#project_col_headings,
+.project-listing,
+.project-manager-row {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+}
+
 div.msg-box {
   min-height: 36px;
   padding: 14px 0;
@@ -266,14 +276,6 @@ div.msg-box p span.success {
 div.msg-box p span.error {
   color: #ff436d;
   border-color: #ff436d;
-}
-
-#project_col_headings,
-.project-listing,
-.project-manager-row {
-  position: relative;
-  overflow: hidden;
-  clear: both;
 }
 
 #project_col_headings,
