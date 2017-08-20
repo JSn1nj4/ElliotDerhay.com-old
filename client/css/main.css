@@ -417,6 +417,25 @@ div.msg-box p span.error {
   content: "Yes";
 }
 
+/* save/delete buttons */
+button.proj-btn {
+  display: block;
+  float: left;
+  margin: 0 8%;
+  border: solid 1px #00C49A;
+  width: 30%;
+  background-color: transparent;
+  line-height: 28px;
+  font-size: 20px;
+  color: #00C49A;
+  transition: background 0.5s, color 0.3s;
+}
+
+button.proj-btn:hover {
+  background-color: #00C49A;
+  color: #00130f;
+}
+
 /* === RESPONSIVE STYLES === */
 /*
   @TODO: Create grid system somewhat similar to what Bootstrap does
