@@ -4,34 +4,111 @@
       <div class="row_inner">
         <div class="e_col col-16-xs">
           <div class="col-inner">
-            <h1>Projects Manager</h1>
-            <button id="logout">ed.logout()</button>
-            <div class="msg-box">
-              {{#transition in="fadeInDown" out="fadeOutUp"}}
-                {{#if showMsg}}
-                  {{#with msg}}
-                    <p><span class="{{type}}">{{txt}}</span></p>
-                  {{/with}}
-                {{/if}}
-              {{/transition}}
+            <div id="project-manager-header-row">
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <h1>Projects Manager</h1>
+                </div>
+              </div>
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <button id="logout"><span class="devicons devicons-terminal_badge"></span>quit</button>
+                </div>
+              </div>
+            </div>
+            <div id="project-manager-msg-box-row">
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <div class="msg-box">
+                    {{#transition in="fadeInDown" out="fadeOutUp"}}
+                      {{#if showMsg}}
+                        {{#with msg}}
+                          <p><span class="{{type}}">{{txt}}</span></p>
+                        {{/with}}
+                      {{/if}}
+                    {{/transition}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="project_col_headings" class="project-manager-row">
+              <div class="proj-col col-1">
+                <div class="proj-col-inner">
+                  <p>project</p>
+                </div>
+              </div>
+              <div class="proj-col col-2">
+                <div class="proj-col-inner">
+                  <p>url</p>
+                </div>
+              </div>
+              <div class="proj-col col-3">
+                <div class="proj-col-inner">
+                  <p>original?</p>
+                </div>
+              </div>
+              <div class="proj-col col-4">
+                <div class="proj-col-inner">
+                  <p>author</p>
+                </div>
+              </div>
+              <div class="proj-col col-5">
+                <div class="proj-col-inner">
+                  <p>profile</p>
+                </div>
+              </div>
+              <div class="proj-col col-6">
+                <div class="proj-col-inner">
+                  <p>(<span class="keyboard-key">save</span>/<span class="code-line">del</span>)</p>
+                </div>
+              </div>
             </div>
             {{#each getProjectsList}}
               <form class="project-listing">
-                <p class="project-manager-row">
-                  <input type="text" name="proj_name" value="{{name}}">
-                  <input type="text" name="proj_url" value="{{url}}">
-                  <select name="isSource">
-                    <option value="true">true</option>
-                    <option value="false" {{isFalse isSource}}>false</option>
-                  </select>
-                  <input type="text" name="auth_user" value="{{author.user}}">
-                  <input type="text" name="auth_url" value="{{author.url}}">
-                  <button type="submit" title="Update">&#10003;</button>
-                  <button type="button" class="delete-btn" title="Delete">&times;</button>
-                </p>
+                <div class="project-manager-row">
+                  <div class="proj-col col-1">
+                    <div class="proj-col-inner">
+                      <div class="field-wrapper"><input type="text" name="proj_name" value="{{name}}"></div>
+                    </div>
+                  </div>
+                  <div class="proj-col col-2">
+                    <div class="proj-col-inner">
+                      <div class="field-wrapper"><input type="text" name="proj_url" value="{{url}}"></div>
+                    </div>
+                  </div>
+                  <div class="proj-col col-3">
+                    <div class="proj-col-inner">
+                      <div class="field-wrapper field-checkbox">
+                        <input type="checkbox" name="isSource" id="isSource-{{@index}}" {{checkRepoType isSource}}>
+                        <label for="isSource-{{@index}}"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="proj-col col-4">
+                    <div class="proj-col-inner">
+                      <div class="field-wrapper"><input type="text" name="auth_user" value="{{author.user}}"></div>
+                    </div>
+                  </div>
+                  <div class="proj-col col-5">
+                    <div class="proj-col-inner">
+                      <div class="field-wrapper"><input type="text" name="auth_url" value="{{author.url}}"></div>
+                    </div>
+                  </div>
+                  <div class="proj-col col-6">
+                    <div class="proj-col-inner">
+                      <button type="submit" title="Commit" class="proj-btn devicons devicons-git_commit"></button><button type="button" title="Delete" class="proj-btn delete-btn">&minus;&nbsp;&minus;</button>
+                    </div>
+                  </div>
+                </div>
               </form>
             {{/each}}
-            <button id="newProjectBtn">+</button>
+            <div class="project-manager-row">
+              <div class="proj-col">
+                <div class="proj-col-inner">
+                  <button id="newProjectBtn">&plus;&nbsp;&plus;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

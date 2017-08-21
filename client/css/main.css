@@ -240,6 +240,58 @@ footer {
 }
 
 /* = PROJECT MANAGER STYLES = */
+#project-manager-header-row .proj-col {
+  width: 50%;
+}
+#project-manager-header-row .proj-col:first-child {
+  width: 90%;
+}
+#project-manager-header-row h1,
+#logout,
+#logout .devicons-terminal_badge {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+}
+#project-manager-header-row h1 {
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+#project-manager-header-row .proj-col:last-child {
+  width: 10%;
+}
+#logout {
+  outline: #fff solid thin;
+  outline-offset: -1px;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  transition: background 0.5s, color 0.3s;
+}
+#logout .devicons-terminal_badge {
+  margin-left: -10px;
+  margin-right: -6px;
+  font-size: 40px;
+  vertical-align: middle;
+}
+#logout:hover {
+  background-color: #fff;
+  color: #00130f;
+}
+
+#project-manager-header-row,
+#project-manager-msg-box-row,
+#project_col_headings,
+.project-listing,
+.project-manager-row {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+}
+
 div.msg-box {
   min-height: 36px;
   padding: 14px 0;
@@ -266,6 +318,190 @@ div.msg-box p span.success {
 div.msg-box p span.error {
   color: #ff436d;
   border-color: #ff436d;
+}
+
+#project_col_headings,
+.project-listing {
+  width: 100%;
+}
+
+#project_col_headings,
+.project-manager-row {
+  padding-top: 20px;
+}
+
+#project_col_headings p {
+  padding: 0;
+}
+
+.proj-col {
+  position: relative;
+  float: left;
+}
+
+.proj-col.col-1 {
+  width: 20%;
+}
+
+.proj-col.col-2 {
+  width: 25%;
+}
+
+.proj-col.col-3 {
+  width: 10%;
+}
+
+.proj-col.col-4 {
+  width: 10%;
+}
+
+.proj-col.col-5 {
+  width: 25%;
+}
+
+.proj-col.col-6 {
+  width: 10%;
+}
+
+.proj-col-inner {
+  padding: 0 10px;
+}
+
+/* project field styles */
+
+.project-manager-row .field-wrapper {
+  padding: 0 10px 0 20px;
+  position: relative;
+  border-bottom: solid 2px #fff;
+}
+.project-manager-row .field-wrapper:before {
+  content: "$";
+  position: absolute;
+  line-height: 30px;
+  left: 0px;
+}
+.project-manager-row .field-wrapper.field-select,
+.project-manager-row .field-wrapper.field-checkbox {
+  padding: 0;
+}
+.project-manager-row .field-wrapper.field-checkbox {
+  border: none;
+}
+.project-manager-row .field-wrapper.field-select:before,
+.project-manager-row .field-wrapper.field-checkbox:before {
+  display: none;
+}
+
+.project-manager-row input[type="text"],
+.project-manager-row select,
+.project-manager-row option {
+  color: #00C49A;
+  font-weight: bold;
+}
+
+.project-manager-row input[type="text"],
+.project-manager-row select {
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+
+.project-manager-row input[type="text"] {
+  height: 30px;
+}
+
+.project-manager-row input[type="text"]:focus {
+  outline: none;
+}
+
+.project-manager-row select {
+  height: 30px;
+}
+
+.project-manager-row option {
+  border: none;
+  background-color: #00130f;
+}
+
+/* styles for checkbox label altering trick */
+.project-manager-row input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.project-manager-row input[type="checkbox"] + label,
+.project-manager-row input[type="checkbox"] + label:before {
+  display: inline-block;
+  width: 100%;
+}
+
+.project-manager-row input[type="checkbox"] + label {
+  height: 30px;
+  text-align: center;
+}
+
+.project-manager-row input[type="checkbox"] + label:before {
+  border: solid 1px #00C49A;
+  background: transparent;
+  color: #00C49A;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  content: "No";
+  -webkit-transition: background 0.5s, color 0.3s;
+  -moz-transition: background 0.5s, color 0.3s;
+  -o-transition: background 0.5s, color 0.3s;
+  transition: background 0.5s, color 0.3s;
+}
+.project-manager-row input[type="checkbox"]:checked + label:before {
+  border: solid 1px #00C49A;
+  background: #00C49A;
+  color: #00130f;
+  content: "Yes";
+}
+
+/* save/delete buttons */
+button.proj-btn,
+#newProjectBtn {
+  background-color: transparent;
+  line-height: 30px;
+  font-size: 20px;
+  transition: background 0.5s, color 0.3s;
+}
+
+button.proj-btn {
+  display: block;
+  float: left;
+  margin: 0;
+  outline: #00C49A solid thin;
+  outline-offset: -1px;
+  border: none;
+  width: 45%;
+  color: #00C49A;
+}
+
+button.proj-btn:first-child {
+  margin-right: 10%;
+}
+
+button.proj-btn:hover {
+  background-color: #00C49A;
+  color: #00130f;
+}
+
+/* the new project button */
+#newProjectBtn {
+  width: 50px;
+  outline: #fff solid thin;
+  outline-offset: -1px;
+  border: none;
+  color: #fff;
+}
+
+#newProjectBtn:hover {
+  background-color: #fff;
+  color: #00130f;
 }
 
 /* === RESPONSIVE STYLES === */
