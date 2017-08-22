@@ -239,6 +239,27 @@ footer {
   padding: 30px 15px;
 }
 
+/* = PROJECT MANAGER LOGIN STYLES = */
+#login_form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+#login_form p {
+  padding: 0;
+  text-align: center;
+}
+#login_form input {
+  width: 100%;
+}
+#login_form button {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 150px;
+}
+#login_form + .error-message {
+  text-align: center;
+}
+
 /* = PROJECT MANAGER STYLES = */
 #project-manager-header-row .proj-col {
   width: 50%;
