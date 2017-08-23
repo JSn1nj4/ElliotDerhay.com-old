@@ -269,12 +269,15 @@ footer {
   text-align: left;
   border-top-width: 2px;
 }
-#login_form p:first-child:before {
+#login_form p:first-child:before,
+#login_form span.blinky-carat {
   display: block;
   position: absolute;
-  content: "$";
   line-height: 50px;
   left: 20px;
+}
+#login_form p:first-child:before {
+  content: "$";
 }
 #login_form input {
   width: 100%;
@@ -285,8 +288,12 @@ footer {
 #login_form input:focus {
   outline: none;
 }
+#login_form span.blinky-carat {
+  visibility: hidden;
+  top: 0;
+}
 #login_form input:focus + span.blinky-carat {
-  /* element to be used in animated carat */
+  visibility: visible;
 }
 #login_form p:nth-child(3) {
   padding-bottom: 10px;
