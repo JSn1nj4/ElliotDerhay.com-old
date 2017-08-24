@@ -299,6 +299,9 @@ footer {
   padding-bottom: 10px;
   border-bottom-width: 2px;
 }
+#login_form button {
+  display: none;
+}
 #login_form + .error-message {
   text-align: center;
 }
