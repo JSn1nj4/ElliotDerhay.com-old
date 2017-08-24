@@ -299,12 +299,6 @@ footer {
   padding-bottom: 10px;
   border-bottom-width: 2px;
 }
-#login_form button {
-  margin: 0 auto;
-  width: 50%;
-  max-width: 150px;
-  visibility: hidden;
-}
 #login_form + .error-message {
   text-align: center;
 }
