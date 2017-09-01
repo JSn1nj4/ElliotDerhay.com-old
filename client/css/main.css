@@ -282,6 +282,20 @@ footer {
   padding: 0;
   background: transparent;
 }
+/* Unfortunately, these selectors can't be used in groups :( */
+#login_form input::-webkit-form-placeholder {
+  color: rgba(0, 196, 154, .5);
+}
+#login_form input::-moz-placeholder {
+  color: rgba(0, 196, 154, .5);
+}
+#login_form input:-ms-input-placeholder {
+  color: rgba(0, 196, 154, .5);
+}
+#login_form input::placeholder {
+  color: rgba(0, 196, 154, .5);
+}
+
 #login_form input:focus {
   outline: none;
 }
