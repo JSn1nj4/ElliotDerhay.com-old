@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env ROOT_URL=http://elliotderhay.dev meteor run --port 80",
+    "sim-prod": "cross-env ROOT_URL=http://prod.elliotderhay.dev meteor run --production --port 80"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,8 @@
     "babel-runtime": "^6.23.0",
     "bcrypt": "^1.0.2",
     "simpl-schema": "^0.2.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.1"
   }
 }
