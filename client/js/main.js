@@ -7,6 +7,7 @@ let routes = [
   {route: '/', name: 'Home', template: 'PageLayout', content: 'Home'},
   {route: '/projects', name: 'Projects', template: 'PageLayout', content: 'Projects'},
   {route: '/projects/manager', name: 'Projects Manager', template: 'ManagerLayout', content: ''},
+  {route: '/experiments', name: 'Experiments', template: 'PageLayout', content: 'ComingSoon'},
   {route: '/contact', name: 'Contact', template: 'PageLayout', content: 'ComingSoon'},
 ];
 
