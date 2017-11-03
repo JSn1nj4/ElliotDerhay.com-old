@@ -1,5 +1,7 @@
-import '/imports/api/projectsmanager.js';
 import { projects } from '/imports/api/projects';
+import '/imports/api/projectsmanager.js';
+import '../components/SingleProjectEntry.js';
+import './ManagerContent.html';
 
 Template.ManagerContent.onCreated(function managerOnCreated() {
   this.username = new ReactiveVar( Meteor.user().username );
