@@ -48,39 +48,11 @@ Template.ManagerContent.events({
     Meteor.call('addProject', {}, tpl.msgCallback);
   },
 
-  'submit .project-listing'(e, tpl) {
-    // First things first: prevent default form submit action
-    e.preventDefault();
-
-    let formData = e.target;
-    let projID = this._id;
-    let projData = {
-      name: formData.proj_name.value,
-      url: formData.proj_url.value,
-      isSource: formData.isSource.checked,
-      author: {
-        user: formData.auth_user.value,
-        url: formData.auth_url.value
-      }
-    };
-
-    Meteor.call('updateProject', { projID, projData }, tpl.msgCallback);
-  },
-
-  // eslint-disable-next-line no-unused-vars
-  'click .delete-btn'(e, tpl) {
-    let projID = this._id;
-    Meteor.call('deleteProject', { projID }, tpl.msgCallback);
-  }
-
 });
 
 Template.ManagerContent.helpers({
   getProjectsList() {
     return projects.find({}, { sort: { createdAt: -1} } ).fetch();
-  },
-  checkRepoType(isSource) {
-    return isSource ? 'checked' : '';
   },
   showMsg() { // check if the message should be visible
     return Template.instance().msgVisible.get();

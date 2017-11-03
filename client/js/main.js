@@ -2,6 +2,16 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // App JS
 
+Blaze.TemplateInstance.prototype.findParentTemplate = function (name) {
+  var view = this.view;
+  while (view) {
+    if (view.name === `Template.${name}`) {
+      return view.templateInstance();
+    }
+    view = view.parentView;
+  }
+};
+
 // Client-side routes
 let routes = [
   {route: '/', name: 'Home', template: 'PageLayout', content: 'Home'},
