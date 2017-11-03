@@ -6,5 +6,3 @@ Template.Header.helpers({
     return FlowRouter.current().path;
   }
 });
-
-console.log(FlowRouter);
