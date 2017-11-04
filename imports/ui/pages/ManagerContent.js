@@ -1,5 +1,4 @@
-import { projects } from '/imports/api/projects';
-import '/imports/api/projectsmanager.js';
+import { projects } from '/imports/api/projects/projects.js';
 import '../components/SingleProjectEntry.js';
 import './ManagerContent.html';
 
