@@ -32,7 +32,7 @@
     <div class="col-inner">
       <div class="project-wrapper">
         <h2 class="project-title">
-          <a class="devicons devicons-git{{#unless isSource}}_branch{{/unless}}" href="{{ this.project.url }}" target="_blank"><span>{{ this.project.name }}</span></a>
+          <a class="devicons devicons-git{{#unless this.project.isSource}}_branch{{/unless}}" href="{{ this.project.url }}" target="_blank"><span>{{ this.project.name }}</span></a>
         </h2>
         <div class="e_col col-8-lg col-16-md col-8-sm">
           <p><span class="project-author">Author: <a href="{{ this.project.author.url }}" target="_blank">{{ this.project.author.user }}</a></span></p>
