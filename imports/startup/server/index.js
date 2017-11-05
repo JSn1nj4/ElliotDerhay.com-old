@@ -1,6 +1,7 @@
 //import { Accounts } from 'meteor/accounts-base';
 import '/imports/api/projects/methods.js';
 import '/imports/api/projects/server/publications.js';
+import './fixtures.js';
 // import './imports/methods.js';
 
 // @TODO: Remove the following startup code before first release
