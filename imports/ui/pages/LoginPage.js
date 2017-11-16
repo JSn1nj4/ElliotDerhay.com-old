@@ -1,4 +1,5 @@
 import { ReactiveVar } from 'meteor/reactive-var';
+import './LoginPage.html';
 
 Template.LoginPage.onCreated(function() { // arrow function broke context :'(
   // Setup a reactive var for dealing with login messages

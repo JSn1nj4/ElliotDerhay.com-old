@@ -1,3 +1,5 @@
+import './SingleProjectEntry.html';
+
 Template.SingleProjectEntry.onCreated(function singleProjectEntryCreated() {
   // Give the child template access to this callback function
   this.parent = this.findParentTemplate('ManagerContent');
