@@ -1,4 +1,5 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import './Header.html';
 
 Template.Header.helpers({
   route: function() {
@@ -6,5 +7,3 @@ Template.Header.helpers({
     return FlowRouter.current().path;
   }
 });
-
-console.log(FlowRouter);

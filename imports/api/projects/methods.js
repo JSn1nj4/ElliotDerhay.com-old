@@ -1,7 +1,7 @@
 import SimpleSchema from 'simpl-schema';
 import { Roles } from 'meteor/alanning:roles';
-import { projects } from '/imports/api/projects.js';
-import { ProjectSchemas } from './schemas/projects.js';
+import { projects } from './projects.js';
+import { ProjectSchemas } from './schemas.js';
 
 // Check that the given user ID is in the required role
 function userInRole( id ) {
