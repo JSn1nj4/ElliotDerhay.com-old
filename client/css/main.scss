@@ -1,13 +1,24 @@
 /* CSS declarations go here */
-@import "//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css";
+@import url(https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css);
+
+// Color variables
+$white: #fff;
+$d-gray: #090909;
+$d-gray-2: #151515;
+$gray: #555;
+$sea-green: #00C49A;
+$highlight-green: #85ffe4;
+$dark-green: #00130f;
+$success-green: #5ec256;
+$error-red: #ff436d;
 
 /* general styles */
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #090909;
-  color: #fff;
+  background: $d-gray;
+  color: $white;
   font-family: monospace;
 }
 
@@ -23,7 +34,7 @@ p {
 }
 
 #page-container a {
-  color: #00C49A;
+  color: $sea-green;
   text-decoration: none;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -32,7 +43,7 @@ p {
 }
 
 #page-container a:hover {
-  color: #85ffe4;
+  color: $highlight-green;
 }
 
 img {
@@ -65,7 +76,7 @@ footer {
 
 header,
 footer {
-  color: #00C49A;
+  color: $sea-green;
   position: relative;
 }
 
@@ -78,7 +89,7 @@ header a {
 }
 
 #brand {
-  color: #fff;
+  color: $white;
   font-size: 40px;
   line-height: 1em;
   padding: 15px;
@@ -86,7 +97,7 @@ header a {
 }
 
 #brand span {
-  color: #00C49A;
+  color: $sea-green;
   font-size: .7em;
   margin: auto -.3em;
   line-height: 1em;
@@ -104,7 +115,7 @@ header a {
 
 #main-menu a {
   display: inline-block;
-  color: #00C49A;
+  color: $sea-green;
   text-align: right;
   vertical-align: middle;
   text-transform: uppercase;
@@ -118,13 +129,13 @@ header a {
 }
 
 #main-menu a:hover {
-  color: #fff;
+  color: $white;
 }
 
 #page-container {
-  background: #151515;
+  background: $d-gray-2;
   box-shadow: 0px 2px 4px #000;
-  color: #fff;
+  color: $white;
   overflow: hidden;
   padding-bottom: 60px;
 }
@@ -197,8 +208,8 @@ header a {
   font-weight: 400;
   padding: 0.2em 0;
   text-align: center;
-  color: #fff;
-  text-shadow: #fff 0 0 10px;
+  color: $white;
+  text-shadow: $white 0 0 10px;
 }
 
 .banner-container h1 {
@@ -217,7 +228,7 @@ header a {
 
 .project-wrapper {
   padding: 0 8px;
-  border: solid 1px #555;
+  border: solid 1px $gray;
   border-radius: 3px;
   background: rgba(255,255,255,0.05);
   position: relative;
@@ -253,7 +264,7 @@ footer {
 #login_form p,
 #login_form input {
   font-weight: bold;
-  color: #00C49A;
+  color: $sea-green;
   line-height: 50px;
 }
 #login_form p {
@@ -338,12 +349,12 @@ footer {
   width: 10%;
 }
 #logout {
-  outline: #fff solid thin;
+  outline: $white solid thin;
   outline-offset: -1px;
   border: none;
   width: 100%;
   background-color: transparent;
-  color: #fff;
+  color: $white;
   font-size: 18px;
   transition: background 0.5s, color 0.3s;
 }
@@ -354,8 +365,8 @@ footer {
   vertical-align: middle;
 }
 #logout:hover {
-  background-color: #fff;
-  color: #00130f;
+  background-color: $white;
+  color: $dark-green;
 }
 
 #project-manager-header-row,
@@ -387,13 +398,13 @@ div.msg-box p span {
 }
 
 div.msg-box p span.success {
-  color: #5ec256;
-  border-color: #5ec256;
+  color: $success-green;
+  border-color: $success-green;
 }
 
 div.msg-box p span.error {
-  color: #ff436d;
-  border-color: #ff436d;
+  color: $error-red;
+  border-color: $error-red;
 }
 
 #project_col_headings,
@@ -448,7 +459,7 @@ div.msg-box p span.error {
 .project-manager-row .field-wrapper {
   padding: 0 10px 0 20px;
   position: relative;
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 2px $white;
 }
 .project-manager-row .field-wrapper:before {
   content: "$";
@@ -471,7 +482,7 @@ div.msg-box p span.error {
 .project-manager-row input[type="text"],
 .project-manager-row select,
 .project-manager-row option {
-  color: #00C49A;
+  color: $sea-green;
   font-weight: bold;
 }
 
@@ -497,7 +508,7 @@ div.msg-box p span.error {
 
 .project-manager-row option {
   border: none;
-  background-color: #00130f;
+  background-color: $dark-green;
 }
 
 /* styles for checkbox label altering trick */
@@ -518,9 +529,9 @@ div.msg-box p span.error {
 }
 
 .project-manager-row input[type="checkbox"] + label:before {
-  border: solid 1px #00C49A;
+  border: solid 1px $sea-green;
   background: transparent;
-  color: #00C49A;
+  color: $sea-green;
   font-weight: bold;
   font-size: 16px;
   line-height: 30px;
@@ -531,9 +542,9 @@ div.msg-box p span.error {
   transition: background 0.5s, color 0.3s;
 }
 .project-manager-row input[type="checkbox"]:checked + label:before {
-  border: solid 1px #00C49A;
-  background: #00C49A;
-  color: #00130f;
+  border: solid 1px $sea-green;
+  background: $sea-green;
+  color: $dark-green;
   content: "Yes";
 }
 
@@ -550,11 +561,11 @@ button.proj-btn {
   display: block;
   float: left;
   margin: 0;
-  outline: #00C49A solid thin;
+  outline: $sea-green solid thin;
   outline-offset: -1px;
   border: none;
   width: 45%;
-  color: #00C49A;
+  color: $sea-green;
 }
 
 button.proj-btn:first-child {
@@ -562,22 +573,22 @@ button.proj-btn:first-child {
 }
 
 button.proj-btn:hover {
-  background-color: #00C49A;
-  color: #00130f;
+  background-color: $sea-green;
+  color: $dark-green;
 }
 
 /* the new project button */
 #newProjectBtn {
   width: 50px;
-  outline: #fff solid thin;
+  outline: $white solid thin;
   outline-offset: -1px;
   border: none;
-  color: #fff;
+  color: $white;
 }
 
 #newProjectBtn:hover {
-  background-color: #fff;
-  color: #00130f;
+  background-color: $white;
+  color: $dark-green;
 }
 
 /* === RESPONSIVE STYLES === */
