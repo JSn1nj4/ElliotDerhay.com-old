@@ -532,23 +532,33 @@ div.msg-box {
     border: none;
     background-color: $dark-green;
   }
-}
 
-/* styles for checkbox label altering trick */
-.project-manager-row input[type="checkbox"] {
-  position: absolute;
-  visibility: hidden;
-}
+  // styles for checkbox label altering trick
+  input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
 
-.project-manager-row input[type="checkbox"] + label,
-.project-manager-row input[type="checkbox"] + label:before {
-  display: inline-block;
-  width: 100%;
-}
+    + label {
+      + &, + &:before {
+        display: inline-block;
+        width: 100%;
+      }
 
-.project-manager-row input[type="checkbox"] + label {
-  height: 30px;
-  text-align: center;
+      height: 30px;
+      text-align: center;
+
+      &:before {
+        border: solid 1px $sea-green;
+        background: transparent;
+        color: $sea-green;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 30px;
+        content: "No";
+        @include color-bg-transitions($bg-speed: 0.5s);
+      }
+    }
+  }
 }
 
 .project-manager-row input[type="checkbox"] + label:before {
