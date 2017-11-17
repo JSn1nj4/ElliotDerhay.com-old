@@ -539,7 +539,7 @@ div.msg-box {
     visibility: hidden;
 
     + label {
-      + &, + &:before {
+      &, &:before {
         display: inline-block;
         width: 100%;
       }
