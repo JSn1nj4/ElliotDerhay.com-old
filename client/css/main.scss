@@ -503,38 +503,35 @@ div.msg-box {
       border: none;
     }
   }
-}
 
-.project-manager-row input[type="text"],
-.project-manager-row select,
-.project-manager-row option {
-  color: $sea-green;
-  font-weight: bold;
-}
+  input[type="text"], select, option {
+    color: $sea-green;
+    font-weight: bold;
+  }
 
-.project-manager-row input[type="text"],
-.project-manager-row select {
-  border: none;
-  background: transparent;
-  padding: 0;
-  width: 100%;
-}
+  input[type="text"], select {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+  }
 
-.project-manager-row input[type="text"] {
-  height: 30px;
-}
+  input[type="text"] {
+    height: 30px;
 
-.project-manager-row input[type="text"]:focus {
-  outline: none;
-}
+    &:focus {
+      outline: none;
+    }
+  }
 
-.project-manager-row select {
-  height: 30px;
-}
+  select {
+    height: 30px;
+  }
 
-.project-manager-row option {
-  border: none;
-  background-color: $dark-green;
+  option {
+    border: none;
+    background-color: $dark-green;
+  }
 }
 
 /* styles for checkbox label altering trick */
