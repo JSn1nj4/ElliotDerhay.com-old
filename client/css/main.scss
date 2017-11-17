@@ -561,16 +561,6 @@ div.msg-box {
   }
 }
 
-.project-manager-row input[type="checkbox"] + label:before {
-  border: solid 1px $sea-green;
-  background: transparent;
-  color: $sea-green;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 30px;
-  content: "No";
-  @include color-bg-transitions($bg-speed: 0.5s);
-}
 .project-manager-row input[type="checkbox"]:checked + label:before {
   border: solid 1px $sea-green;
   background: $sea-green;
