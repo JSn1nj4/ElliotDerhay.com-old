@@ -1,5 +1,5 @@
 /* CSS declarations go here */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Oxygen+Mono');
 @import url('https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css');
 
 // Color variables
@@ -35,7 +35,7 @@ body {
   padding: 0;
   background: $d-gray;
   color: $white;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Oxygen Mono', monospace;
 }
 
 h1, h2, h3, h4, h5, h6, p {
