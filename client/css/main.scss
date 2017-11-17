@@ -558,26 +558,27 @@ div.msg-box {
         @include color-bg-transitions($bg-speed: 0.5s);
       }
     }
+
+    &:checked + label:before {
+      border: solid 1px $sea-green;
+      background: $sea-green;
+      color: $dark-green;
+      content: "Yes";
+    }
   }
 }
 
-.project-manager-row input[type="checkbox"]:checked + label:before {
-  border: solid 1px $sea-green;
-  background: $sea-green;
-  color: $dark-green;
-  content: "Yes";
-}
+// save/delete buttons
+button.proj-button {
+  @at-root {
+    &, #newProjectBtn {
+      background-color: transparent;
+      line-height: 30px;
+      font-size: 20px;
+      @include color-bg-transitions($bg-speed: 0.5s);
+    }
+  }
 
-/* save/delete buttons */
-button.proj-btn,
-#newProjectBtn {
-  background-color: transparent;
-  line-height: 30px;
-  font-size: 20px;
-  @include color-bg-transitions($bg-speed: 0.5s);
-}
-
-button.proj-btn {
   display: block;
   float: left;
   margin: 0;
@@ -586,15 +587,15 @@ button.proj-btn {
   border: none;
   width: 45%;
   color: $sea-green;
-}
 
-button.proj-btn:first-child {
-  margin-right: 10%;
-}
+  &:first-child {
+    margin-right: 10%;
+  }
 
-button.proj-btn:hover {
-  background-color: $sea-green;
-  color: $dark-green;
+  &:hover {
+    background-color: $sea-green;
+    color: $dark-green;
+  }
 }
 
 /* the new project button */
@@ -604,11 +605,11 @@ button.proj-btn:hover {
   outline-offset: -1px;
   border: none;
   color: $white;
-}
 
-#newProjectBtn:hover {
-  background-color: $white;
-  color: $dark-green;
+  &:hover {
+    background-color: $white;
+    color: $dark-green;
+  }
 }
 
 /* === RESPONSIVE STYLES === */
