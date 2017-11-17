@@ -53,26 +53,26 @@ p {
   color: $sea-green;
   text-decoration: none;
   @include color-transitions;
-}
 
-#page-container a:hover {
-  color: $highlight-green;
+  &:hover {
+    color: $highlight-green;
+  }
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+
+  &.center {
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 p > img,
 span > img {
   display: inline;
-}
-
-img.center {
-  margin: 0 auto;
-  text-align: center;
 }
 
 
@@ -95,10 +95,10 @@ footer {
 
 header {
   z-index: 10;
-}
 
-header a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 #brand {
@@ -107,14 +107,14 @@ header a {
   line-height: 1em;
   padding: 15px;
   display: inline-block;
-}
 
-#brand span {
-  color: $sea-green;
-  font-size: .7em;
-  margin: auto -.3em;
-  line-height: 1em;
-  vertical-align: middle;
+  span {
+    color: $sea-green;
+    font-size: .7em;
+    margin: auto -.3em;
+    line-height: 1em;
+    vertical-align: middle;
+  }
 }
 
 #main-menu {
@@ -124,22 +124,22 @@ header a {
   top: 0;
   height: 100%;
   font-size: 0;
-}
 
-#main-menu a {
-  display: inline-block;
-  color: $sea-green;
-  text-align: right;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-size: 24px;
-  line-height: 1em;
-  padding: 23px 30px;
-  @include color-bg-transitions;
-}
+  a {
+    display: inline-block;
+    color: $sea-green;
+    text-align: right;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 1em;
+    padding: 23px 30px;
+    @include color-bg-transitions;
 
-#main-menu a:hover {
-  color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
 }
 
 #page-container {
@@ -181,18 +181,18 @@ header a {
 
 /* Styles for Coming Soon template */
 #page-coming-soon {
-    text-align: center;
-    padding: 160px 15px;
-}
+  text-align: center;
+  padding: 160px 15px;
 
-#page-coming-soon h1 {
+  h1 {
     font-size: 80px;
     padding: 0;
     text-transform: uppercase;
-}
+  }
 
-#page-coming-soon h4 {
+  h4 {
     font-size: 24px;
+  }
 }
 
 .banner-container {
@@ -201,6 +201,26 @@ header a {
   overflow: hidden;
   min-height: 400px;
   padding: 90px 0 120px 0;
+
+  h1, h2, h3 {
+    font-weight: 400;
+    padding: 0.2em 0;
+    text-align: center;
+    color: $white;
+    text-shadow: $white 0 0 10px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+
+  }
 }
 
 #home_banner {
@@ -210,28 +230,6 @@ header a {
 #projects_banner {
   background-image: url(/img/github-static-v2-dark.jpg);
   background-position: center;
-}
-
-.banner-container h1,
-.banner-container h2,
-.banner-container h3 {
-  font-weight: 400;
-  padding: 0.2em 0;
-  text-align: center;
-  color: $white;
-  text-shadow: $white 0 0 10px;
-}
-
-.banner-container h1 {
-  font-size: 60px;
-}
-
-.banner-container h3 {
-  font-size: 30px;
-}
-
-.banner-container p {
-
 }
 
 /* = PROJECTS STYLES = */
@@ -265,99 +263,125 @@ footer {
   margin: 0 auto;
   background-color: #0f0f0f;
   border: solid 1px #4c4c4c;
-}
-#login_form p,
-#login_form input,
-#login_form button {
-  font-size: 18px;
-}
-#login_form p,
-#login_form input {
-  font-weight: bold;
-  color: $sea-green;
-  line-height: 50px;
-}
-#login_form p {
-  position: relative;
-  padding: 0 20px 0 50px;
-  text-align: center;
-}
-#login_form p:first-child {
-  padding-top: 10px;
-  text-align: left;
-}
-#login_form p:first-child:before,
-#login_form span.blinky-carat {
-  display: block;
-  position: absolute;
-  line-height: 50px;
-  left: 20px;
-}
-#login_form p:first-child:before {
-  content: "$";
-}
-#login_form input {
-  width: 100%;
-  border: 0;
-  padding: 0;
-  background: transparent;
-}
-/* Unfortunately, these selectors can't be used in groups :( */
-#login_form input::-webkit-form-placeholder {
-  color: rgba(0, 196, 154, .5);
-}
-#login_form input::-moz-placeholder {
-  color: rgba(0, 196, 154, .5);
-}
-#login_form input:-ms-input-placeholder {
-  color: rgba(0, 196, 154, .5);
-}
-#login_form input::placeholder {
-  color: rgba(0, 196, 154, .5);
+
+  p, input, button {
+    font-size: 18px;
+  }
+
+  p, input {
+    font-weight: bold;
+    color: $sea-green;
+    line-height: 50px;
+  }
+
+  p {
+    position: relative;
+    padding: 0 20px 0 50px;
+    text-align: center;
+
+    &:first-child {
+      padding-top: 10px;
+      text-align: left;
+
+      &:before {
+        content: "$";
+      }
+    }
+
+    &:nth-child(3) {
+      padding-bottom: 10px;
+    }
+  }
+
+  p:first-child:before,
+  span.blinky-carat {
+    display: block;
+    position: absolute;
+    line-height: 50px;
+    left: 20px;
+  }
+
+  span.blinky-carat {
+    visibility: hidden;
+    top: 0;
+  }
+
+  input {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+
+      + span.blinky-carat {
+        visibility: visible;
+      }
+    }
+    // Unfortunately, these selectors can't be used in groups :(
+    &::-webkit-form-placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+    &::placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+  }
+
+  button {
+    display: none;
+  }
+
+  + .error-message {
+    text-align: center;
+  }
 }
 
-#login_form input:focus {
-  outline: none;
-}
-#login_form span.blinky-carat {
-  visibility: hidden;
-  top: 0;
-}
-#login_form input:focus + span.blinky-carat {
-  visibility: visible;
-}
-#login_form p:nth-child(3) {
-  padding-bottom: 10px;
-}
-#login_form button {
-  display: none;
-}
-#login_form + .error-message {
-  text-align: center;
+// PROJECT MANAGER STYLES
+#project-manager-header-row {
+  .proj-col {
+    width: 50%;
+
+    &:first-child {
+      width: 90%;
+    }
+
+    &:last-child {
+      width: 10%;
+    }
+  }
+
+  @at-root { // Allows removing the parent from selectors
+  // The below compiles to `#project-manager-header-row h1, #logout, #logout .devicons-terminal_badge`
+    & h1, #logout, #logout .devicons-terminal_badge {
+      margin: 0;
+      padding: 0;
+      line-height: 40px;
+    }
+
+    &,
+    #project-manager-msg-box-row,
+    #project_col_headings,
+    .project-listing,
+    .project-manager-row {
+      position: relative;
+      overflow: hidden;
+      clear: both;
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: lighter;
+  }
 }
 
-/* = PROJECT MANAGER STYLES = */
-#project-manager-header-row .proj-col {
-  width: 50%;
-}
-#project-manager-header-row .proj-col:first-child {
-  width: 90%;
-}
-#project-manager-header-row h1,
-#logout,
-#logout .devicons-terminal_badge {
-  margin: 0;
-  padding: 0;
-  line-height: 40px;
-}
-#project-manager-header-row h1 {
-  font-size: 32px;
-  font-weight: lighter;
-}
-
-#project-manager-header-row .proj-col:last-child {
-  width: 10%;
-}
 #logout {
   outline: $white solid thin;
   outline-offset: -1px;
@@ -367,54 +391,45 @@ footer {
   color: $white;
   font-size: 18px;
   transition: background 0.5s, color 0.3s;
-}
-#logout .devicons-terminal_badge {
-  margin-left: -10px;
-  margin-right: -6px;
-  font-size: 40px;
-  vertical-align: middle;
-}
-#logout:hover {
-  background-color: $white;
-  color: $dark-green;
-}
 
-#project-manager-header-row,
-#project-manager-msg-box-row,
-#project_col_headings,
-.project-listing,
-.project-manager-row {
-  position: relative;
-  overflow: hidden;
-  clear: both;
+  .devicons-terminal_badge {
+    margin-left: -10px;
+    margin-right: -6px;
+    font-size: 40px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $dark-green;
+  }
 }
 
 div.msg-box {
   min-height: 36px;
   padding: 14px 0;
-}
 
-div.msg-box p {
-  padding: 0;
-  margin: 0;
-}
+  p {
+    padding: 0;
+    margin: 0;
 
-div.msg-box p span {
-  padding: 3px 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 2px;
-  font-weight: bold;
-}
+    span {
+      padding: 3px 10px;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      font-weight: bold;
 
-div.msg-box p span.success {
-  color: $success-green;
-  border-color: $success-green;
-}
-
-div.msg-box p span.error {
-  color: $error-red;
-  border-color: $error-red;
+      &.success {
+        color: $success-green;
+        border-color: $success-green;
+      }
+      &.error {
+        color: $error-red;
+        border-color: $error-red;
+      }
+    }
+  }
 }
 
 #project_col_headings,
