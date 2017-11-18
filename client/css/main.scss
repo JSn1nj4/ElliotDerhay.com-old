@@ -1,5 +1,5 @@
 /* CSS declarations go here */
-@import url('https://fonts.googleapis.com/css?family=Oxygen+Mono');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700');
 @import url('https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css');
 
 // Color variables
@@ -12,6 +12,8 @@ $highlight-green: #85ffe4;
 $dark-green: #00130f;
 $success-green: #5ec256;
 $error-red: #ff436d;
+
+$default-fonts: 'Source Code Pro', monospace;
 
 // Mixins
 @mixin color-transitions($speed: 0.3s) {
@@ -35,7 +37,7 @@ body {
   padding: 0;
   background: $d-gray;
   color: $white;
-  font-family: 'Fira Mono', 'Oxygen Mono', monospace;
+  font-family: $default-fonts;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -44,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 0 2em 0;
   line-height: 1.5em;
 }
@@ -241,12 +243,17 @@ header {
   background: rgba(255,255,255,0.05);
   position: relative;
   overflow: hidden;
+
+  @at-root {
+    .project-title, & p {
+      padding-bottom: 16px;
+      line-height: 1em;
+    }
+  }
 }
 
-.project-title,
-.project-wrapper p {
-    padding-bottom: 16px;
-    line-height: 1em;
+.project-title span {
+  font-family: $default-fonts;
 }
 
 .project-author, .project-last-updated {
