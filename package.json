@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env ROOT_URL=http://elliotderhay.dev meteor run",
-    "sim-prod": "cross-env ROOT_URL=http://prod.elliotderhay.dev meteor run --production --port 80"
+    "sim-prod": "cross-env ROOT_URL=http://prod.elliotderhay.dev meteor run --production"
   },
   "repository": {
     "type": "git",
