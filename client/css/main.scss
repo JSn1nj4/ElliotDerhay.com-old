@@ -1,0 +1,700 @@
+/* CSS declarations go here */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700');
+@import url('https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css');
+
+// Color variables
+$white: #fff;
+$d-gray: #090909;
+$d-gray-2: #151515;
+$gray: #555;
+$sea-green: #00C49A;
+$highlight-green: #85ffe4;
+$dark-green: #00130f;
+$success-green: #5ec256;
+$error-red: #ff436d;
+
+$default-fonts: 'Source Code Pro', monospace;
+
+// Mixins
+@mixin color-transitions($speed: 0.3s) {
+  -webkit-transition: color $speed;
+  -moz-transition: color $speed;
+  -o-transition: color $speed;
+  transition: color $speed;
+}
+
+@mixin color-bg-transitions($color-speed: 0.3s, $bg-speed: 0.3s) {
+  -webkit-transition: color $color-speed, background-color $bg-speed;
+  -moz-transition: color $color-speed, background-color $bg-speed;
+  -o-transition: color $color-speed, background-color $bg-speed;
+  transition: color $color-speed, background-color $bg-speed;
+}
+
+/* general styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: $d-gray;
+  color: $white;
+  font-family: $default-fonts;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0.83em 0;
+}
+
+p {
+  font-size: 16px;
+  padding: 0 0 2em 0;
+  line-height: 1.5em;
+}
+
+#page-container a {
+  color: $sea-green;
+  text-decoration: none;
+  @include color-transitions;
+
+  &:hover {
+    color: $highlight-green;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+
+  &.center {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+p > img,
+span > img {
+  display: inline;
+}
+
+
+
+
+
+/* specific element styles */
+
+header,
+#page-container,
+footer {
+  padding: 0;
+}
+
+header,
+footer {
+  color: $sea-green;
+  position: relative;
+}
+
+header {
+  z-index: 10;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#brand {
+  color: $white;
+  font-size: 40px;
+  line-height: 1em;
+  padding: 15px;
+  display: inline-block;
+
+  span {
+    color: $sea-green;
+    font-size: .7em;
+    margin: auto -.3em;
+    line-height: 1em;
+    vertical-align: middle;
+  }
+}
+
+#main-menu {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-size: 0;
+
+  a {
+    display: inline-block;
+    color: $sea-green;
+    text-align: right;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 1em;
+    padding: 23px 30px;
+    @include color-bg-transitions;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+#page-container {
+  background: $d-gray-2;
+  box-shadow: 0px 2px 4px #000;
+  color: $white;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+/* = ROWS AND COLUMNS = */
+/*
+  @TODO: figure out general row/column paddings and other styles
+*/
+.e_row { /* by default, all rows will be full-width */
+  width: 100%;
+  position: relative;
+  clear: both;
+}
+
+.row-fixed_width { /* @TODO: decide what the largest fixed width of the grid is */
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.row_inner {
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+.e_col {
+  position: relative;
+  float: left;
+}
+
+.col-inner {
+  padding: 20px 15px 0;
+}
+
+/* Styles for Coming Soon template */
+#page-coming-soon {
+  text-align: center;
+  padding: 160px 15px;
+
+  h1 {
+    font-size: 80px;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+}
+
+.banner-container {
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  padding: 90px 0 120px 0;
+
+  h1, h2, h3 {
+    font-weight: 400;
+    padding: 0.2em 0;
+    text-align: center;
+    color: $white;
+    text-shadow: $white 0 0 10px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+
+  }
+}
+
+#home_banner {
+  background-image: url(/img/Elliot.Color2-hd-outlined-green-dark.jpg);
+}
+
+#projects_banner {
+  background-image: url(/img/github-static-v2-dark.jpg);
+  background-position: center;
+}
+
+/* = PROJECTS STYLES = */
+
+.project-wrapper {
+  padding: 0 8px;
+  border: solid 1px $gray;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+
+  @at-root {
+    .project-title, & p {
+      padding-bottom: 16px;
+      line-height: 1em;
+    }
+  }
+}
+
+.project-title span {
+  font-family: $default-fonts;
+}
+
+.project-author, .project-last-updated {
+    padding-left: 24px;
+}
+
+footer {
+  padding: 30px 15px;
+}
+
+/* = PROJECT MANAGER LOGIN STYLES = */
+#login_form {
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: #0f0f0f;
+  border: solid 1px #4c4c4c;
+
+  p, input, button {
+    font-size: 18px;
+  }
+
+  p, input {
+    font-weight: bold;
+    color: $sea-green;
+    line-height: 50px;
+  }
+
+  p {
+    position: relative;
+    padding: 0 20px 0 50px;
+    text-align: center;
+
+    &:first-child {
+      padding-top: 10px;
+      text-align: left;
+
+      &:before {
+        content: "$";
+      }
+    }
+
+    &:nth-child(3) {
+      padding-bottom: 10px;
+    }
+  }
+
+  p:first-child:before,
+  span.blinky-carat {
+    display: block;
+    position: absolute;
+    line-height: 50px;
+    left: 20px;
+  }
+
+  span.blinky-carat {
+    visibility: hidden;
+    top: 0;
+  }
+
+  input {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+
+      + span.blinky-carat {
+        visibility: visible;
+      }
+    }
+    // Unfortunately, these selectors can't be used in groups :(
+    &::-webkit-form-placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+    &::placeholder {
+      color: rgba(0, 196, 154, .5);
+    }
+  }
+
+  button {
+    display: none;
+  }
+
+  + .error-message {
+    text-align: center;
+  }
+}
+
+// PROJECT MANAGER STYLES
+#project-manager-header-row {
+  .proj-col {
+    width: 50%;
+
+    &:first-child {
+      width: 90%;
+    }
+
+    &:last-child {
+      width: 10%;
+    }
+  }
+
+  @at-root { // Allows removing the parent from selectors
+  // The below compiles to `#project-manager-header-row h1, #logout, #logout .devicons-terminal_badge`
+    & h1, #logout, #logout .devicons-terminal_badge {
+      margin: 0;
+      padding: 0;
+      line-height: 40px;
+    }
+
+    &,
+    #project-manager-msg-box-row,
+    #project_col_headings,
+    .project-listing,
+    .project-manager-row {
+      position: relative;
+      overflow: hidden;
+      clear: both;
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: lighter;
+  }
+}
+
+#logout {
+  outline: $white solid thin;
+  outline-offset: -1px;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: $white;
+  font-size: 18px;
+  transition: background 0.5s, color 0.3s;
+
+  .devicons-terminal_badge {
+    margin-left: -10px;
+    margin-right: -6px;
+    font-size: 40px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $dark-green;
+  }
+}
+
+div.msg-box {
+  min-height: 36px;
+  padding: 14px 0;
+
+  p {
+    padding: 0;
+    margin: 0;
+
+    span {
+      padding: 3px 10px;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      font-weight: bold;
+
+      &.success {
+        color: $success-green;
+        border-color: $success-green;
+      }
+      &.error {
+        color: $error-red;
+        border-color: $error-red;
+      }
+    }
+  }
+}
+
+#project_col_headings {
+  @at-root { // For styles shared between #project_col_headings and other elements
+    &, .project-listing {
+      width: 100%;
+    }
+
+    &, .project-manager-row {
+      padding-top: 20px;
+    }
+  }
+
+  p {
+    padding: 0;
+  }
+}
+
+.proj-col {
+  position: relative;
+  float: left;
+
+  &.col-1 {
+    width: 20%;
+  }
+  &.col-2 {
+    width: 25%;
+  }
+  &.col-3 {
+    width: 10%;
+  }
+  &.col-4 {
+    width: 10%;
+  }
+  &.col-5 {
+    width: 25%;
+  }
+  &.col-6 {
+    width: 10%;
+  }
+}
+
+.proj-col-inner {
+  padding: 0 10px;
+}
+
+/* project field styles */
+
+.project-manager-row {
+  .field-wrapper {
+    padding: 0 10px 0 20px;
+    position: relative;
+    border-bottom: solid 2px $white;
+
+    &:before {
+      content: "$";
+      position: absolute;
+      line-height: 30px;
+      left: 0px;
+    }
+
+    &.field-select, &.field-checkbox {
+      padding: 0;
+
+      // For setting the `:before` of both `.field-select` and `.field-checkbox`
+      &:before {
+        display: none;
+      }
+    }
+    &.field-checkbox {
+      border: none;
+    }
+  }
+
+  input[type="text"], select, option {
+    color: $sea-green;
+    font-weight: bold;
+  }
+
+  input[type="text"], select {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+  }
+
+  input[type="text"] {
+    height: 30px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  select {
+    height: 30px;
+  }
+
+  option {
+    border: none;
+    background-color: $dark-green;
+  }
+
+  // styles for checkbox label altering trick
+  input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+
+    + label {
+      &, &:before {
+        display: inline-block;
+        width: 100%;
+      }
+
+      height: 30px;
+      text-align: center;
+
+      &:before {
+        border: solid 1px $sea-green;
+        background: transparent;
+        color: $sea-green;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 30px;
+        content: "No";
+        @include color-bg-transitions($bg-speed: 0.5s);
+      }
+    }
+
+    &:checked + label:before {
+      border: solid 1px $sea-green;
+      background: $sea-green;
+      color: $dark-green;
+      content: "Yes";
+    }
+  }
+}
+
+// save/delete buttons
+button.proj-btn {
+  @at-root {
+    &, #newProjectBtn {
+      background-color: transparent;
+      line-height: 30px;
+      font-size: 20px;
+      @include color-bg-transitions($bg-speed: 0.5s);
+    }
+  }
+
+  display: block;
+  float: left;
+  margin: 0;
+  outline: $sea-green solid thin;
+  outline-offset: -1px;
+  border: none;
+  width: 45%;
+  color: $sea-green;
+
+  &:first-child {
+    margin-right: 10%;
+  }
+
+  &:hover {
+    background-color: $sea-green;
+    color: $dark-green;
+  }
+}
+
+/* the new project button */
+#newProjectBtn {
+  width: 50px;
+  outline: $white solid thin;
+  outline-offset: -1px;
+  border: none;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $dark-green;
+  }
+}
+
+/* === RESPONSIVE STYLES === */
+/*
+  @TODO: Create grid system somewhat similar to what Bootstrap does
+    Note: I understand Bootstrap already exists, but I'm trying to create
+    something simpler that fits my needs rather than compiling a bloated,
+    pre-made stylesheet into my project.
+
+  Grid size notes:
+    - 16 columns across
+    - 15px side padding (inner)
+    - column class formatting as follows: .col-<1-16>-<xs-xl>
+    - Screen sizes: (ranging from XS to XL)
+      > XS:  320px
+      > SM:  480px
+      > MD:  768px
+      > LG:  992px
+      > XL: 1200px+
+    These sizes should be handled smallest to largest below
+*/
+
+@media only screen and (max-width: 319px) { /* everything below XS */
+  .col-4-md,
+  .col-5-md,
+  .col-8-sm, .col-8-md,
+  .col-12-md,
+  .col-16-xs, .col-16-lg {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 320px) { /* beginning of XS screens */
+  .col-4-md,
+  .col-5-md,
+  .col-8-sm, .col-8-md,
+  .col-12-md,
+  .col-16-xs, .col-16-lg {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 480px) { /* beginning of SM screens */
+  .col-8-sm {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) { /* beginning of MD screens */
+  .col-4-md {
+    width: 25%;
+  }
+  .col-5-md {
+    width: 31.25%;
+  }
+  .col-8-md {
+    width: 50%;
+  }
+  .col-12-md {
+    width: 75%;
+  }
+  .col-16-md {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) { /* beginning of LG screens */
+  .col-5-lg {
+    width: 31.25%;
+  }
+  .col-8-lg {
+    width: 50%;
+  }
+  .col-16-lg {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) { /* beginning of XL screens */
+
+}
