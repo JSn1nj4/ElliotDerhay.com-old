@@ -9,12 +9,6 @@ import '/imports/ui/components/Footer.js';
 import '/imports/ui/layouts/PageLayout.js';
 import '/imports/ui/layouts/ManagerLayout.js';
 
-// pages rendered by the route
-import '/imports/ui/pages/ComingSoon.js';
-import '/imports/ui/pages/Home.js';
-import '/imports/ui/pages/Projects.js';
-import '/imports/ui/pages/Contact.js';
-
 // Client-side routes
 let routes = [
   {route: '/', name: 'Home', template: 'PageLayout', content: 'Home'},
@@ -27,6 +21,11 @@ let routes = [
 routes.map(r => {
   FlowRouter.route(r.route, {
     name: r.name,
+    waitOn() {
+      if(r.content && r.content.length >= 1) {
+        return import(`/imports/ui/pages/${r.content}.js`);
+      }
+    },
     action() {
       if(r.content && r.content.length >= 1) {
         BlazeLayout.render(r.template, {
