@@ -13,8 +13,6 @@ import '/imports/ui/layouts/ManagerLayout.js';
 import '/imports/ui/pages/ComingSoon.js';
 import '/imports/ui/pages/Home.js';
 import '/imports/ui/pages/Projects.js';
-import '/imports/ui/pages/LoginPage.js';
-import '/imports/ui/pages/ManagerContent.js';
 import '/imports/ui/pages/Contact.js';
 
 // Client-side routes
