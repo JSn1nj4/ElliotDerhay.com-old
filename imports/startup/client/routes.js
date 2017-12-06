@@ -6,16 +6,16 @@ import '/imports/ui/components/Header.js';
 import '/imports/ui/components/Footer.js';
 
 // layouts for use in routes
-import '/imports/ui/layouts/PageLayout.html';
-import '/imports/ui/layouts/ManagerLayout.html';
+import '/imports/ui/layouts/PageLayout.js';
+import '/imports/ui/layouts/ManagerLayout.js';
 
 // pages rendered by the route
-import '/imports/ui/pages/ComingSoon.html';
-import '/imports/ui/pages/Home.html';
+import '/imports/ui/pages/ComingSoon.js';
+import '/imports/ui/pages/Home.js';
 import '/imports/ui/pages/Projects.js';
 import '/imports/ui/pages/LoginPage.js';
 import '/imports/ui/pages/ManagerContent.js';
-import '/imports/ui/pages/Contact.html';
+import '/imports/ui/pages/Contact.js';
 
 // Client-side routes
 let routes = [
