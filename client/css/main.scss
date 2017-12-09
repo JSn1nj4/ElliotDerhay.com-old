@@ -181,6 +181,27 @@ header {
   padding: 20px 15px 0;
 }
 
+// For grid rows
+.grid_row {
+  > .row_inner {
+    display: grid;
+    grid-gap: 15px;
+
+    > .e_col {
+      width: auto;
+      float: none;
+
+      > .col-inner {
+        padding: 0;
+      }
+    }
+  }
+
+  &.grid_2_cols > .row_inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Styles for Coming Soon template */
 #page-coming-soon {
   text-align: center;
