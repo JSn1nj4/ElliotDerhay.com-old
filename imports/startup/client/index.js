@@ -1,4 +1,4 @@
-import { Template } from 'meteor/templating';
+import { Template } from 'meteor/templating'; // eslint-disable-line no-unused-vars
 import './helpers.js';
 import './routes.js';
 
