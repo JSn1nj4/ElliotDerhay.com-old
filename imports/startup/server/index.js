@@ -7,9 +7,9 @@ import { Email } from 'meteor/email';
 const random = Math.random();
 
 Email.send({
-  from: 'elliot@example.com',
-  to: 'recipient@example.com',
-  replyTo: 'elliot@example.com',
+  from: 'Elliot Derhay <elliot@example.com>',
+  to: 'Recipient <recipient@example.com>',
+  replyTo: 'Elliot Derhay <elliot@example.com>',
   subject: 'Local test email',
   html: `<h1>Test email.</h1>
   <p>Random number: ${random}</p>`,
