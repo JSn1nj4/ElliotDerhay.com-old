@@ -4,6 +4,7 @@ import '/imports/api/projects/server/publications.js';
 import './fixtures.js';
 
 import { Email } from 'meteor/email';
+const random = Math.random();
 
 Email.send({
   from: 'elliot@example.com',
@@ -11,5 +12,6 @@ Email.send({
   replyTo: 'elliot@example.com',
   subject: 'Local test email',
   html: `<h1>Test email.</h1>
-  <p>Random number: ${Math.random()}</p>`
+  <p>Random number: ${random}</p>`,
+  text: `Test email. Random number: ${random}`
 });
