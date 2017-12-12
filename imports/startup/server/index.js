@@ -9,6 +9,7 @@ Email.send({
   from: 'elliot@example.com',
   to: 'recipient@example.com',
   replyTo: 'elliot@example.com',
-  text: `Test email.
-  Random number: ${Math.random()}`
+  subject: 'Local test email',
+  html: `<h1>Test email.</h1>
+  <p>Random number: ${Math.random()}</p>`
 });
