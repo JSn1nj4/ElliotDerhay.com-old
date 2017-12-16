@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env ROOT_URL=http://elliotderhay.test meteor run",
-    "sim-prod": "cross-env ROOT_URL=http://prod.elliotderhay.test meteor run --production"
+    "dev": "cross-env NODE_ENV=development meteor run",
+    "sim-prod": "cross-env NODE_ENV=development meteor run --production"
   },
   "repository": {
     "type": "git",
