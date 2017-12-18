@@ -198,7 +198,7 @@ header {
   }
 
   &.grid_2_cols > .row_inner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(16, 1fr);
   }
 }
 
@@ -678,11 +678,21 @@ button.proj-btn {
   .col-16-xs, .col-16-lg {
     width: 100%;
   }
+
+  .grid_row > .row_inner {
+    & > .col-8-sm,
+    & > .col-8-md {
+      grid-column: span 16;
+    }
+  }
 }
 
 @media only screen and (min-width: 480px) { /* beginning of SM screens */
   .col-8-sm {
     width: 50%;
+  }
+  .grid_row > .row_inner > .col-8-sm {
+    grid-column: span 8;
   }
 }
 
@@ -695,6 +705,9 @@ button.proj-btn {
   }
   .col-8-md {
     width: 50%;
+  }
+  .grid_row > .row_inner > .col-8-md {
+    grid-column: span 8;
   }
   .col-12-md {
     width: 75%;
