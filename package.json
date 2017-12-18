@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env ROOT_URL=http://elliotderhay.dev meteor run",
-    "sim-prod": "cross-env ROOT_URL=http://prod.elliotderhay.dev meteor run --production"
+    "dev": "cross-env NODE_ENV=development meteor run",
+    "sim-prod": "cross-env NODE_ENV=development meteor run --production"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,10 @@
   "homepage": "https://gitlab.com/JSn1nj4/elliotderhay.com#README",
   "private": true,
   "dependencies": {
-    "babel-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
-    "core-js": "^2.5.1",
-    "simpl-schema": "^0.2.3"
+    "core-js": "^2.5.3",
+    "simpl-schema": "^1.2.2"
   },
   "devDependencies": {
     "cross-env": "^5.1.1"
