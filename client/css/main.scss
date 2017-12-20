@@ -660,17 +660,7 @@ button.proj-btn {
     These sizes should be handled smallest to largest below
 */
 
-@media only screen and (max-width: 319px) { /* everything below XS */
-  .col-4-md,
-  .col-5-md,
-  .col-8-sm, .col-8-md,
-  .col-12-md,
-  .col-16-xs, .col-16-lg {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 320px) { /* beginning of XS screens */
+@media only screen and (min-width: 0px) { /* Defaults for everything below small screen sizes */
   .col-4-md,
   .col-5-md,
   .col-8-sm, .col-8-md,
