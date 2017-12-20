@@ -669,9 +669,13 @@ button.proj-btn {
     width: 100%;
   }
 
+  // Grid-specific styles
   .grid_row > .row_inner {
-    & > .col-8-sm,
-    & > .col-8-md {
+    & > .col-4-md,
+    & > .col-5-md,
+    & > .col-8-sm, & > .col-8-md,
+    & > .col-12-md,
+    & > .col-16-xs, & > .col-16-lg {
       grid-column: span 16;
     }
   }
@@ -681,8 +685,12 @@ button.proj-btn {
   .col-8-sm {
     width: 50%;
   }
-  .grid_row > .row_inner > .col-8-sm {
-    grid-column: span 8;
+
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-8-md {
+      grid-column: span 8;
+    }
   }
 }
 
@@ -696,14 +704,30 @@ button.proj-btn {
   .col-8-md {
     width: 50%;
   }
-  .grid_row > .row_inner > .col-8-md {
-    grid-column: span 8;
-  }
   .col-12-md {
     width: 75%;
   }
   .col-16-md {
     width: 100%;
+  }
+
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-4-md {
+      grid-column: span 4;
+    }
+    & > .col-5-md {
+      grid-column: span 5;
+    }
+    & > .col-8-md {
+      grid-column: span 8;
+    }
+    & > .col-12-md {
+      grid-column: span 12;
+    }
+    & > .col-16-md {
+      grid-column: span 16;
+    }
   }
 }
 
@@ -716,6 +740,19 @@ button.proj-btn {
   }
   .col-16-lg {
     width: 100%;
+  }
+
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-5-lg {
+      grid-column: span 5;
+    }
+    & > .col-8-lg {
+      grid-column: span 8;
+    }
+    & > .col-16-lg {
+      grid-column: span 16;
+    }
   }
 }
 
