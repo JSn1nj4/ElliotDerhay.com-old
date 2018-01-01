@@ -64,7 +64,7 @@
               </div>
             </div>
             {{#each entry in getProjectsList}}
-              {{> SingleProjectEntry entry=entry @index=@index}}
+              {{> SingleProjectEntry entry=entry @index=@index msgCallback=getMsgCallback}}
             {{/each}}
             <div class="project-manager-row">
               <div class="proj-col">

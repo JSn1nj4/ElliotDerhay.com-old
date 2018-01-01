@@ -61,5 +61,8 @@ Template.ManagerContent.helpers({
   },
   msg() { // return the message object
     return Template.instance().msgObj.get();
+  },
+  getMsgCallback() { // For passing the msgCallback method to children  
+    return Template.instance().msgCallback;
   }
 });
