@@ -168,7 +168,7 @@ header {
 }
 
 .row_inner {
-  padding-top: 40px;
+  padding: 40px 15px 0 15px;
   overflow: hidden;
 }
 
@@ -179,6 +179,27 @@ header {
 
 .col-inner {
   padding: 20px 15px 0;
+}
+
+// For grid rows
+.grid_row {
+  > .row_inner {
+    display: grid;
+    grid-gap: 15px;
+
+    > .e_col {
+      width: auto;
+      float: none;
+
+      > .col-inner {
+        padding: 0;
+      }
+    }
+  }
+
+  &.grid_2_cols > .row_inner {
+    grid-template-columns: repeat(16, 1fr);
+  }
 }
 
 /* Styles for Coming Soon template */
@@ -639,7 +660,7 @@ button.proj-btn {
     These sizes should be handled smallest to largest below
 */
 
-@media only screen and (max-width: 319px) { /* everything below XS */
+@media only screen and (min-width: 0px) { /* Defaults for everything below small screen sizes */
   .col-4-md,
   .col-5-md,
   .col-8-sm, .col-8-md,
@@ -647,21 +668,29 @@ button.proj-btn {
   .col-16-xs, .col-16-lg {
     width: 100%;
   }
-}
 
-@media only screen and (min-width: 320px) { /* beginning of XS screens */
-  .col-4-md,
-  .col-5-md,
-  .col-8-sm, .col-8-md,
-  .col-12-md,
-  .col-16-xs, .col-16-lg {
-    width: 100%;
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-4-md,
+    & > .col-5-md,
+    & > .col-8-sm, & > .col-8-md,
+    & > .col-12-md,
+    & > .col-16-xs, & > .col-16-lg {
+      grid-column: span 16;
+    }
   }
 }
 
 @media only screen and (min-width: 480px) { /* beginning of SM screens */
   .col-8-sm {
     width: 50%;
+  }
+
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-8-md {
+      grid-column: span 8;
+    }
   }
 }
 
@@ -681,6 +710,25 @@ button.proj-btn {
   .col-16-md {
     width: 100%;
   }
+
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-4-md {
+      grid-column: span 4;
+    }
+    & > .col-5-md {
+      grid-column: span 5;
+    }
+    & > .col-8-md {
+      grid-column: span 8;
+    }
+    & > .col-12-md {
+      grid-column: span 12;
+    }
+    & > .col-16-md {
+      grid-column: span 16;
+    }
+  }
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
@@ -692,6 +740,19 @@ button.proj-btn {
   }
   .col-16-lg {
     width: 100%;
+  }
+
+  // Grid-specific styles
+  .grid_row > .row_inner {
+    & > .col-5-lg {
+      grid-column: span 5;
+    }
+    & > .col-8-lg {
+      grid-column: span 8;
+    }
+    & > .col-16-lg {
+      grid-column: span 16;
+    }
   }
 }
 
