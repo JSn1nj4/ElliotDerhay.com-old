@@ -1,3 +1,4 @@
+import { ReactiveVar } from 'meteor/reactive-var';
 import { projects } from '/imports/api/projects/projects.js';
 import '../components/SingleProjectEntry.js';
 import './ManagerContent.html';
