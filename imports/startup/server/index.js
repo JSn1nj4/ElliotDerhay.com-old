@@ -1,17 +1,18 @@
 // Server startup entry point
+// @TODO: Figure out how to use SSL later. Would be nice to have.
+// import { SSLProxy } from 'meteor/tarang:ssl';
 import '/imports/api/projects/methods.js';
 import '/imports/api/projects/server/publications.js';
 import './fixtures.js';
 
-import { Email } from 'meteor/email';
-const random = Math.random();
-
-Email.send({
-  from: 'Elliot Derhay <elliot@example.com>',
-  to: 'Recipient <recipient@example.com>',
-  replyTo: 'Elliot Derhay <elliot@example.com>',
-  subject: 'Local test email',
-  html: `<h1>Test email.</h1>
-  <p>Random number: ${random}</p>`,
-  text: `Test email. Random number: ${random}`
-});
+if(process.env.NODE_ENV == 'development') {
+  process.env.ROOT_URL = 'elliotderhay.test';
+  // SSLProxy({
+  //   port: 6000,
+  //   ssl: {
+  //     key: Assets.getText('certs/ed-key.pem'),
+  //     cert: Assets.getText('certs/ed-cert.pem'),
+  //     ca: Assets.getText('certs/ed-csr.pem')
+  //   }
+  // });
+}
