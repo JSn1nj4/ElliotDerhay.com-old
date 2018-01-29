@@ -1,9 +1,7 @@
 import './SingleProjectEntry.html';
 
 Template.SingleProjectEntry.onCreated(function singleProjectEntryCreated() {
-  // Give the child template access to this callback function
-  this.parent = this.findParentTemplate('ManagerContent');
-  this.msgCallback = this.parent.msgCallback;
+  this.msgCallback = this.data.msgCallback;
   this._id = this.data.entry._id;
 });
 

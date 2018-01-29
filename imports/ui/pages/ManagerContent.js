@@ -1,3 +1,4 @@
+import { ReactiveVar } from 'meteor/reactive-var';
 import { projects } from '/imports/api/projects/projects.js';
 import '../components/SingleProjectEntry.js';
 import './ManagerContent.html';
@@ -60,5 +61,8 @@ Template.ManagerContent.helpers({
   },
   msg() { // return the message object
     return Template.instance().msgObj.get();
+  },
+  getMsgCallback() { // For passing the msgCallback method to children  
+    return Template.instance().msgCallback;
   }
 });
