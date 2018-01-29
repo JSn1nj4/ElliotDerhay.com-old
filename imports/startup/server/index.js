@@ -7,6 +7,14 @@ import './fixtures.js';
 
 if(process.env.NODE_ENV == 'development') {
   process.env.ROOT_URL = 'elliotderhay.test';
+}
+
+if(process.env.NODE_ENV == 'prod-sim') {
+  process.env.ROOT_URL = 'prod.elliotderhay.test';
+}
+
+if(process.env.NODE_ENV !== 'production') {
+  process.env.MAIL_URL = 'smtp://localhost:1025';
   // SSLProxy({
   //   port: 6000,
   //   ssl: {
