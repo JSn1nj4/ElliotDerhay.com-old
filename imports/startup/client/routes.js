@@ -59,7 +59,7 @@ publicRoutes.route('/contact', {
   action() {
     import('/imports/ui/pages/ComingSoon.js').then(() => {
       BlazeLayout.render('PageLayout', {
-        content: 'ComingSoon'
+        content: 'Contact'
       });
     });
   }
