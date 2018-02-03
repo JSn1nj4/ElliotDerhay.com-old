@@ -57,7 +57,7 @@ publicRoutes.route('/experiments', {
 publicRoutes.route('/contact', {
   name: 'Contact',
   action() {
-    import('/imports/ui/pages/ComingSoon.js').then(() => {
+    import('/imports/ui/pages/Contact.js').then(() => {
       BlazeLayout.render('PageLayout', {
         content: 'Contact'
       });
