@@ -9,7 +9,7 @@ Template.HeroImage.onCreated(function heroImageOnCreated() {
       content: false
     };
 
-    if(i == this.heroSettings.contentColumn - 1) {
+    if(i === this.heroSettings.contentColumn - 1) {
       column.content = this.heroSettings.content;
     }
 
