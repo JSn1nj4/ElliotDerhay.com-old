@@ -1,19 +1,24 @@
 <template name="HeroImage">
-  <section id="home_banner" class="banner-container">
+  <section id="{{heroId}}" class="banner-container">
     <div class="e_row row-fixed_width">
       <div class="row_inner">
-        <div class="e_col col-12-md">
-          <div class="col-inner">
-            <h1>ELLIOT DERHAY</h1>
-            <h3>Lorem ipsum dolor sit amet, mea no movet scaevola assueverit, pro ferri choro maiestatis in</h3>
-          </div>
-        </div>
-        <div class="e_col col-4-md">
-          <div class="col-inner">
-            <p>&nbsp;</p>
-          </div>
-        </div>
+      {{#each column in heroColumns}}
+        {{> HeroImageColumn column=column}}
+      {{/each}}
       </div>
     </div>
   </section>
+</template>
+
+<template name="HeroImageColumn">
+  <div class="e_col col-{{column.span}}-md">
+    <div class="col-inner">
+    {{#if column.content}}
+      <h1>{{column.content.title}}</h1>
+      <h3>{{column.content.tagline}}</h3>
+    {{else}}
+      <p>&nbsp;</p>
+    {{/if}}
+    </div>
+  </div>
 </template>
