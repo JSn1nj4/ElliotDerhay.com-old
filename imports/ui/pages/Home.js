@@ -1,5 +1,5 @@
-import './Home.html';
 import '../components/HeroImage.js';
+import './Home.html';
 
 Template.Home.onCreated(function homeOnCreated() {
   this.heroSettings = {
