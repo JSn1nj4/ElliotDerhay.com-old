@@ -1,7 +1,7 @@
 import './Home.html';
 import '../components/HeroImage.js';
 
-Template.Home.onCreated(function() {
+Template.Home.onCreated(function homeOnCreated() {
   this.heroSettings = {
     id: 'home_banner',
     content: {
