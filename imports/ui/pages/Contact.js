@@ -1,4 +1,6 @@
 import '../components/HeroImage.js';
+import '../components/Socials.js';
+import '../components/ContactForm.js';
 import './Contact.html';
 
 Template.Contact.onCreated(function contactOnCreated() {
