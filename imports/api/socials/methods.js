@@ -2,7 +2,7 @@ import simpleIcons from 'simple-icons';
 import SimpleSchema from 'simpl-schema';
 
 Meteor.methods({
-  getIcon({ names }) {
+  getIconList({ names }) {
 
     let iconContext = new SimpleSchema({
       name: String
