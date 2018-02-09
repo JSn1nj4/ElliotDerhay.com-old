@@ -2,23 +2,29 @@ import simpleIcons from 'simple-icons';
 import SimpleSchema from 'simpl-schema';
 
 Meteor.methods({
-  getIcon({ name }) {
+  getIcon({ names }) {
 
     let iconContext = new SimpleSchema({
       name: String
     }).newContext();
 
-    iconContext.validate({ name });
+    let icons = names.map((name, i) => {
+      iconContext.validate({ name });
 
-    const isValid = iconContext.isValid();
-    if(!isValid) {
-      throw new Meteor.error('Invalid icon name format');
-    }
+      let isValid = iconContext.isValid();
+      if(!isValid) {
+        throw new Meteor.error('Invalid icon name format');
+      }
 
-    console.log(simpleIcons[name]);
+      let icon = { svg: simpleIcons[name] };
+      if(!icon.svg || icon.svg === '') {
+        icon.error = 'Icon not found';
+      }
+      
+      console.log(icon);
+      return icon;
+    });
 
-    return {
-      success: 'Icon found!'
-    }
+    return icons;
   }
 });
