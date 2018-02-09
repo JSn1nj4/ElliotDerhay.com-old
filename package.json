@@ -24,7 +24,8 @@
     "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
     "core-js": "^2.5.3",
-    "simpl-schema": "^1.2.2"
+    "simpl-schema": "^1.2.2",
+    "simple-icons": "^1.2.19"
   },
   "devDependencies": {
     "cross-env": "^5.1.1"
