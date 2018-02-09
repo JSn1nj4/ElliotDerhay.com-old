@@ -15,8 +15,8 @@ Template.Contact.onCreated(function contactOnCreated() {
   };
 
   this.socials = [
-    { class: 'github', link: 'https://github.com/JSn1nj4' },
-    { class: 'twitter', link: 'https://twitter.com/JSn1nj4' }
+    { name: 'github', link: 'https://github.com/JSn1nj4' },
+    { name: 'twitter', link: 'https://twitter.com/JSn1nj4' }
   ];
 });
 
