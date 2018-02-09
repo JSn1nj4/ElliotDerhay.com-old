@@ -4,6 +4,7 @@ Template.Socials.onCreated(function socialsOnCreated(){
   // console.log(Meteor.call(''));
   this.icons = { // @TODO: set later using Meteor method
     github: 'github',
+    gitlab: 'gitlab',
     twitter: 'twitter'
   };
 });
