@@ -1,6 +1,7 @@
 <template name="Socials">
   <p class="socials">
-    <a href="https://github.com/JSn1nj4"><i class="socicon-github"></i></a>
-    <a href="https://twitter.com/JSn1nj4"><i class="socicon-twitter"></i></a>
+    {{#each icon in icons}}
+      <a href="{{icon.link}}"><i class="socicon-{{icon.class}}"></i></a>
+    {{/each}}
   </p>
 </template>

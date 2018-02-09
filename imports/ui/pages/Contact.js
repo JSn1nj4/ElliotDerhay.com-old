@@ -13,10 +13,18 @@ Template.Contact.onCreated(function contactOnCreated() {
     layout: '12,4',
     contentColumn: 1
   };
+
+  this.socials = [
+    { class: 'github', link: 'https://github.com/JSn1nj4' },
+    { class: 'twitter', link: 'https://twitter.com/JSn1nj4' }
+  ];
 });
 
 Template.Contact.helpers({
   getHeroSettings() {
     return Template.instance().heroSettings;
+  },
+  getSocials() {
+    return Template.instance().socials;
   }
 });
