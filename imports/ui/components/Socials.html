@@ -1,12 +1,14 @@
 <template name="Socials">
-  <p class="socials">
-    {{#each icon in icons}}
-      <a href="{{icon.link}}"><i class="socicon-{{icon.name}}"></i></a>
-    {{/each}}
-  </p>
-  <p class="socials svg">
-    {{#each icon in icons}}
-      <a href="{{icon.link}}">{{getSocialIcon icon.name}}</a>
-    {{/each}}
-  </p>
+  <div class="socials-wrapper">
+    <p class="socials">
+      {{#each icon in icons}}
+        <a href="{{icon.link}}"><i class="socicon-{{icon.name}}"></i></a>
+      {{/each}}
+    </p>
+    <p class="socials svg">
+      {{#each icon in icons}}
+        <a href="{{icon.link}}">{{getSocialIcon icon.name}}</a>
+      {{/each}}
+    </p>
+  </div>
 </template>
