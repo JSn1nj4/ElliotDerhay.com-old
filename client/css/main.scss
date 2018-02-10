@@ -643,6 +643,16 @@ button.proj-btn {
 
 /* === CONTACT FORM === */
 
+/* === SOCIAL MEDIA ICONS === */
+.socials svg {
+  fill: $sea-green;
+  max-width: 30px;
+  @include color-transitions($property: fill, $speed: 0.3s);
+
+  &:hover {
+    fill: #fff;
+  }
+}
 
 /* === FOOTER === */
 footer {
