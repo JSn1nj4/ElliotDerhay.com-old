@@ -4,20 +4,18 @@ import './Socials.html';
 
 Template.Socials.onCreated(function socialsOnCreated(){
   Meteor.subscribe('iconCollection');
-
-  iconCollection.find({}).map((val) => {
-    console.log(val);
-  });
-
-  this.icons = { // @TODO: set later using Meteor method
-    github: 'github',
-    gitlab: 'gitlab',
-    twitter: 'twitter'
+  this.fetchIcon = (title) => {
+    return iconCollection.findOne({ title });
   };
 });
 
 Template.Socials.helpers({
-  getSocialIcon(name) {
-    return Template.instance().icons[name];
+  getIcon(name) {
+    return Template.instance().fetchIcon(name);
+  },
+  getIconList(list) {
+    return list.map((item) => {
+      return Template.instance().fetchIcon(item.name);
+    });
   }
 });
