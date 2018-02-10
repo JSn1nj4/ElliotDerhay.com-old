@@ -78,8 +78,8 @@ let defaultIconsList = [
 ];
 
 defaultIconsList.map(doc => {
-  let iconsFound = iconCollection.find({ name: doc.icon.title }).fetch().length;
+  let iconsFound = iconCollection.find({ title: doc.icon.title }).fetch().length;
   if(iconsFound < 1) {
-    iconCollection.insert({ name: doc.icon.title, icon: doc.icon, link: doc.link });
+    iconCollection.insert({ ...doc.icon, link: doc.link });
   }
 });
