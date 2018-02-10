@@ -5,7 +5,10 @@ import './Socials.html';
 Template.Socials.onCreated(function socialsOnCreated(){
   Meteor.subscribe('iconCollection');
 
-  // console.log(Meteor.call(''));
+  iconCollection.find({}).map((val) => {
+    console.log(val);
+  });
+
   this.icons = { // @TODO: set later using Meteor method
     github: 'github',
     gitlab: 'gitlab',
