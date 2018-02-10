@@ -1,4 +1,6 @@
 import { projects } from '/imports/api/projects/projects.js';
+import simpleIcons from 'simple-icons';
+import { iconCollection } from '/imports/api/socials/socials.js';
 import { Roles } from 'meteor/alanning:roles';
 // Users to add if they don't exist
 let username = 'JSn1nj4';
@@ -65,5 +67,19 @@ dummyProjectData.map(doc => {
   let projectsFound = projects.find({name: doc.name}).fetch().length;
   if(projectsFound < 1) {
     projects.insert(doc);
+  }
+});
+
+// Setup default SVG icons
+let defaultIconsList = [
+  { icon: simpleIcons['GitHub'], link: 'https://github.com/JSn1nj4' },
+  { icon: simpleIcons['GitLab'], link: 'https://gitlab.com/JSn1nj4' },
+  { icon: simpleIcons['Twitter'], link: 'https://twitter.com/JSn1nj4' }
+];
+
+defaultIconsList.map(doc => {
+  let iconsFound = iconCollection.find({ name: doc.icon.title }).fetch().length;
+  if(iconsFound < 1) {
+    iconCollection.insert({ name: doc.icon.title, icon: doc.icon, link: doc.link });
   }
 });

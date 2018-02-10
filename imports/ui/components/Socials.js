@@ -1,12 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
+import { iconCollection } from '/imports/api/socials/socials.js';
 import './Socials.html';
 
 Template.Socials.onCreated(function socialsOnCreated(){
-  const socialIcons = new Mongo.Collection('socialIcons');
-  Meteor.subscribe('socialIcons');
-
-  let currentSocialIcons = socialIcons.find({});
+  Meteor.subscribe('iconCollection');
 
   // console.log(Meteor.call(''));
   this.icons = { // @TODO: set later using Meteor method
