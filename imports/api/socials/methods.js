@@ -1,30 +1,41 @@
 import simpleIcons from 'simple-icons';
 import SimpleSchema from 'simpl-schema';
+import { socialsList } from './socials.js';
 
 Meteor.methods({
-  getIconList({ names }) {
+  getIconList({ icons }) {
 
     let iconContext = new SimpleSchema({
-      name: String
+      name: String,
+      url: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Url
+      }
     }).newContext();
 
-    let icons = names.map((name, i) => {
-      iconContext.validate({ name });
+    let errors = icons.map((iconObject) => {
+      let name = iconObject.name;
+      let url = iconObject.url;
+
+      iconContext.validate({ name, url });
 
       let isValid = iconContext.isValid();
       if(!isValid) {
-        throw new Meteor.error('Invalid icon name format');
+        console.log(`Invalid icon data:\n\tname: ${name}\n\turl: ${url}\n`);
+        throw new Meteor.error('Invalid icon data');
       }
 
-      let icon = { svg: simpleIcons[name] };
-      if(!icon.svg || icon.svg === '') {
-        icon.error = 'Icon not found';
+      let icon = simpleIcons[name];
+      if(!icon || icon === '') {
+        return `Icon not found: ${name}`;
       }
-      
+
       console.log(icon);
-      return icon;
+      socialsList.push({ icon, url });
     });
 
-    return icons;
+    if( errors.length ) {
+      return errors;
+    }
   }
 });
