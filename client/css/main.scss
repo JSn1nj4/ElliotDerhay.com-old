@@ -652,11 +652,18 @@ button.proj-btn {
   &:hover {
     fill: #fff;
   }
+
+  @at-root {
+    footer & {
+      max-width: 20px;
+    }
+  }
 }
 
 /* === FOOTER === */
 footer {
-  padding: 30px 15px;
+  padding: 30px 15px 0;
+  text-align: center;
 }
 
 /* === RESPONSIVE STYLES === */
