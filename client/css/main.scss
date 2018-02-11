@@ -691,6 +691,10 @@ footer {
     display: none;
   }
 
+  .visible-sm {
+    display: none;
+  }
+
   .col-4-sm, .col-4-md,
   .col-5-md,
   .col-8-sm, .col-8-md,
@@ -719,6 +723,10 @@ footer {
     display: none;
   }
 
+  .visible-sm {
+    display: initial;
+  }
+
   .col-4-sm {
     width: 25%;
   }
@@ -742,6 +750,10 @@ footer {
     display: initial;
   }
   .hidden-md {
+    display: none;
+  }
+
+  .visible-sm {
     display: none;
   }
 
