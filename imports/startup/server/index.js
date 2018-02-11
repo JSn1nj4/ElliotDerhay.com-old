@@ -3,6 +3,8 @@
 // import { SSLProxy } from 'meteor/tarang:ssl';
 import '/imports/api/projects/methods.js';
 import '/imports/api/projects/server/publications.js';
+import '/imports/api/socials/server/publications.js';
+import '/imports/api/socials/methods.js';
 import './fixtures.js';
 
 if(process.env.NODE_ENV == 'development') {
