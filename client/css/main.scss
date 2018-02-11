@@ -687,7 +687,11 @@ footer {
 */
 
 @media only screen and (min-width: 0px) { /* Defaults for everything below small screen sizes */
-  .col-4-md,
+  .hidden-xs {
+    display: none;
+  }
+
+  .col-4-sm, .col-4-md,
   .col-5-md,
   .col-8-sm, .col-8-md,
   .col-12-md,
@@ -697,7 +701,7 @@ footer {
 
   // Grid-specific styles
   .grid_row > .row_inner {
-    & > .col-4-md,
+    & > .col-4-sm, & > .col-4-md,
     & > .col-5-md,
     & > .col-8-sm, & > .col-8-md,
     & > .col-12-md,
@@ -708,19 +712,39 @@ footer {
 }
 
 @media only screen and (min-width: 480px) { /* beginning of SM screens */
+  .hidden-xs {
+    display: initial;
+  }
+  .hidden-sm {
+    display: none;
+  }
+
+  .col-4-sm {
+    width: 25%;
+  }
   .col-8-sm {
     width: 50%;
   }
 
   // Grid-specific styles
   .grid_row > .row_inner {
-    & > .col-8-md {
+    & > .col-4-sm {
+      grid-column: span 4;
+    }
+    & > .col-8-sm {
       grid-column: span 8;
     }
   }
 }
 
 @media only screen and (min-width: 768px) { /* beginning of MD screens */
+  .hidden-sm {
+    display: initial;
+  }
+  .hidden-md {
+    display: none;
+  }
+
   .col-4-md {
     width: 25%;
   }
@@ -758,6 +782,13 @@ footer {
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
+  .hidden-md {
+    display: initial;
+  }
+  .hidden-lg {
+    display: none;
+  }
+
   .col-5-lg {
     width: 31.25%;
   }
@@ -783,5 +814,10 @@ footer {
 }
 
 @media only screen and (min-width: 1200px) { /* beginning of XL screens */
-
+  .hidden-lg {
+    display: initial;
+  }
+  .hidden-xl {
+    display: none;
+  }
 }
