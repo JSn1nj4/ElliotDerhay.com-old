@@ -1,17 +1,4 @@
 import { projects } from '/imports/api/projects/projects.js';
-import { Roles } from 'meteor/alanning:roles';
-// Users to add if they don't exist
-let username = 'JSn1nj4';
-if( Meteor.users.find({username: username}).fetch().length < 1 ) {
-
-  let userId = Accounts.createUser({
-    username: 'JSn1nj4',
-    password: '@FCV!x5z$%6HFcmSO%TTApWP*xQiB19@'
-  });
-
-  Accounts.addEmail( userId, 'e.j.derhay@gmail.com', true);
-  Roles.addUsersToRoles( userId, 'sensei' );
-}
 
 // Dummy projects to load if they don't exist
 let dummyProjectData = [
