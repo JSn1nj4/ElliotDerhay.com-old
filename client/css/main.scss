@@ -52,6 +52,42 @@ p {
   line-height: 1.5em;
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+  color: $white;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-bottom: solid 2px $white;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2px 0 8px 0;
+  @include color-transitions($property: border-color);
+
+  &:focus {
+    border-bottom-color: $sea-green;
+    outline: none;
+  }
+}
+
+button {
+  outline: $sea-green solid thin;
+  outline-offset: -1px;
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: $sea-green;
+  font-size: 18px;
+  @include color-bg-transitions($bg-speed: 0.5s);
+
+  &:hover {
+    background-color: $sea-green;
+    color: $d-gray;
+  }
+}
+
 #page-container a {
   color: $sea-green;
   text-decoration: none;
