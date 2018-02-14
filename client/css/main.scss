@@ -640,6 +640,7 @@ button.proj-btn {
       background-color: transparent;
       line-height: 30px;
       font-size: 20px;
+      padding: 1px 6px;
       @include color-bg-transitions($bg-speed: 0.5s);
     }
   }
