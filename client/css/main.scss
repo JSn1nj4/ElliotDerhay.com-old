@@ -24,6 +24,19 @@ $default-fonts: 'Source Code Pro', monospace;
   transition: $property $speed;
 }
 
+// List expected (prop speed, prop speed, ...)
+@mixin each-transitions($settings...) {
+  $set: null;
+  @each $transition in $settings {
+    $set: $set, $transition;
+  }
+
+  -webkit-transition: $set;
+  -moz-transition: $set;
+  -o-transition: $set;
+  transition: $set;
+}
+
 @mixin color-bg-transitions($color-speed: 0.3s, $bg-speed: 0.3s) {
   -webkit-transition: color $color-speed, background-color $bg-speed;
   -moz-transition: color $color-speed, background-color $bg-speed;
@@ -59,17 +72,21 @@ textarea {
   margin: 0;
   padding: 0;
   border: none;
-  background: transparent;
-  border-bottom: solid 2px $white;
+  background: rgba(0,0,0,0.1);
+  border-bottom: solid 2px $gray;
   width: 100%;
   box-sizing: border-box;
-  padding: 2px 0 8px 0;
-  @include color-transitions($property: border-color);
+  padding: 8px;
+  @include each-transitions(color 0.3s, border-color 0.5s);
 
   &:focus {
     border-bottom-color: $sea-green;
     outline: none;
   }
+}
+
+textarea {
+  min-height: 100px;
 }
 
 button {
@@ -193,7 +210,8 @@ header {
 /*
   @TODO: figure out general row/column paddings and other styles
 */
-.e_row { /* by default, all rows will be full-width */
+.e_row,
+.e_row_inner { /* by default, all rows will be full-width */
   width: 100%;
   position: relative;
   clear: both;
@@ -207,15 +225,30 @@ header {
 .row_inner {
   padding: 40px 15px 0 15px;
   overflow: hidden;
+
+  @at-root {
+    .e_row_inner > & {
+      padding: 0;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
 }
 
-.e_col {
+.e_col,
+.e_col_inner {
   position: relative;
   float: left;
 }
 
 .col-inner {
   padding: 20px 15px 0;
+
+  @at-root {
+    .e_col_inner > & {
+      padding: 0 10px;
+    }
+  }
 }
 
 // For grid rows
