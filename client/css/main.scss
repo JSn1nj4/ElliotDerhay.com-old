@@ -65,7 +65,7 @@ textarea {
   margin: 0;
   padding: 0;
   border: none;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.2);
   border-bottom: solid 2px $gray;
   width: 100%;
   box-sizing: border-box;
@@ -574,7 +574,7 @@ div.msg-box {
     padding: 0 10px 0 20px;
     position: relative;
     border-bottom: solid 2px $gray;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
 
     &:before {
       content: "$";
