@@ -756,9 +756,11 @@ footer {
     display: none;
   }
 
+  .col-3-sm,
   .col-4-sm, .col-4-md,
   .col-5-md,
   .col-8-sm, .col-8-md,
+  .col-10-sm,
   .col-12-md,
   .col-16-xs, .col-16-lg {
     width: 100%;
@@ -766,9 +768,11 @@ footer {
 
   // Grid-specific styles
   .grid_row > .row_inner {
+    & > .col-3-sm,
     & > .col-4-sm, & > .col-4-md,
     & > .col-5-md,
     & > .col-8-sm, & > .col-8-md,
+    & > .col-10-sm,
     & > .col-12-md,
     & > .col-16-xs, & > .col-16-lg {
       grid-column: span 16;
@@ -788,11 +792,17 @@ footer {
     display: initial;
   }
 
+  .col-3-sm {
+    width: 18.75%
+  }
   .col-4-sm {
     width: 25%;
   }
   .col-8-sm {
     width: 50%;
+  }
+  .col-10-sm {
+    width: 62.5%;
   }
 
   // Grid-specific styles
@@ -802,6 +812,9 @@ footer {
     }
     & > .col-8-sm {
       grid-column: span 8;
+    }
+    & > .col-10-sm {
+      grid-column: span 10;
     }
   }
 }
