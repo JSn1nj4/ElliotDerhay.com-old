@@ -50,6 +50,12 @@ p {
   font-size: 16px;
   padding: 0 0 2em 0;
   line-height: 1.5em;
+
+  @at-root {
+    form & {
+      padding-bottom: 1em;
+    }
+  }
 }
 
 input[type="text"],
@@ -63,7 +69,7 @@ textarea {
   border-bottom: solid 2px $gray;
   width: 100%;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 15px;
   @include each-transitions(color 0.3s, border-color 0.5s);
 
   &:focus {
