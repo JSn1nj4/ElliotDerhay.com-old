@@ -707,7 +707,7 @@ button.proj-btn {
 .socials svg {
   fill: $sea-green;
   max-width: 30px;
-  @include each-transitions((color 0.3s));
+  @include each-transitions((fill 0.3s));
 
   &:hover {
     fill: #fff;
