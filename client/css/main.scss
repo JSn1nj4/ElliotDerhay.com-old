@@ -478,7 +478,7 @@ header {
   background-color: transparent;
   color: $white;
   font-size: 18px;
-  transition: background 0.5s, color 0.3s;
+  @include each-transitions((color $default-speed, background 0.5s));
 
   .devicons-terminal_badge {
     margin-left: -10px;
