@@ -573,7 +573,8 @@ div.msg-box {
   .field-wrapper {
     padding: 0 10px 0 20px;
     position: relative;
-    border-bottom: solid 2px $white;
+    border-bottom: solid 2px $gray;
+    background-color: rgba(0,0,0,0.1);
 
     &:before {
       content: "$";
