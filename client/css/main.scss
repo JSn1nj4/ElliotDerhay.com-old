@@ -15,6 +15,7 @@ $success-green: #5ec256;
 $error-red: #ff436d;
 
 $default-fonts: 'Source Code Pro', monospace;
+$default-speed: 0.3s;
 
 // Mixins
 
@@ -70,7 +71,7 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  @include each-transitions(color 0.3s, border-color 0.5s);
+  @include each-transitions((color $default-speed, border-color 0.5s));
 
   &:focus {
     border-bottom-color: $sea-green;
@@ -90,7 +91,7 @@ button {
   background-color: transparent;
   color: $sea-green;
   font-size: 18px;
-  @include each-transitions((color 0.3s, background-color 0.5s));
+  @include each-transitions((color $default-speed, background-color 0.5s));
 
   &:hover {
     background-color: $sea-green;
@@ -101,7 +102,7 @@ button {
 #page-container a {
   color: $sea-green;
   text-decoration: none;
-  @include each-transitions((color 0.3s));
+  @include each-transitions((color $default-speed));
 
   &:hover {
     color: $highlight-green;
@@ -183,7 +184,7 @@ header {
     font-size: 24px;
     line-height: 1em;
     padding: 23px 30px;
-    @include each-transitions((color 0.3s, background-color 0.3s));
+    @include each-transitions((color $default-speed, background-color $default-speed));
 
     &:hover {
       color: $white;
@@ -643,7 +644,7 @@ div.msg-box {
         font-size: 16px;
         line-height: 30px;
         content: "No";
-        @include each-transitions((color 0.3s, background-color 0.3s));
+        @include each-transitions((color $default-speed, background-color $default-speed));
       }
     }
 
@@ -664,7 +665,7 @@ button.proj-btn {
       line-height: 30px;
       font-size: 20px;
       padding: 1px 6px;
-      @include each-transitions((color 0.3s, background-color 0.5s));
+      @include each-transitions((color $default-speed, background-color 0.5s));
     }
   }
 
@@ -707,7 +708,7 @@ button.proj-btn {
 .socials svg {
   fill: $sea-green;
   max-width: 30px;
-  @include each-transitions((fill 0.3s));
+  @include each-transitions((fill $default-speed));
 
   &:hover {
     fill: #fff;
