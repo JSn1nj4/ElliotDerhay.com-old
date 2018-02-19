@@ -1,0 +1,11 @@
+<template name="StatusMessage">
+  <div class="msg-box">
+    {{#transition in="fadeInDown" out="fadeOutUp"}}
+      {{#if showMsg}}
+        {{#with getMessage}}
+          <p><span class="{{type}}">{{text}}</span></p>
+        {{/with}}
+      {{/if}}
+    {{/transition}}
+  </div>
+</template>
