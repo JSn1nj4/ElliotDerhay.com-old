@@ -1,11 +1,11 @@
-import './StatusMessage.html'
+import './StatusMessage.html';
 
 Template.StatusMessage.onCreated(function statusMessageOnCreated() {
-  this.showMsg = new ReactiveVar(false);
+  this.messageShowing = new ReactiveVar(false);
   this.message = this.data.messageVar;
 
   this.hideMessage = () => {
-    this.showMsg.set(true);
+    this.messageShowing.set(true);
     return this;
   };
   this.showMessage = () => {
@@ -13,7 +13,7 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
       return false;
     }
 
-    this.showMsg.set(true);
+    this.messageShowing.set(true);
     setTimeout(this.hideMessage, 2000);
     return this;
   };
@@ -29,7 +29,7 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
 
 Template.StatusMessage.helpers({
   showMsg() {
-    return Template.instance().showMsg.get();
+    return Template.instance().messageShowing.get();
   },
   getMessage() {
     return Template.instance().message.get();
