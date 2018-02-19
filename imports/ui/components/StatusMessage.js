@@ -6,7 +6,7 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
   this.message = this.data.messageVar;
 
   this.hideMessage = () => {
-    this.messageShowing.set(true);
+    this.messageShowing.set(false);
     return this;
   };
   this.showMessage = () => {
@@ -15,7 +15,7 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
     }
 
     this.messageShowing.set(true);
-    setTimeout(this.hideMessage, 2000);
+    setTimeout(this.hideMessage, 4000);
     return this;
   };
 
