@@ -8,7 +8,7 @@ Template.Contact.onCreated(function contactOnCreated() {
     id: 'contact_banner',
     content: {
       title: 'GET IN TOUCH',
-      tagline: 'Lorem ipsum dolor sit amet, mea no movet scaevola assueverit, pro ferri choro maiestatis in'
+      tagline: 'Fill out the form below and I will get back to you as soon as I can.'
     },
     layout: '12,4',
     contentColumn: 1
