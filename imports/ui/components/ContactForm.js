@@ -15,7 +15,7 @@ Template.ContactForm.onCreated(function contactFormOnCreated() {
     console.log('No form action defined!');
   }
 
-  this.setMessage({type: 'success', text: 'test'});
+  this.setMessage({type: 'error', text: 'test'});
 });
 
 Template.ContactForm.events({
