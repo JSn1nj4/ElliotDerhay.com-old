@@ -1,3 +1,4 @@
+import { ReactiveVar } from 'meteor/reactive-var';
 import './StatusMessage.html';
 
 Template.StatusMessage.onCreated(function statusMessageOnCreated() {
@@ -9,7 +10,7 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
     return this;
   };
   this.showMessage = () => {
-    if( !this.message || this.message.get() === '') {
+    if( !this.message || this.message.get() === {}) {
       return false;
     }
 

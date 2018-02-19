@@ -1,4 +1,4 @@
-import 'meteor/reactive-var';
+import { ReactiveVar } from 'meteor/reactive-var';
 import './StatusMessage.js';
 import './ContactForm.html';
 
