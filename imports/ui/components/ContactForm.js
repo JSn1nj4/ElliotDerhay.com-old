@@ -9,13 +9,6 @@ Template.ContactForm.onCreated(function contactFormOnCreated() {
   this.setErrorMessage = text => {
     this.currentMessage.set({type: 'error', text});
   };
-
-  if(this.data.action) {
-    this.action = this.data.action; // get action method passed to contact form
-  } else {
-    console.log('No form action defined!');
-  }
-
   this.setSuccessMessage = text => {
     this.currentMessage.set({type: 'success', text});
   };
