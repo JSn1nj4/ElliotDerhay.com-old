@@ -6,8 +6,8 @@ Template.ContactForm.onCreated(function contactFormOnCreated() {
   this.currentMessage = new ReactiveVar({});
   this.messageResponse = null;
 
-  this.setMessage = msg => {
-    this.currentMessage.set(msg);
+  this.setErrorMessage = text => {
+    this.currentMessage.set({type: 'error', text});
   };
 
   if(this.data.action) {
@@ -16,37 +16,31 @@ Template.ContactForm.onCreated(function contactFormOnCreated() {
     console.log('No form action defined!');
   }
 
-  this.setMessage({type: 'error', text: 'test'});
-
-  this.autorun(() => {
-    if(this.emailResponse) {
-      this.setMessage(this.emailResponse.firstname);
-      console.log(JSON.stringify(this.emailResponse));
-    }
-  });
+  this.setSuccessMessage = text => {
+    this.currentMessage.set({type: 'success', text});
+  };
 });
 
 Template.ContactForm.events({
-  'submit'(e) {
+  'submit'(e, tpl) {
     e.preventDefault();
-    // Template.instance().setMessage({type: 'success', text: 'Form submitted!'});
+
     const form = e.target;
     const formData = {
-      firstname: form.firstname,
-      lastname: form.lastname,
-      email: form.email,
-      subject: form.subject,
-      message: form.message
+      firstname: form.firstname.value,
+      lastname: form.lastname.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value
     };
 
-    Template.instance().emailResponse = Meteor.call('email.send', { formData }, (err, res) => {
+    Meteor.call('email.send', { formData }, (err, res) => {
       if(err) {
-        console.log(err);
-        return null;
+        tpl.setErrorMessage(err.message);
+        return;
       }
 
-      console.log(res.message);
-      return res.formData;
+      tpl.setSuccessMessage(res);
     });
   }
 });
