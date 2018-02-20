@@ -8,7 +8,7 @@ Meteor.methods({
     emailContext.validate({ ...formData });
 
     if(!emailContext.isValid()) {
-      throw new Meteor.Error('invalid-data', 'Form data is of the wrong type.');
+      throw new Meteor.Error('validation-error', 'Form data is invalid.');
     }
 
     return 'Email sent!';
