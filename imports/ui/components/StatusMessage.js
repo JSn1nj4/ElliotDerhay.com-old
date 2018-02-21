@@ -10,7 +10,12 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
     return this;
   };
   this.showMessage = () => {
-    if( !this.message || this.message.get() === {}) {
+    if(!this.message.get().type || !this.message.get().text) {
+      console.log(this.message.get());
+      this.message.set({
+        type: 'error',
+        text: 'Status message formatted incorrectly'
+      });
       return false;
     }
 
@@ -20,10 +25,10 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
   };
 
   this.autorun(() => {
-    if(!this.message || this.message === {} || this.message === '') {
+    if(!this.message) {
       return false;
     }
-
+    
     this.showMessage();
   });
 });

@@ -6,7 +6,7 @@ import './ManagerContent.html';
 
 Template.ManagerContent.onCreated(function managerOnCreated() {
   this.username = new ReactiveVar( Meteor.user().username );
-  this.msgObj = new ReactiveVar({}); // For error/success messages
+  this.msgObj = new ReactiveVar(); // For error/success messages
 
   this.showTheMsg = (text, type) => {
     // Just a reminder: `this` INSIDE this method refers to the template
