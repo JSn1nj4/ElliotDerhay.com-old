@@ -20,7 +20,7 @@ Template.StatusMessage.onCreated(function statusMessageOnCreated() {
   };
 
   this.autorun(() => {
-    if(!this.message) {
+    if(!this.message || this.message === {} || this.message === '') {
       return false;
     }
 
