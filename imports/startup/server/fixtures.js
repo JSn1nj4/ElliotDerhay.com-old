@@ -1,4 +1,6 @@
 import { projects } from '/imports/api/projects/projects.js';
+import simpleIcons from 'simple-icons';
+import { iconCollection } from '/imports/api/socials/socials.js';
 
 // Dummy projects to load if they don't exist
 let dummyProjectData = [
@@ -52,5 +54,19 @@ dummyProjectData.map(doc => {
   let projectsFound = projects.find({name: doc.name}).fetch().length;
   if(projectsFound < 1) {
     projects.insert(doc);
+  }
+});
+
+// Setup default SVG icons
+let defaultIconsList = [
+  { icon: simpleIcons['GitHub'], link: 'https://github.com/JSn1nj4' },
+  { icon: simpleIcons['GitLab'], link: 'https://gitlab.com/JSn1nj4' },
+  { icon: simpleIcons['Twitter'], link: 'https://twitter.com/JSn1nj4' }
+];
+
+defaultIconsList.map(doc => {
+  let iconsFound = iconCollection.find({ title: doc.icon.title }).fetch().length;
+  if(iconsFound < 1) {
+    iconCollection.insert({ ...doc.icon, link: doc.link });
   }
 });

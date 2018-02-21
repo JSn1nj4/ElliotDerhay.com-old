@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700');
 @import url('https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css');
+@import url('https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh');
 
 // Color variables
 $white: #fff;
@@ -14,20 +15,21 @@ $success-green: #5ec256;
 $error-red: #ff436d;
 
 $default-fonts: 'Source Code Pro', monospace;
+$default-speed: 0.3s;
 
 // Mixins
-@mixin color-transitions($speed: 0.3s) {
-  -webkit-transition: color $speed;
-  -moz-transition: color $speed;
-  -o-transition: color $speed;
-  transition: color $speed;
-}
 
-@mixin color-bg-transitions($color-speed: 0.3s, $bg-speed: 0.3s) {
-  -webkit-transition: color $color-speed, background-color $bg-speed;
-  -moz-transition: color $color-speed, background-color $bg-speed;
-  -o-transition: color $color-speed, background-color $bg-speed;
-  transition: color $color-speed, background-color $bg-speed;
+// List expected (prop speed, prop speed, ...)
+@mixin each-transitions($settings...) {
+  $set: null;
+  @each $transition in $settings {
+    $set: $set, $transition;
+  }
+
+  -webkit-transition: $set;
+  -moz-transition: $set;
+  -o-transition: $set;
+  transition: $set;
 }
 
 /* general styles */
@@ -49,12 +51,60 @@ p {
   font-size: 16px;
   padding: 0 0 2em 0;
   line-height: 1.5em;
+
+  @at-root {
+    form & {
+      padding-bottom: 1em;
+    }
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  color: $white;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0,0,0,0.2);
+  border-bottom: solid 2px $gray;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  @include each-transitions((color $default-speed, border-color 0.5s));
+
+  &:focus {
+    border-bottom-color: $sea-green;
+    outline: none;
+    color: $sea-green;
+  }
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button {
+  outline: $sea-green solid thin;
+  outline-offset: -1px;
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: $sea-green;
+  font-size: 18px;
+  cursor: pointer;
+  @include each-transitions((color $default-speed, background-color 0.5s));
+
+  &:hover {
+    background-color: $sea-green;
+    color: $d-gray;
+  }
 }
 
 #page-container a {
   color: $sea-green;
   text-decoration: none;
-  @include color-transitions;
+  @include each-transitions((color $default-speed));
 
   &:hover {
     color: $highlight-green;
@@ -136,7 +186,7 @@ header {
     font-size: 24px;
     line-height: 1em;
     padding: 23px 30px;
-    @include color-bg-transitions;
+    @include each-transitions((color $default-speed, background-color $default-speed));
 
     &:hover {
       color: $white;
@@ -156,7 +206,8 @@ header {
 /*
   @TODO: figure out general row/column paddings and other styles
 */
-.e_row { /* by default, all rows will be full-width */
+.e_row,
+.e_row_inner { /* by default, all rows will be full-width */
   width: 100%;
   position: relative;
   clear: both;
@@ -170,15 +221,30 @@ header {
 .row_inner {
   padding: 40px 15px 0 15px;
   overflow: hidden;
+
+  @at-root {
+    .e_row_inner > & {
+      padding: 0;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
 }
 
-.e_col {
+.e_col,
+.e_col_inner {
   position: relative;
   float: left;
 }
 
 .col-inner {
   padding: 20px 15px 0;
+
+  @at-root {
+    .e_col_inner > & {
+      padding: 0 10px;
+    }
+  }
 }
 
 // For grid rows
@@ -240,10 +306,6 @@ header {
   h3 {
     font-size: 30px;
   }
-
-  p {
-
-  }
 }
 
 #home_banner {
@@ -253,6 +315,10 @@ header {
 #projects_banner {
   background-image: url(/img/github-static-v2-dark.jpg);
   background-position: center;
+}
+
+#contact_banner {
+  background-color: $dark-green;
 }
 
 /* = PROJECTS STYLES = */
@@ -279,10 +345,6 @@ header {
 
 .project-author, .project-last-updated {
     padding-left: 24px;
-}
-
-footer {
-  padding: 30px 15px;
 }
 
 /* = PROJECT MANAGER LOGIN STYLES = */
@@ -418,7 +480,7 @@ footer {
   background-color: transparent;
   color: $white;
   font-size: 18px;
-  transition: background 0.5s, color 0.3s;
+  @include each-transitions((color $default-speed, background 0.5s));
 
   .devicons-terminal_badge {
     margin-left: -10px;
@@ -510,7 +572,8 @@ div.msg-box {
   .field-wrapper {
     padding: 0 10px 0 20px;
     position: relative;
-    border-bottom: solid 2px $white;
+    border-bottom: solid 2px $gray;
+    background-color: rgba(0,0,0,0.2);
 
     &:before {
       content: "$";
@@ -583,7 +646,7 @@ div.msg-box {
         font-size: 16px;
         line-height: 30px;
         content: "No";
-        @include color-bg-transitions($bg-speed: 0.5s);
+        @include each-transitions((color $default-speed, background-color $default-speed));
       }
     }
 
@@ -603,7 +666,8 @@ button.proj-btn {
       background-color: transparent;
       line-height: 30px;
       font-size: 20px;
-      @include color-bg-transitions($bg-speed: 0.5s);
+      padding: 1px 6px;
+      @include each-transitions((color $default-speed, background-color 0.5s));
     }
   }
 
@@ -640,6 +704,31 @@ button.proj-btn {
   }
 }
 
+/* === CONTACT FORM === */
+
+/* === SOCIAL MEDIA ICONS === */
+.socials svg {
+  fill: $sea-green;
+  max-width: 30px;
+  @include each-transitions((fill $default-speed));
+
+  &:hover {
+    fill: #fff;
+  }
+
+  @at-root {
+    footer & {
+      max-width: 20px;
+    }
+  }
+}
+
+/* === FOOTER === */
+footer {
+  padding: 30px 15px 0;
+  text-align: center;
+}
+
 /* === RESPONSIVE STYLES === */
 /*
   @TODO: Create grid system somewhat similar to what Bootstrap does
@@ -661,9 +750,19 @@ button.proj-btn {
 */
 
 @media only screen and (min-width: 0px) { /* Defaults for everything below small screen sizes */
-  .col-4-md,
+  .hidden-xs {
+    display: none;
+  }
+
+  .visible-sm {
+    display: none;
+  }
+
+  .col-3-sm,
+  .col-4-sm, .col-4-md,
   .col-5-md,
   .col-8-sm, .col-8-md,
+  .col-10-sm,
   .col-12-md,
   .col-16-xs, .col-16-lg {
     width: 100%;
@@ -671,9 +770,11 @@ button.proj-btn {
 
   // Grid-specific styles
   .grid_row > .row_inner {
-    & > .col-4-md,
+    & > .col-3-sm,
+    & > .col-4-sm, & > .col-4-md,
     & > .col-5-md,
     & > .col-8-sm, & > .col-8-md,
+    & > .col-10-sm,
     & > .col-12-md,
     & > .col-16-xs, & > .col-16-lg {
       grid-column: span 16;
@@ -682,19 +783,56 @@ button.proj-btn {
 }
 
 @media only screen and (min-width: 480px) { /* beginning of SM screens */
+  .hidden-xs {
+    display: initial;
+  }
+  .hidden-sm {
+    display: none;
+  }
+
+  .visible-sm {
+    display: initial;
+  }
+
+  .col-3-sm {
+    width: 18.75%
+  }
+  .col-4-sm {
+    width: 25%;
+  }
   .col-8-sm {
     width: 50%;
+  }
+  .col-10-sm {
+    width: 62.5%;
   }
 
   // Grid-specific styles
   .grid_row > .row_inner {
-    & > .col-8-md {
+    & > .col-4-sm {
+      grid-column: span 4;
+    }
+    & > .col-8-sm {
       grid-column: span 8;
+    }
+    & > .col-10-sm {
+      grid-column: span 10;
     }
   }
 }
 
 @media only screen and (min-width: 768px) { /* beginning of MD screens */
+  .hidden-sm {
+    display: initial;
+  }
+  .hidden-md {
+    display: none;
+  }
+
+  .visible-sm {
+    display: none;
+  }
+
   .col-4-md {
     width: 25%;
   }
@@ -732,6 +870,13 @@ button.proj-btn {
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
+  .hidden-md {
+    display: initial;
+  }
+  .hidden-lg {
+    display: none;
+  }
+
   .col-5-lg {
     width: 31.25%;
   }
@@ -757,5 +902,10 @@ button.proj-btn {
 }
 
 @media only screen and (min-width: 1200px) { /* beginning of XL screens */
-
+  .hidden-lg {
+    display: initial;
+  }
+  .hidden-xl {
+    display: none;
+  }
 }

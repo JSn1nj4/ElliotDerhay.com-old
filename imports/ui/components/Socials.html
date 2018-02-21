@@ -1,0 +1,9 @@
+<template name="Socials">
+  <div class="socials-wrapper">
+    <p class="socials svg">
+      {{#each icon in (getIconList icons)}}
+        <a href="{{icon.link}}">{{{ icon.svg }}}</a>
+      {{/each}}
+    </p>
+  </div>
+</template>
