@@ -3,7 +3,7 @@ import './StatusMessage.js';
 import './ContactForm.html';
 
 Template.ContactForm.onCreated(function contactFormOnCreated() {
-  this.currentMessage = new ReactiveVar({});
+  this.currentMessage = new ReactiveVar();
   this.messageResponse = null;
 
   this.setErrorMessage = text => {
