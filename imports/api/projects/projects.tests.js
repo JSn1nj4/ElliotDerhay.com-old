@@ -23,6 +23,13 @@ if(Meteor.isServer) {
         createdAt: new Date(),
         updatedAt: new Date()
       });
+
+      const added = projects.find({ _id: projectId });
+      const collectionName = added._getCollectionName();
+      const count = added.count();
+
+      assert.equal(collectionName, 'projects');
+      assert.equal(count, 1);
     });
   });
 }
