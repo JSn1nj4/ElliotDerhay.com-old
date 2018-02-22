@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
     "dev": "cross-env NODE_ENV=development meteor run",
     "sim-prod": "cross-env NODE_ENV=prod-sim meteor run --production"
   },
