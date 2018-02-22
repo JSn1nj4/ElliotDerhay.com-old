@@ -12,9 +12,17 @@ if(Meteor.isServer) {
     it('insert correctly', function() { // eslint-disable-line no-undef
       projects.attachSchema(ProjectSchemas.Project);
 
-      // const projectId = projects.insert({
-      //
-      // });
+      const projectId = projects.insert({
+        name: 'Test project',
+        url: 'http://example.com/test-user/test-project',
+        isSource: true,
+        author: {
+          user: 'test-user',
+          url: 'http://example.com/test-user'
+        },
+        createdAt: new Date(),
+        updatedAt: new Date()
+      });
     });
   });
 }
