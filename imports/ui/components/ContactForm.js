@@ -27,7 +27,7 @@ Template.ContactForm.events({
       message: form.message.value
     };
 
-    Meteor.call('email.send', { formData }, (err, res) => {
+    Meteor.call('email.send.contact', { formData }, (err, res) => {
       if(err) {
         tpl.setErrorMessage(err.message);
         return;

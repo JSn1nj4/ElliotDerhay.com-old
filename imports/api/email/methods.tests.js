@@ -5,7 +5,7 @@ import './methods.js';
 if(Meteor.isServer) {
   describe('Email sending method', function() { // eslint-disable-line no-undef
     it('can send email', function() { // eslint-disable-line no-undef
-      const sendEmail = Meteor.server.method_handlers['email.send'];
+      const sendContactEmail = Meteor.server.method_handlers['email.send.contact'];
       const formData = {
         firstname: 'firstname',
         lastname: 'lastname',
@@ -14,7 +14,7 @@ if(Meteor.isServer) {
         message: 'test message'
       };
 
-      const result = sendEmail.apply({}, [{ formData }]);
+      const result = sendContactEmail.apply({}, [{ formData }]);
 
       assert.equal(result, 'Email sent!');
     });
