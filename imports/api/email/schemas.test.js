@@ -46,31 +46,31 @@ if(Meteor.isServer) {
         let context = EmailSchema.newContext();
         context.validate(testData.correctData);
 
-        assert.equal(context.valid(), true);
+        assert.equal(context.isValid(), true);
       });
       it('Validation fails with a missing field', function() { // eslint-disable-line no-undef
         let context = EmailSchema.newContext();
         context.validate(testData.missingField);
 
-        assert.equal(context.valid(), false);
+        assert.equal(context.isValid(), false);
       });
       it('Validation fails with incorrect data', function() { // eslint-disable-line no-undef
         let context = EmailSchema.newContext();
         context.validate(testData.missingField);
 
-        assert.equal(context.valid(), false);
+        assert.equal(context.isValid(), false);
       });
       it('Validation fails when values are too long', function() { // eslint-disable-line no-undef
         let context = EmailSchema.newContext();
         context.validate(testData.badValueLength);
 
-        assert.equal(context.valid(), false);
+        assert.equal(context.isValid(), false);
       });
       it('Validation fails with invalid email', function() { // eslint-disable-line no-undef
         let context = EmailSchema.newContext();
         context.validate(testData.invalidEmail);
 
-        assert.equal(context.valid(), false);
+        assert.equal(context.isValid(), false);
       });
     });
   });
