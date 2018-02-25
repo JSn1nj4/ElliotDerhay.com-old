@@ -24,7 +24,7 @@ if(Meteor.isServer) {
 
   });
 
-  it('can send password-reset emails', function() { // eslint-disable-line no-undef
-    
+  it('can send login notification emails', function() { // eslint-disable-line no-undef
+
   });
 }
