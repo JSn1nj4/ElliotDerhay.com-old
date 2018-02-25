@@ -3,8 +3,8 @@ import { assert } from 'chai';
 import './methods.js';
 
 if(Meteor.isServer) {
-  describe('Email sending method', function() { // eslint-disable-line no-undef
-    it('can send email', function() { // eslint-disable-line no-undef
+  describe('Email sending methods', function() { // eslint-disable-line no-undef
+    it('can send contact form emails', function() { // eslint-disable-line no-undef
       const sendContactEmail = Meteor.server.method_handlers['email.send.contact'];
       const formData = {
         firstname: 'firstname',
@@ -18,5 +18,13 @@ if(Meteor.isServer) {
 
       assert.equal(result, 'Email sent!');
     });
+  });
+
+  it('can send password-reset emails', function() { // eslint-disable-line no-undef
+
+  });
+
+  it('can send password-reset emails', function() { // eslint-disable-line no-undef
+    
   });
 }
