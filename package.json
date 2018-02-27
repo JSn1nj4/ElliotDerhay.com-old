@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-dot": "cross-env SERVER_TEST_REPORTER=dot meteor test --once --driver-package meteortesting:mocha",
+    "test": "meteor test --raw-logs --once --driver-package meteortesting:mocha",
+    "test-dot": "cross-env SERVER_TEST_REPORTER=dot meteor test --raw-logs --once --driver-package meteortesting:mocha",
     "dev": "cross-env NODE_ENV=development meteor run",
     "sim-prod": "cross-env NODE_ENV=prod-sim meteor run --production"
   },
