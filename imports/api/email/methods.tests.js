@@ -14,7 +14,7 @@ if(Meteor.isServer) {
         message: 'test message'
       };
 
-      const result = sendContactEmail.apply({}, [{ formData }]);
+      const result = sendContactEmail.call({}, { formData });
 
       assert.equal(result, 'Email sent!');
     });
