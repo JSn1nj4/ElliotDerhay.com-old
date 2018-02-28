@@ -2,12 +2,21 @@ import { EmailSchema } from './schemas.js';
 
 export class EmailSender {
   constructor(settings, testMode = false) {
-    this.settings = settings;
+    if(!settings && !testMode) {
+      console.log('Either pass connection settings or set to test mode.');
+      return false;
+    }
+
+    this.updateConnectionSettings(settings);
     this.testMode = testMode;
   }
 
+  updateConnectionSettings(settings) {
+    this.settings = settings;
+  }
+
   cleanEmail(email) {
-    let emailContext = EmailSchema.newContext();
+    // let emailContext = EmailSchema.newContext();
 
     // email checking code
 
@@ -15,10 +24,13 @@ export class EmailSender {
   }
 
   sendEmail(email) {
-    email = this.cleanEmail(email);
+    // email = this.cleanEmail(email);
 
     if(this.testMode) {
       console.log(`Email object: ${JSON.stringify(email)}`);
+    }
+
+    if(!this.settings) {
       return 'test';
     }
 
