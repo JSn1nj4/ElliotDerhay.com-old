@@ -6,31 +6,31 @@ if(Meteor.isServer) {
   describe('Expected EmailSender class behavior', function() { // eslint-disable-line no-undef
     describe('Email object instantiation', function() { // eslint-disable-line no-undef
       it('create email object in test mode', function() { // eslint-disable-line no-undef
-        return false;
+        assert.isOk(false);
       });
 
       it('create email object in live mode', function() { // eslint-disable-line no-undef
-        return false;
+        assert.isOk(false);
       });
 
       it('fail to create email object when setting both params', function() { // eslint-disable-line no-undef
-        return false;
+        assert.isOk(false);
       });
     });
 
     describe('Expect email sending to succeed', function() { // eslint-disable-line no-undef
       it('email sends in test mode', function() { // eslint-disable-line no-undef
-        return false;
+        assert.isOk(false);
       });
 
       it('email sends in live mode', function() { // eslint-disable-line no-undef
-        return false;
+        assert.isOk(false);
       });
     });
 
     describe('Expect email sending to fail', function() { // eslint-disable-line no-undef
       it('email validation fails when formatted incorrectly', function() { // eslint-disable-line no-undef
-        return false;
+        assert.isOk(false);
       });
     });
   });
