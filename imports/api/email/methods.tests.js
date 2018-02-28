@@ -15,9 +15,10 @@ if(Meteor.isServer) {
           message: 'test message'
         };
 
-        const result = sendContactEmail.call({}, { formData });
+        const result = sendContactEmail.call({}, { formData, getValidation: true });
 
-        assert.equal(result, 'Email sent!');
+        assert.equal(result.validation, true);
+        assert.equal(result.message, 'Email sent!');
       });
 
       it('can send password-reset emails', function() { // eslint-disable-line no-undef
