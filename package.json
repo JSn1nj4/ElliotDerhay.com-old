@@ -21,6 +21,7 @@
   "homepage": "https://gitlab.com/JSn1nj4/elliotderhay.com#README",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
     "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
     "core-js": "^2.5.3",
