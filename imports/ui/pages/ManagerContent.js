@@ -1,23 +1,20 @@
 import { ReactiveVar } from 'meteor/reactive-var';
 import { projects } from '/imports/api/projects/projects.js';
+import '../components/StatusMessage.js';
 import '../components/SingleProjectEntry.js';
 import './ManagerContent.html';
 
 Template.ManagerContent.onCreated(function managerOnCreated() {
   this.username = new ReactiveVar( Meteor.user().username );
-  this.msgObj = new ReactiveVar({}); // For error/success messages
-  this.msgVisible = new ReactiveVar(false); // Whether to show the message box
-  this.showTheMsg = (txt, type) => {
-    // Just a reminder: `this` INSIDE this method refers to the template instance
+  this.msgObj = new ReactiveVar(); // For error/success messages
 
-    // Show message, using a vanilla JS timeout
-    this.msgObj.set({txt, type});
-    setTimeout(() => {
-      this.msgVisible.set(true);
-    }, 200);
-    setTimeout(() => {
-      this.msgVisible.set(false);
-    }, 4000);
+  this.showTheMsg = (text, type) => {
+    // Just a reminder: `this` INSIDE this method refers to the template
+    // instance. This is because arrow functions inherit `this` from their
+    // parent object.
+
+    // Set message object
+    this.msgObj.set({text, type});
   };
 
   // Generic callback method for using the `.showTheMsg()` method
@@ -56,13 +53,10 @@ Template.ManagerContent.helpers({
   getProjectsList() {
     return projects.find({}, { sort: { createdAt: -1} } ).fetch();
   },
-  showMsg() { // check if the message should be visible
-    return Template.instance().msgVisible.get();
+  getMessageVar() {
+    return Template.instance().msgObj;
   },
-  msg() { // return the message object
-    return Template.instance().msgObj.get();
-  },
-  getMsgCallback() { // For passing the msgCallback method to children  
+  getMsgCallback() { // For passing the msgCallback method to children
     return Template.instance().msgCallback;
   }
 });

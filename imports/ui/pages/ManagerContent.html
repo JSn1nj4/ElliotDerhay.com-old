@@ -19,15 +19,7 @@
             <div id="project-manager-msg-box-row">
               <div class="proj-col">
                 <div class="proj-col-inner">
-                  <div class="msg-box">
-                    {{#transition in="fadeInDown" out="fadeOutUp"}}
-                      {{#if showMsg}}
-                        {{#with msg}}
-                          <p><span class="{{type}}">{{txt}}</span></p>
-                        {{/with}}
-                      {{/if}}
-                    {{/transition}}
-                  </div>
+                  {{> StatusMessage messageVar=getMessageVar}}
                 </div>
               </div>
             </div>
