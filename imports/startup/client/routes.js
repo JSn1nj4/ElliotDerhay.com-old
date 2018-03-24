@@ -12,6 +12,20 @@ FlowRouter.globals.push({
   }
 });
 
+FlowRouter.route('*', {
+  waitOn() {
+    return [
+      import('/imports/ui/layouts/PageLayout.js'),
+      import('/imports/ui/pages/NotFound.js')
+    ];
+  },
+  action() {
+    BlazeLayout.render('PageLayout', {
+      content: 'NotFound'
+    });
+  }
+});
+
 let publicRoutes = FlowRouter.group({
   name: 'public',
   waitOn() {
