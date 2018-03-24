@@ -1,19 +1,25 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { ReactiveVar } from 'meteor/reactive-var';
 import './NotFound.html';
 
 Template.NotFound.onCreated(function notFoundOnCreated() {
   this.redirectTime = new ReactiveVar(5);
-  // this.beginCountdown = () => {
-  //   while(this.data.redirectTime.get() > 0) {
-  //     setTimeout(() => {
-  //       this.data.redirectTime.set(
-  //         this.data.redirectTime.get() - 1
-  //       );
-  //     }, 1000);
-  //   }
-  // };
+  this.beginCountdown = () => {
+    var intervalID = setInterval(() => {
+      let redirectTime = this.redirectTime.get();
+      if(redirectTime === 0) {
+        clearInterval(intervalID);
+        FlowRouter.go('/');
+        return true;
+      }
 
-  // this.beginCountdown();
+      this.redirectTime.set(redirectTime - 1);
+    }, 1000);
+  };
+});
+
+Template.NotFound.onRendered(function notFoundOnRendered() {
+  this.beginCountdown();
 });
 
 Template.NotFound.helpers({
