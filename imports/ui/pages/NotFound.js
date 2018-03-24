@@ -2,7 +2,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './NotFound.html';
 
 Template.NotFound.onCreated(function notFoundOnCreated() {
-  // this.redirectTime = new ReactiveVar(5);
+  this.redirectTime = new ReactiveVar(5);
   // this.beginCountdown = () => {
   //   while(this.data.redirectTime.get() > 0) {
   //     setTimeout(() => {
@@ -18,6 +18,6 @@ Template.NotFound.onCreated(function notFoundOnCreated() {
 
 Template.NotFound.helpers({
   redirectTime() {
-    // return Template.instance().redirectTime.get();
+    return Template.instance().redirectTime.get();
   }
 });
