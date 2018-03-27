@@ -14,24 +14,6 @@ Thumbs.db
 # NPM
 node_modules/*
 
-# fonts
-*.eot
-*.ttc
-*.ttf
-*.otf
-*.woff
-
-# images
-*.png
-*.jpg
-*.jpe
-*.jpeg
-*.gif
-*.ico
-*.svg
-*.cur
-*.tiff
-
 # logs
 *.log
 error_log
@@ -48,6 +30,3 @@ error_log
 *.ogv
 *.avi
 *.swf
-
-# Files marked as "Assume Unchanged"
-/public/img
