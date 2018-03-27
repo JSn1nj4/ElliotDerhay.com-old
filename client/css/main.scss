@@ -287,12 +287,24 @@ header {
   background-size: cover;
   position: relative;
   overflow: hidden;
-  min-height: 200px;
-  padding: 0 0 60px 0;
+  height: auto;
 
-  h1, h2, h3 {
+  .e_row {
+    display: table;
+    height: 100%;
+
+    .row_inner {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .col-inner {
+    padding-top: 0;
+  }
+
+  h1, h3 {
     font-weight: 400;
-    padding: 0.2em 0;
     text-align: center;
     color: $white;
     text-shadow: $white 0 0 10px;
@@ -300,10 +312,12 @@ header {
 
   h1 {
     font-size: 60px;
+    padding: 0 0 0.2em 0;
   }
 
   h3 {
     font-size: 30px;
+    padding: 0.2em 0 0 0;
   }
 }
 
@@ -820,11 +834,13 @@ footer {
   }
 }
 
-@media only screen and (min-width: 768px) { /* beginning of MD screens */
+@media only screen and (min-width: 600px) {
   .banner-container {
-    min-height: 300px;
-    padding: 30px 0 80px 0;
+    height: 56.25vw;
   }
+}
+
+@media only screen and (min-width: 768px) { /* beginning of MD screens */
   .hidden-sm {
     display: initial;
   }
@@ -873,6 +889,9 @@ footer {
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
+  .banner-container {
+    height: 46.875vw;
+  }
   .hidden-md {
     display: initial;
   }
@@ -906,20 +925,12 @@ footer {
 
 @media only screen and (min-width: 1200px) { /* beginning of XL screens */
   .banner-container {
-    min-height: 400px;
-    padding: 60px 0 100px 0;
+    height: 37.5vw;
   }
   .hidden-lg {
     display: initial;
   }
   .hidden-xl {
     display: none;
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .banner-container {
-    min-height: 500px;
-    padding: 90px 0 120px 0;
   }
 }
