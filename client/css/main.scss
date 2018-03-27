@@ -154,14 +154,14 @@ header {
 
 #brand {
   color: $white;
-  font-size: 40px;
+  font-size: 26px;
   line-height: 1em;
-  padding: 15px;
+  padding: 12px;
   display: inline-block;
 
   span {
     color: $sea-green;
-    font-size: .7em;
+    font-size: .6em;
     margin: auto -.3em;
     line-height: 1em;
     vertical-align: middle;
@@ -182,9 +182,9 @@ header {
     text-align: right;
     vertical-align: middle;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1em;
-    padding: 23px 30px;
+    padding: 16px 18px;
     @include each-transitions((color $default-speed, background-color $default-speed));
 
     &:hover {
@@ -889,6 +889,30 @@ footer {
 }
 
 @media only screen and (min-width: 992px) { /* beginning of LG screens */
+  #brand {
+    font-size: 40px;
+    padding: 15px;
+
+    span {
+      font-size: .7em;
+    }
+  }
+
+  #main-menu a {
+    font-size: 24px;
+    padding: 23px 30px;
+  }
+
+  .banner-container {
+    h1 {
+      font-size: 60px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
   .banner-container {
     height: 46.875vw;
   }
@@ -926,14 +950,6 @@ footer {
 @media only screen and (min-width: 1200px) { /* beginning of XL screens */
   .banner-container {
     height: 37.5vw;
-
-    h1 {
-      font-size: 60px;
-    }
-
-    h3 {
-      font-size: 30px;
-    }
   }
   .hidden-lg {
     display: initial;
