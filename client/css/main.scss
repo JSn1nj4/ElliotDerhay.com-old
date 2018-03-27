@@ -311,12 +311,12 @@ header {
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 40px;
     padding: 0 0 0.2em 0;
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 24px;
     padding: 0.2em 0 0 0;
   }
 }
@@ -926,6 +926,14 @@ footer {
 @media only screen and (min-width: 1200px) { /* beginning of XL screens */
   .banner-container {
     height: 37.5vw;
+
+    h1 {
+      font-size: 60px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
   }
   .hidden-lg {
     display: initial;
