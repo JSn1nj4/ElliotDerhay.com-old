@@ -48,6 +48,3 @@ error_log
 *.ogv
 *.avi
 *.swf
-
-# Files marked as "Assume Unchanged"
-/public/img
