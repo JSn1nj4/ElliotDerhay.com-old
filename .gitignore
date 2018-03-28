@@ -8,6 +8,7 @@
 # computer system files
 Thumbs.db
 .DS_Store
+.directory
 
 # file caches
 
