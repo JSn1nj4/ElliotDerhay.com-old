@@ -7,7 +7,7 @@ if(Meteor.isServer) {
     describe('Email object instantiation', function() { // eslint-disable-line no-undef
       it('create email object in test mode', function() { // eslint-disable-line no-undef
         let sender = new EmailSender(null, true);
-        assert.isOk(sender, 'object created in test mode');
+        assert.isOk(sender.testMode, 'object created in test mode');
       });
 
       it('create email object in live mode', function() { // eslint-disable-line no-undef
