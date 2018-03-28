@@ -7,6 +7,11 @@ export class EmailSender {
       return false;
     }
 
+    if((settings != null || settings != undefined) && testMode) {
+      console.log('You cannot both pass connection settings and set to test mode.');
+      return false;
+    }
+
     this.updateConnectionSettings(settings);
     this.testMode = testMode;
   }

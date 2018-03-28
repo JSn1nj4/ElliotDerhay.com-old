@@ -15,7 +15,9 @@ if(Meteor.isServer) {
       });
 
       it('fail to create email object when setting both params', function() { // eslint-disable-line no-undef
-        assert.isOk(false);
+        let sender = new EmailSender({}, true);
+        console.log(sender);
+        assert.isNotOk(sender, 'object creation fails with both params set');
       });
     });
 
