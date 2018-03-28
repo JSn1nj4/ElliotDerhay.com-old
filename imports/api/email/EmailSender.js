@@ -9,6 +9,12 @@ export class EmailSender {
 
     this.updateConnectionSettings(settings);
     this.testMode = testMode;
+
+    if(testMode) {
+      return 'test mode';
+    }
+
+    return true;
   }
 
   updateConnectionSettings(settings) {
