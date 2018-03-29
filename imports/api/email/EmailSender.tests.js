@@ -13,12 +13,6 @@ if(Meteor.isServer) {
       it('create email object in live mode', function() { // eslint-disable-line no-undef
         assert.isOk(false);
       });
-
-      it('fail to create email object when setting both params', function() { // eslint-disable-line no-undef
-        let sender = new EmailSender({}, true);
-        console.log(sender);
-        assert.isNotOk(sender, 'object creation fails with both params set');
-      });
     });
 
     describe('Expect email sending to succeed', function() { // eslint-disable-line no-undef

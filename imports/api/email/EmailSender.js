@@ -3,13 +3,7 @@ import { EmailSchema } from './schemas.js';
 export class EmailSender {
   constructor(settings, testMode = false) {
     if(!settings && !testMode) {
-      console.log('Either pass connection settings or set to test mode.');
-      return false;
-    }
-
-    if((settings != null || settings != undefined) && testMode) {
-      console.log('You cannot both pass connection settings and set to test mode.');
-      return false;
+      throw new Error('Either pass connection settings or set to test mode.');
     }
 
     this.updateConnectionSettings(settings);
