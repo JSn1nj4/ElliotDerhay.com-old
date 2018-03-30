@@ -11,7 +11,14 @@ export class EmailSender {
   }
 
   updateConnectionSettings(settings) {
-    this.settings = settings;
+    this.settings.host = settings.host || '';
+    this.settings.port = settings.port || 587;
+    this.settings.user = settings.user || '';
+    this.settings.password = settings.password || '';
+
+    if(!this.testMode && (!settings.host || !settings.user || !settings.password)) {
+      throw new Error('You must set a host, username and password in live mode!');
+    }
   }
 
   cleanEmail(email) {

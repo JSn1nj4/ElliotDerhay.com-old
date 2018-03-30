@@ -11,7 +11,9 @@ if(Meteor.isServer) {
       });
 
       it('create email object in live mode', function() { // eslint-disable-line no-undef
-        assert.isOk(false);
+        expect(new EmailSender({ // eslint-disable-line no-undef
+          host: ''
+        })).to.be.an('object').that.has.deep.keys(['url', 'port', 'user', 'password']);
       });
     });
 
