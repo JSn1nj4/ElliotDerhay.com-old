@@ -25,3 +25,10 @@ Template.HeroImage.helpers({
     return Template.instance().columns;
   }
 });
+
+// helpers specifically for the HeroImageColumn template
+Template.HeroImageColumn.helpers({
+  willColumnHide(showContent) {
+    return showContent === false ? 'hidden-xs hidden-sm' : '';
+  }
+});

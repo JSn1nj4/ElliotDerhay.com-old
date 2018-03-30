@@ -11,7 +11,7 @@
 </template>
 
 <template name="HeroImageColumn">
-  <div class="e_col col-{{column.span}}-md">
+  <div class="e_col col-{{column.span}}-md {{willColumnHide column.content}}">
     <div class="col-inner">
     {{#if column.content}}
       <h1>{{column.content.title}}</h1>
