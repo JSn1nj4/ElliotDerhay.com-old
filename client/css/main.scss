@@ -185,7 +185,7 @@ header {
     text-transform: uppercase;
     font-size: 18px;
     line-height: 1em;
-    padding: 16px 6px;
+    padding: 16px 18px;
     @include each-transitions((color $default-speed, background-color $default-speed));
 
     &:hover {
@@ -842,13 +842,6 @@ footer {
 }
 
 @media only screen and (min-width: 600px) {
-  #main-menu {
-    a {
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-  }
-
   #brand {
     span {
       display: inline;
