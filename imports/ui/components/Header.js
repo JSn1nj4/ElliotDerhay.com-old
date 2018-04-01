@@ -9,7 +9,6 @@ Template.Header.onCreated(function headerOnCreated() {
 Template.Header.events({
   'change input[name="mobile_menu_toggle"]'(e, tpl) {
     tpl.openMobileMenu.set(tpl.openMobileMenu.get() ? false : true);
-    console.log(tpl.openMobileMenu.get());
   }
 });
 
