@@ -4,7 +4,7 @@ import './Header.html';
 
 Template.Header.onCreated(function headerOnCreated() {
   this.openMobileMenu = new ReactiveVar(false);
-  window.addEventListener('resize', () => {
+  this.mobileMenuHeight = new ReactiveVar();
   this.menuItems = [
     'Home',
     'Projects',
@@ -12,10 +12,19 @@ Template.Header.onCreated(function headerOnCreated() {
     'Contact'
   ];
 
+  this.checkWindowWidth = () => {
     if(window.innerWidth >= 600) {
       this.openMobileMenu.set(false);
+      this.mobileMenuHeight.set('');
     }
-  });
+
+    if(window.innerWidth < 600) {
+      this.mobileMenuHeight.set(`height:${this.menuItems.length * 50}px;`);
+    }
+  };
+
+  window.addEventListener('resize', this.checkWindowWidth);
+  this.checkWindowWidth();
 });
 
 Template.Header.events({
@@ -38,5 +47,7 @@ Template.Header.helpers({
   mobileMenuState() {
     return Template.instance().openMobileMenu.get() ? 'open' : 'closed';
   },
+  mobileMenuHeight() {
+    return Template.instance().openMobileMenu.get() ? Template.instance().mobileMenuHeight.get() : '';
   }
 });

@@ -356,12 +356,6 @@ header {
       color: $white;
     }
   }
-
-  @at-root {
-    #mobile_menu_toggle.open + & {
-      height: 150px;
-    }
-  }
 }
 
 #page-container {
