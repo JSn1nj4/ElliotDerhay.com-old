@@ -453,6 +453,7 @@ header {
   position: relative;
   overflow: hidden;
   height: auto;
+  min-height: 46.875vw;
 
   .e_row {
     display: table;
@@ -1008,6 +1009,7 @@ footer {
 @media only screen and (min-width: 600px) {
   .banner-container {
     height: 56.25vw;
+    min-height: auto;
 
     .row_inner {
       padding-bottom: 0;
@@ -1061,7 +1063,7 @@ footer {
       grid-column: span 16;
     }
   }
-  
+
   #main-menu {
     overflow: auto;
     width: auto;
