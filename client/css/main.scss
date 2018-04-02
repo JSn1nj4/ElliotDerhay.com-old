@@ -349,7 +349,7 @@ header {
     text-transform: uppercase;
     font-size: 18px;
     line-height: 1em;
-    padding: 16px 18px;
+    padding: 16px 20px;
     @include each-transitions((color $default-speed, background-color $default-speed));
 
     &:hover {
@@ -1096,7 +1096,8 @@ footer {
 
   #main-menu a {
     font-size: 24px;
-    padding: 23px 30px;
+    padding-top: 23px;
+    padding-bottom: 23px;
   }
 
   .banner-container {
