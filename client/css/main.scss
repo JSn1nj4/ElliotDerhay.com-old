@@ -1006,27 +1006,6 @@ footer {
 }
 
 @media only screen and (min-width: 600px) {
-  #main-menu {
-    overflow: auto;
-    width: auto;
-    height: 100%;
-    top: 0;
-    @include each-transitions((none));
-
-    a {
-      display: inline-block;
-      text-align: right;
-    }
-  }
-
-  #mobile_menu_toggle {
-    display: none;
-
-    &.open + #main-menu {
-      height: 100%;
-    }
-  }
-
   .banner-container {
     height: 56.25vw;
 
@@ -1080,6 +1059,27 @@ footer {
     }
     & > .col-16-md {
       grid-column: span 16;
+    }
+  }
+  
+  #main-menu {
+    overflow: auto;
+    width: auto;
+    height: 100%;
+    top: 0;
+    @include each-transitions((none));
+
+    a {
+      display: inline-block;
+      text-align: right;
+    }
+  }
+
+  #mobile_menu_toggle {
+    display: none;
+
+    &.open + #main-menu {
+      height: 100%;
     }
   }
 }

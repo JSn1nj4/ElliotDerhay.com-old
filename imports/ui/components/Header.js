@@ -11,14 +11,15 @@ Template.Header.onCreated(function headerOnCreated() {
     'Experiments',
     'Contact'
   ];
+  let screenWidthThreshold = 768;
 
   this.checkWindowWidth = () => {
-    if(window.innerWidth >= 600) {
+    if(window.innerWidth >= screenWidthThreshold) {
       this.openMobileMenu.set(false);
       this.mobileMenuHeight.set('');
     }
 
-    if(window.innerWidth < 600) {
+    if(window.innerWidth < screenWidthThreshold) {
       this.mobileMenuHeight.set(`height:${this.menuItems.length * 50}px;`);
     }
   };
