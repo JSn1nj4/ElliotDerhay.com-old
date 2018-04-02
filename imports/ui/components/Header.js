@@ -5,6 +5,13 @@ import './Header.html';
 Template.Header.onCreated(function headerOnCreated() {
   this.openMobileMenu = new ReactiveVar(false);
   window.addEventListener('resize', () => {
+  this.menuItems = [
+    'Home',
+    'Projects',
+    'Experiments',
+    'Contact'
+  ];
+
     if(window.innerWidth >= 600) {
       this.openMobileMenu.set(false);
     }
@@ -25,7 +32,11 @@ Template.Header.helpers({
     FlowRouter.watchPathChange();
     return FlowRouter.current().path;
   },
-  toggleState() {
+  getMenuItems() {
+    return Template.instance().menuItems;
+  },
+  mobileMenuState() {
     return Template.instance().openMobileMenu.get() ? 'open' : 'closed';
+  },
   }
 });

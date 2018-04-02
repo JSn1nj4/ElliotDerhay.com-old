@@ -1,6 +1,6 @@
 <template name="Header">
   <a id="brand" href="/">ed(<span>'{{route}}'</span>)</a>
-  <label id="mobile_menu_toggle" class="{{toggleState}}">
+  <label id="mobile_menu_toggle" class="{{mobileMenuState}}">
     <input type="checkbox" name="mobile_menu_toggle">
     <div class="bars-wrapper">
       <div></div>
@@ -8,10 +8,9 @@
       <div></div>
     </div>
   </label>
-  <nav id="main-menu">
-    <a href="{{ pathFor 'Home' }}">Home</a>
-    <a href="{{ pathFor 'Projects' }}">Projects</a>
-    <!-- <a href="{{ pathFor 'Experiments'}}">Experiments</a> -->
-    <a href="{{ pathFor 'Contact' }}">Contact</a>
+  <nav id="main-menu" style="{{mobileMenuHeight}}">
+    {{#each item in getMenuItems}}
+      <a href="{{ pathFor item }}">{{item}}</a>
+    {{/each}}
   </nav>
 </template>
