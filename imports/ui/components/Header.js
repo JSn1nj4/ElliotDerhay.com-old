@@ -21,7 +21,7 @@ Template.Header.events({
 });
 
 Template.Header.helpers({
-  route: function() {
+  route() {
     FlowRouter.watchPathChange();
     return FlowRouter.current().path;
   },
