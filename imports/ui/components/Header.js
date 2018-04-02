@@ -4,6 +4,11 @@ import './Header.html';
 
 Template.Header.onCreated(function headerOnCreated() {
   this.openMobileMenu = new ReactiveVar(false);
+  window.addEventListener('resize', () => {
+    if(window.innerWidth >= 600) {
+      this.openMobileMenu.set(false);
+    }
+  });
 });
 
 Template.Header.events({
