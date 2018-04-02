@@ -1011,6 +1011,7 @@ footer {
     width: auto;
     height: 100%;
     top: 0;
+    @include each-transitions((none));
 
     a {
       display: inline-block;
