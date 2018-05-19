@@ -31,3 +31,6 @@ error_log
 *.ogv
 *.avi
 *.swf
+
+# builds directory
+builds/
