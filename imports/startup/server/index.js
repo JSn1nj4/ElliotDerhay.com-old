@@ -8,13 +8,13 @@ import '/imports/api/socials/methods.js';
 import '/imports/api/email/methods.js';
 import './fixtures.js';
 
-if(process.env.NODE_ENV == 'development') {
-  process.env.ROOT_URL = 'elliotderhay.test';
-}
+// if(process.env.NODE_ENV == 'development') {
+//
+// }
 
-if(process.env.NODE_ENV == 'prod-sim') {
-  process.env.ROOT_URL = 'prod.elliotderhay.test';
-}
+// if(process.env.NODE_ENV == 'prod-sim') {
+//
+// }
 
 if(process.env.NODE_ENV !== 'production') {
   process.env.MAIL_URL = 'smtp://localhost:1025';
