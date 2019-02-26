@@ -10,13 +10,13 @@ export class EmailSender {
     this.testMode = testMode;
   }
 
-  updateConnectionSettings(settings) {
-    this.settings.host = settings.host || '';
-    this.settings.port = settings.port || 587;
-    this.settings.user = settings.user || '';
-    this.settings.password = settings.password || '';
+  updateConnectionSettings({host, port, user, password}) {
+    this.settings.host = host || '';
+    this.settings.port = port || 587;
+    this.settings.user = user || '';
+    this.settings.password = password || '';
 
-    if(!this.testMode && (!settings.host || !settings.user || !settings.password)) {
+    if(!this.testMode && (!host || !user || !password)) {
       throw new Error('You must set a host, username and password in live mode!');
     }
   }
